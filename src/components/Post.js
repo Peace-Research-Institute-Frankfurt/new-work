@@ -3,7 +3,9 @@ import App from "./App";
 import { graphql, Link } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import * as Styles from "./Post.module.scss";
-const shortCodes = {};
+import Figure from "./Figure";
+import Quote from "./Quote";
+const shortCodes = { Figure, Quote };
 
 export const query = graphql`
   query ($id: String!) {

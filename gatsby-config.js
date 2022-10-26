@@ -17,6 +17,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-json",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-plugin-manifest",
@@ -29,6 +30,13 @@ module.exports = {
       options: {
         name: "authors",
         path: `${__dirname}/content/authors/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "data",
+        path: `${__dirname}/content/data/`,
       },
     },
     {
