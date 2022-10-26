@@ -27,16 +27,18 @@ export const query = graphql`
 const Post = ({ data, children }) => {
   const frontmatter = data.post.childMdx.frontmatter;
   const authors = data.post.childMdx.frontmatter.authors;
-
-  const bylines = authors.map((author) => {
-    const fm = author.frontmatter;
-    return (
-      <li key={fm.name}>
-        <em>{fm.name}</em>
-        <span>{fm.institution}</span>
-      </li>
-    );
-  });
+  let bylines = [];
+  if (authors) {
+    bylines = authors.map((author) => {
+      const fm = author.frontmatter;
+      return (
+        <li key={fm.name}>
+          <em>{fm.name}</em>
+          <span>{fm.institution}</span>
+        </li>
+      );
+    });
+  }
 
   return (
     <App>
