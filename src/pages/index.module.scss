@@ -61,10 +61,10 @@
   position: absolute !important;
   left: 50%;
   top: 50%;
-  height: 80vh;
+  height: 70vh;
   width: 100%;
   transform: translateX(-50%) translateY(-50%);
-  filter: drop-shadow(30px 40px 10px var(--shadow));
+  filter: drop-shadow(30px 40px 8px var(--shadow));
   pointer-events: none;
   z-index: 100;
 }
@@ -128,7 +128,7 @@
   right: 5%;
   top: 50%;
   transform: rotate(30deg);
-  background: rgb(72, 251, 7);
+  background: rgb(12, 255, 81);
   display: flex;
   align-items: center;
   justify-content: center;

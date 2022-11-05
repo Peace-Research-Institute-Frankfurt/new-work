@@ -65,8 +65,8 @@ export function Head({ data }) {
   const frontmatter = data.post.childMdx.frontmatter;
   return (
     <>
-      <title>{frontmatter.title}</title>
-      <meta name="description" content={frontmatter.intro} />
+      <title>{`${frontmatter.title} – New Work (Eine Anleitung)`}</title>
+      <meta name="description" content={`${frontmatter.intro}`} />
     </>
   );
 }
