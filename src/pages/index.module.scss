@@ -65,6 +65,7 @@
   transform: translateX(-50%) translateY(-50%);
   filter: drop-shadow(30px 40px 10px var(--shadow));
   pointer-events: none;
+  z-index: 100;
 }
 
 .content {
@@ -116,4 +117,21 @@
   text-align: center;
   display: inline-block;
   transform: skew(10deg);
+}
+
+.sticker {
+  width:  10rem;
+  height: 10rem;
+  display: block;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: rotate(30deg);
+  background: rgb(72, 251, 7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 5px solid white;
+  box-shadow: 2px 1px 1px rgba(black, 0.2);
 }

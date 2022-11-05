@@ -53,6 +53,7 @@ const Index = ({ data }) => {
           src="../images/leibniz-head.png"
           alt=""
         />
+        <Link to="#1" className={styles.sticker}>Leibniz</Link>
       </header>
       <section className={styles.content}>
         <ol className={styles.posts}>{posts}</ol>
