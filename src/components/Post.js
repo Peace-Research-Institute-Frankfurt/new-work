@@ -14,6 +14,7 @@ export const query = graphql`
         frontmatter {
           title
           intro
+          color
           order
           authors {
             frontmatter {
@@ -29,6 +30,9 @@ export const query = graphql`
 const Post = ({ data, children }) => {
   const frontmatter = data.post.childMdx.frontmatter;
   const authors = data.post.childMdx.frontmatter.authors;
+  const headerStyles = {
+    background: `linear-gradient(to bottom, ${frontmatter.color} 45%, transparent 50%)`,
+  };
   let bylines = [];
   if (authors) {
     bylines = authors.map((author) => {
@@ -46,7 +50,7 @@ const Post = ({ data, children }) => {
     <App>
       <Link href="/">Home</Link>
       <article>
-        <header className={styles.header}>
+        <header className={styles.header} style={headerStyles}>
           <div className={styles.headerCopy}>
             <h1 className={styles.title}>{frontmatter.title}</h1>
             <ul>{bylines}</ul>

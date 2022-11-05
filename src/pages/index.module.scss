@@ -3,7 +3,7 @@
   display: flex;
   padding-bottom: 2rem;
   position: relative;
-  background: linear-gradient(to bottom, var(--orange) 40%, transparent 90%);
+  background: linear-gradient(to bottom, var(--orange) 50%, transparent 90%);
 }
 .title {
   display: flex;
@@ -21,9 +21,9 @@
 .title-main {
   display: block;
   font-weight: 900;
-  font-size: 21.6vw;
+  font-size: 22vw;
   word-spacing: -0.01em;
-  letter-spacing: -0.032em;
+  letter-spacing: -0.034em;
   white-space: nowrap;
   margin-top: -0.085em;
   //   margin-left: -0.1em;
@@ -48,13 +48,13 @@
 .tagline {
   font-family: var(--suisse);
   font-size: var(--ms-3);
-  max-width: 12em;
-  line-height: 1.05;
+  max-width: 13em;
+  line-height: 1.1;
   padding-left: 0em;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.05em;
   font-weight: 700;
   margin-top: -0.75em;
-  margin-left: 0.25em;
+  margin-left: 0.35em;
 }
 
 .face {
@@ -64,7 +64,7 @@
   height: 70vh;
   width: 100%;
   transform: translateX(-50%) translateY(-50%);
-  filter: drop-shadow(30px 40px 8px var(--shadow));
+  filter: drop-shadow(30px 40px 7px var(--shadow));
   pointer-events: none;
   z-index: 100;
 }
@@ -102,22 +102,21 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem 4rem;
+  padding: 2rem 2rem;
   &:hover,
   &:focus-visible {
-    background-color: var(--orange-light);
+    background-color: var(--gray-light);
   }
 }
 
 .posts-title {
   font-family: var(--haas-display);
-  font-weight: 400;
-  font-size: var(--ms-5);
+  font-weight: 700;
+  font-size: var(--ms-4);
   line-height: 1;
   letter-spacing: -0.01em;
   text-align: center;
   display: inline-block;
-  transform: skew(10deg);
 }
 
 .sticker {
