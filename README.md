@@ -1,5 +1,7 @@
 # New Work
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/389532b6-bd8e-432c-84b9-dee1dc63c426/deploy-status)](https://app.netlify.com/sites/leibniz-nw/deploys)
+
 ## Workflow
 
 ### How to get set up
