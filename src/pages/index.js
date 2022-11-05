@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 import * as styles from "./index.module.scss";
 import App from "../components/App";
 import { StaticImage } from "gatsby-plugin-image";
+import LeibnizLogo from "../images/logo-black.svg"
 
 export const query = graphql`
   query {
@@ -53,7 +54,9 @@ const Index = ({ data }) => {
           src="../images/leibniz-head.png"
           alt=""
         />
-        <Link to="#1" className={styles.sticker}>Leibniz</Link>
+        <Link to="#1" className={styles.sticker}>
+          <LeibnizLogo/>
+        </Link>
       </header>
       <section className={styles.content}>
         <ol className={styles.posts}>{posts}</ol>
