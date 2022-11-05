@@ -1,11 +1,4 @@
-const wrapESMPlugin = (name) =>
-  function wrapESM(opts) {
-    return async (...args) => {
-      const mod = await import(name);
-      const plugin = mod.default(opts);
-      return plugin(...args);
-    };
-  };
+require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
@@ -54,6 +47,20 @@ module.exports = {
           // rehypePlugins: [wrapESMPlugin("rehype-slug")],
         },
         // gatsbyRemarkPlugins: ["gatsby-remark-smartypants", "gatsby-plugin-remark-footnotes"],
+      },
+    },
+    {
+      resolve: "gatsby-omni-font-loader",
+      options: {
+        mode: "async",
+        enableListener: false,
+        preconnect: ["https://use.typekit.net"],
+        web: [
+          {
+            name: "haas",
+            file: `https://use.typekit.net/${process.env.TYPEKIT_PROJECT_ID}.css`,
+          },
+        ],
       },
     },
   ],

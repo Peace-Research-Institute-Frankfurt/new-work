@@ -1,0 +1,115 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  padding-bottom: 2rem;
+  position: relative;
+  background: linear-gradient(to bottom, var(--orange) 70%, transparent 90%);
+}
+.title {
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1;
+  font-family: var(--haas-display);
+  opacity: 0.9;
+  color: rgb(3, 4, 13);
+  mix-blend-mode: multiply;
+}
+
+.title-main {
+  display: block;
+  font-weight: 900;
+  font-size: 21.5vw;
+  letter-spacing: -0.032em;
+  white-space: nowrap;
+  margin-top: -0.085em;
+  //   margin-left: -0.1em;
+  .e {
+    margin-left: -0.006em;
+  }
+  .w {
+    margin-left: -0.027em;
+  }
+  .o {
+    margin-left: -0.07em;
+  }
+}
+
+.title-secondary {
+  letter-spacing: -0.042em;
+  font-size: 15vw;
+  font-weight: 100;
+  white-space: nowrap;
+}
+
+.tagline {
+  font-family: var(--suisse);
+  font-size: var(--ms-4);
+  max-width: 12em;
+  line-height: 1.05;
+  padding-left: 0em;
+  letter-spacing: -0.06em;
+  font-weight: 400;
+  margin-top: -0.6em;
+  margin-left: 0.1em;
+}
+
+.face {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 80vh;
+  width: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  filter: drop-shadow(30px 30px 10px var(--shadow));
+  pointer-events: none;
+}
+
+.content {
+  padding: var(--padding);
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  list-style: none;
+  border-radius: 10px;
+  border: 1px solid var(--gray);
+  li {
+    list-style: none;
+    display: flex;
+    border-right: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+    &:nth-of-type(2n) {
+      border-right: 0;
+    }
+    &:nth-last-of-type(1) {
+      grid-column: span 2;
+      border-bottom: 0;
+      border-right: 0;
+    }
+  }
+}
+
+.posts-item {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 4rem;
+  &:hover,
+  &:focus-visible {
+    background-color: var(--orange-light);
+  }
+}
+
+.posts-title {
+  font-weight: 900;
+  font-family: var(--haas-display);
+  font-size: var(--ms-3);
+  text-align: center;
+  display: inline-block;
+}

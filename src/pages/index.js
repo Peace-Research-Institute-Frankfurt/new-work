@@ -1,5 +1,8 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
+import * as styles from "./index.module.scss";
+import App from "../components/App";
+import { StaticImage } from "gatsby-plugin-image";
 
 export const query = graphql`
   query {
@@ -24,20 +27,40 @@ const Index = ({ data }) => {
   const posts = data.posts.nodes.map((node, i) => {
     return (
       <li key={`post-${i}`}>
-        <Link to={node.childMdx.fields.slug}>
-          {node.childMdx.frontmatter.order}. {node.childMdx.frontmatter.title}
+        <Link className={styles.postsItem} to={node.childMdx.fields.slug}>
+          <h2 className={styles.postsTitle}>{node.childMdx.frontmatter.title}</h2>
         </Link>
       </li>
     );
   });
   return (
-    <>
-      <h1>Posts</h1>
-      <ol>{posts}</ol>
-    </>
+    <App>
+      <header role="banner" className={styles.hero}>
+        <h1 className={styles.title}>
+          <div className={styles.titleTop}>
+            <span className={styles.titleMain}>
+              N<span className={styles.e}>e</span><span className={styles.w}>w</span> W<span className={styles.o}>o</span>rk
+            </span>
+            <p className={styles.tagline}>Wie man Räume, Kulturen und Netzwerke für eine neue Generation gestaltet.</p>
+          </div>
+          <span className={styles.titleSecondary}>(Eine Anleitung)</span>
+        </h1>
+        <StaticImage
+          imgStyle={{ objectFit: "contain" }}
+          placeholder="none"
+          layout="constrained"
+          className={styles.face}
+          src="../images/leibniz-head.png"
+          alt=""
+        />
+      </header>
+      <section className={styles.content}>
+        <ol className={styles.posts}>{posts}</ol>
+      </section>
+    </App>
   );
 };
 
 export default Index;
 
-export const Head = () => <title>New Work</title>;
+export const Head = () => <title>New Work (Eine Anleitung)</title>;

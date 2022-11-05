@@ -1,0 +1,60 @@
+@mixin bp($point) {
+  @if $point==xl {
+    @media (min-width: 100rem) {
+      @content;
+    }
+  } @else if $point==l {
+    @media (min-width: 80rem) {
+      @content;
+    }
+  } @else if $point==m {
+    @media (min-width: 55rem) {
+      @content;
+    }
+  } @else if $point==s {
+    @media (min-width: 35rem) {
+      @content;
+    }
+  }
+}
+
+:root {
+  --gray: rgb(87, 94, 101);
+  --gray-70: rgb(14, 14, 14);
+  --blue-90: hsl(210, 37%, 7%);
+  --blue-80: hsl(210, 25%, 15%);
+  --blue-70: #464f58;
+  --blue-60: #36526d;
+  --blue-50: #8db8e2;
+  --blue-20: hsl(220, 15%, 93%);
+  --blue-10: hsl(220, 20%, 95%);
+  --yellow: hsl(49, 98%, 55%);
+  --yellow-40: hsl(49, 100%, 70%);
+  --yellow-20: hsl(49, 100%, 85%);
+  --yellow-10: hsl(49, 100%, 90%);
+  --orange: #ff9e2d;
+  --orange-light: #fff9f2;
+  --shadow: rgba(0, 0, 0, 0.7);
+  --haas-display: "neue-haas-grotesk-display", "Arial", sans-serif;
+  --haas-text: "neue-haas-grotesk-text", sans-serif;
+  --suisse: "Suisse Works", Georgia, serif;
+  --ratio: 1.2; // Minor 3
+  --ms-0: clamp(0.95rem, calc(1.3vw + 0.2rem), 1.15rem);
+  --ms--2: calc(var(--ms--1) / var(--ratio));
+  --ms--1: calc(var(--ms-0) / var(--ratio));
+  --ms-1: calc(var(--ms-0) * var(--ratio));
+  --ms-2: calc(var(--ms-1) * var(--ratio));
+  --ms-3: calc(var(--ms-2) * var(--ratio));
+  --ms-4: calc(var(--ms-3) * var(--ratio));
+  --ms-5: calc(var(--ms-4) * var(--ratio));
+  --ms-6: calc(var(--ms-5) * var(--ratio));
+  --ms-7: calc(var(--ms-6) * var(--ratio));
+  --ms-8: calc(var(--ms-7) * var(--ratio));
+  --ms-9: calc(var(--ms-8) * var(--ratio));
+  --ms-10: calc(var(--ms-9) * var(--ratio));
+  --ms-11: calc(var(--ms-10) * var(--ratio));
+  --ms-12: calc(var(--ms-11) * var(--ratio));
+  --br: 3px;
+  --fast: 100ms;
+  --padding: min(5vw, 3rem);
+}
