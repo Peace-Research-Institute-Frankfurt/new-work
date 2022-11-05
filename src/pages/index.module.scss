@@ -3,7 +3,7 @@
   display: flex;
   padding-bottom: 2rem;
   position: relative;
-  background: linear-gradient(to bottom, var(--orange) 20%, transparent 90%);
+  background: linear-gradient(to bottom, var(--orange) 70%, transparent 90%);
 }
 .title {
   display: flex;
@@ -21,7 +21,8 @@
 .title-main {
   display: block;
   font-weight: 900;
-  font-size: 21.5vw;
+  font-size: 21.6vw;
+  word-spacing: -.01em;
   letter-spacing: -0.032em;
   white-space: nowrap;
   margin-top: -0.085em;
@@ -30,16 +31,16 @@
     margin-left: -0.006em;
   }
   .w {
-    margin-left: -0.027em;
+    margin-left: -0.03em;
   }
   .o {
-    margin-left: -0.07em;
+    margin-left: -0.072em;
   }
 }
 
 .title-secondary {
   letter-spacing: -0.045em;
-  font-size: 18vw;
+  font-size: 18.5vw;
   font-weight: 100;
   white-space: nowrap;
 }
@@ -50,10 +51,10 @@
   max-width: 12em;
   line-height: 1.05;
   padding-left: 0em;
-  letter-spacing: -0.06em;
-  font-weight: 400;
-  margin-top: -0.6em;
-  margin-left: 0.1em;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+  margin-top: -0.75em;
+  margin-left: 0.25em;
 }
 
 .face {
@@ -120,7 +121,7 @@
 }
 
 .sticker {
-  width:  10rem;
+  width: 10rem;
   height: 10rem;
   display: block;
   position: absolute;
