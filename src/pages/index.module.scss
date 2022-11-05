@@ -3,7 +3,7 @@
   display: flex;
   padding-bottom: 2rem;
   position: relative;
-  background: linear-gradient(to bottom, var(--orange) 70%, transparent 90%);
+  background: linear-gradient(to bottom, var(--orange) 20%, transparent 90%);
 }
 .title {
   display: flex;
@@ -14,7 +14,7 @@
   line-height: 1;
   font-family: var(--haas-display);
   opacity: 0.9;
-  color: rgb(3, 4, 13);
+  color: rgb(4, 15, 11);
   mix-blend-mode: multiply;
 }
 
@@ -38,8 +38,8 @@
 }
 
 .title-secondary {
-  letter-spacing: -0.042em;
-  font-size: 15vw;
+  letter-spacing: -0.045em;
+  font-size: 18vw;
   font-weight: 100;
   white-space: nowrap;
 }
@@ -63,7 +63,7 @@
   height: 80vh;
   width: 100%;
   transform: translateX(-50%) translateY(-50%);
-  filter: drop-shadow(30px 30px 10px var(--shadow));
+  filter: drop-shadow(30px 40px 10px var(--shadow));
   pointer-events: none;
 }
 
@@ -77,6 +77,7 @@
   list-style: none;
   border-radius: 10px;
   border: 1px solid var(--gray);
+  overflow: hidden;
   li {
     list-style: none;
     display: flex;
@@ -107,9 +108,12 @@
 }
 
 .posts-title {
-  font-weight: 900;
   font-family: var(--haas-display);
-  font-size: var(--ms-3);
+  font-weight: 400;
+  font-size: var(--ms-5);
+  line-height: 1;
+  letter-spacing: -0.01em;
   text-align: center;
   display: inline-block;
+  transform: skew(10deg);
 }

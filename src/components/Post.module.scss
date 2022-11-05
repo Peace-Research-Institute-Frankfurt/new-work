@@ -1,7 +1,29 @@
 .body {
-    color: red;
+  color: red;
 }
 
+.header {
+  min-height: 100vh;
+  display: flex;
+}
+
+.header-copy {
+  background: linear-gradient(to bottom, #a2ff2d 45%, transparent 50%);
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  font-family: var(--haas-display);
+  font-weight: 900;
+  font-size: var(--ms-7);
+  line-height: 1;
+}
 .intro {
-    font-size: 2rem;
+  font-family: var(--suisse);
+  font-size: var(--ms-4);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
 }

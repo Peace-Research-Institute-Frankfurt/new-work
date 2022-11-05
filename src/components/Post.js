@@ -2,7 +2,7 @@ import React from "react";
 import App from "./App";
 import { graphql, Link } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
-import * as Styles from "./Post.module.scss";
+import * as styles from "./Post.module.scss";
 import Figure from "./Figure";
 import Quote from "./Quote";
 const shortCodes = { Figure, Quote };
@@ -44,14 +44,16 @@ const Post = ({ data, children }) => {
 
   return (
     <App>
+      <Link href="/">Home</Link>
       <article>
-        <header>
-          <Link href="/">Home</Link>
-          <h1>{frontmatter.title}</h1>
-          <ul>{bylines}</ul>
-          {frontmatter.intro && <p className={Styles.intro}>{frontmatter.intro}</p>}
+        <header className={styles.header}>
+          <div className={styles.headerCopy}>
+            <h1 className={styles.title}>{frontmatter.title}</h1>
+            <ul>{bylines}</ul>
+            {frontmatter.intro && <p className={styles.intro}>{frontmatter.intro}</p>}
+          </div>
         </header>
-        <div className={Styles.body}>
+        <div className={styles.body}>
           <MDXProvider components={shortCodes}>{children}</MDXProvider>
         </div>
       </article>
