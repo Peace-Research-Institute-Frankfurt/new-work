@@ -81,11 +81,12 @@
     }
   }
   h2 {
-    font-size: var(--ms-3);
+    font-family: var(--haas-text);
+    font-size: var(--ms-2);
     line-height: 1.1;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     margin-bottom: calc(var(--ms-1) * 0.25);
-    font-weight: 600;
+    font-weight: 700;
     margin-top: calc(var(--ms-1) * 2);
     &:first-child {
       margin-top: 0;
@@ -113,7 +114,7 @@
 %copy-large {
   font-family: var(--suisse);
   font-family: var(--suisse);
-  font-size: var(--ms-1);
+  font-size: var(--ms-2);
   letter-spacing: -0.045em;
   line-height: 1.2;
 }

@@ -1,10 +1,23 @@
 @import "vars";
 
+.nav {
+  position: fixed;
+  padding: var(--padding);
+  border-bottom: 1px solid black;
+  left: 0;
+  right: 0;
+  font-family: var(--haas-text);
+}
+
 .header {
   min-height: 100vh;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+}
+
+.header-placeholder {
+  flex-grow: 1;
 }
 
 .header-copy {
@@ -32,22 +45,36 @@
 }
 
 .byline-name {
+  @extend %caption-caps;
+}
+.byline-image {
+  position: absolute;
+  z-index: 500;
+  width: 6rem;
+  left: 50%;
+  transform-origin: center;
+  transform: translateX(-50%) translateY(-40%);
+  filter: grayscale(1) drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
 }
 .byline-institution {
   display: block;
-  opacity: 0.65;
+  color: var(--gray);
 }
 
 .title {
   font-family: var(--haas-display);
   font-weight: 800;
-  font-size: var(--ms-6);
-  line-height: 0.9;
+  font-size: var(--ms-7);
+  line-height: 0.85;
   letter-spacing: -0.015em;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .intro {
   @extend %copy-large;
   padding-top: 1em;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .body {

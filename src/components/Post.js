@@ -27,7 +27,14 @@ export const query = graphql`
           authors {
             frontmatter {
               name
+              author_id
               institution
+              role
+              image {
+                childImageSharp {
+                  gatsbyImageData(placeholder: NONE)
+                }
+              }
             }
           }
         }
@@ -40,16 +47,22 @@ const Post = ({ data, children }) => {
   const heroImage = getImage(frontmatter.hero_image);
   const authors = data.post.childMdx.frontmatter.authors;
   const headerStyles = {
-    background: `linear-gradient(to bottom, ${frontmatter.color} 45%, transparent 50%)`,
+    background: `linear-gradient(to bottom, ${frontmatter.color} 40%, transparent 60%)`,
   };
   let bylines = [];
   if (authors) {
     bylines = authors.map((author) => {
       const fm = author.frontmatter;
+      const authorImage = getImage(fm.image);
       return (
         <li key={fm.name}>
-          <span>{fm.name}</span>
-          {fm.institution && <span className={styles.bylineInstitution}>{fm.institution}</span>}
+          <GatsbyImage className={styles.bylineImage} image={authorImage} alt={`${fm.name} profile image`} />
+          <span className={styles.bylineName}>{fm.name}</span>
+          {fm.institution && (
+            <span className={styles.bylineInstitution}>
+              {fm.role && `${fm.role} ·`} {fm.institution}
+            </span>
+          )}
         </li>
       );
     });
@@ -57,9 +70,12 @@ const Post = ({ data, children }) => {
 
   return (
     <App>
-      <Link to="/">Home</Link>
+      <nav className={styles.nav}>
+        <Link to="/">New Work (Eine Anleitung)</Link>
+      </nav>
       <article>
         <header className={styles.header} style={headerStyles}>
+          <div className={styles.headerPlaceholder}></div>
           <div className={styles.headerCopy}>
             <div>
               <h1 className={styles.title}>{frontmatter.title}</h1>
@@ -70,7 +86,7 @@ const Post = ({ data, children }) => {
               <span>{frontmatter.reading_time}min read</span>
             </div>
           </div>
-          <GatsbyImage image={heroImage} alt={""}/>
+          <GatsbyImage image={heroImage} alt={""} />
         </header>
         <div className={styles.body}>
           <MDXProvider components={shortCodes}>{children}</MDXProvider>

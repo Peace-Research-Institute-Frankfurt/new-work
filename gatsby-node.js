@@ -59,7 +59,7 @@ exports.createSchemaCustomization = async ({ getNode, getNodesByType, pathPrefix
   const typeDefs = `
   type Author implements Node {
     author_id: String
-    image: File
+    image: File @fileByRelativePath
   }
   type FrontMatter {
     hero_image: File @fileByRelativePath

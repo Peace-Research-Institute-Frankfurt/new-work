@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby";
 import * as styles from "./index.module.scss";
 import App from "../components/App";
 import { StaticImage } from "gatsby-plugin-image";
-import LeibnizLogo from "../images/logo-black.svg"
+import LeibnizLogo from "../images/logo-black.svg";
 
 export const query = graphql`
   query {
@@ -40,9 +40,12 @@ const Index = ({ data }) => {
         <h1 className={styles.title}>
           <div>
             <span className={styles.titleMain}>
-              N<span className={styles.e}>e</span><span className={styles.w}>w</span> W<span className={styles.o}>o</span>rk
+              N<span className={styles.e}>e</span>
+              <span className={styles.w}>w</span> W<span className={styles.o}>o</span>rk
             </span>
-            <p className={styles.tagline}>Wie man Räume, Kulturen und Netzwerke für eine neue Generation gestaltet.</p>
+          </div>
+          <div className={styles.tagline}>
+            <p>Wie man Räume, Kulturen und Netzwerke für eine neue Generation gestaltet.</p>
           </div>
           <span className={styles.titleSecondary}>(Eine Anleitung)</span>
         </h1>
@@ -55,7 +58,7 @@ const Index = ({ data }) => {
           alt=""
         />
         <Link to="#1" className={styles.sticker}>
-          <LeibnizLogo/>
+          <LeibnizLogo />
         </Link>
       </header>
       <section className={styles.content}>
