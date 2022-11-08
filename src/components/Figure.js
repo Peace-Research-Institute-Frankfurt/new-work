@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import * as FigureStyles from "./Figure.module.scss";
+import * as styles from "./Figure.module.scss";
 import React from "react";
 
 export default function Figure(props) {
@@ -21,7 +21,7 @@ export default function Figure(props) {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
           }
         }
       }
@@ -49,18 +49,18 @@ export default function Figure(props) {
 
   if (image) {
     if (image.extension === "svg") {
-      imageEl = <img className={FigureStyles.image} alt={props.alt} src={image.publicURL} />;
+      imageEl = <img className={styles.image} alt={props.alt} src={image.publicURL} />;
     } else {
-      imageEl = <GatsbyImage className={FigureStyles.image} image={getImage(image)} alt={props.alt}></GatsbyImage>;
+      imageEl = <GatsbyImage className={styles.image} image={getImage(image)} alt={props.alt}/>;
     }
   }
 
   return (
-    <figure className={[FigureStyles[size], FigureStyles.container].join(" ")}>
+    <figure className={[styles[size], styles.container].join(" ")}>
       {imageEl}
-      <figcaption className={FigureStyles.caption}>
+      <figcaption className={styles.caption}>
         <span>{props.caption}</span>
-        <span className={FigureStyles.credit}>
+        <span className={styles.credit}>
           <>{props.credit}</>
           {license && (
             <>

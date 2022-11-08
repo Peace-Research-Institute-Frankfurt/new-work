@@ -1,0 +1,30 @@
+@import "vars";
+.container {
+  display: flex;
+  justify-content: space-between;
+  background: var(--black);
+  color: white;
+  padding: 0.75em;
+  padding-bottom: 0.5em;
+  border-radius: var(--br);
+}
+
+.title {
+  margin-bottom: 0.5em;
+  font-family: var(--haas-text);
+  letter-spacing: 0.02em;
+}
+
+.meta {
+  @extend %caption;
+  display: flex;
+}
+
+.type {
+  @extend %caption-caps;
+  &:after {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    content: "·";
+  }
+}

@@ -1,10 +1,10 @@
 import React from "react";
-import * as QuoteStyles from "./Quote.module.scss";
+import * as styles from "./Quote.module.scss";
 export default function Quote(props) {
   return (
-    <blockquote>
-      <div className={QuoteStyles.text}>{props.children}</div>
-      <cite>{props.cite}</cite>
+    <blockquote className={styles.container}>
+      <div className={styles.text}>{props.children}</div>
+      <cite className={styles.cite}>{props.cite}</cite>
     </blockquote>
   );
 }

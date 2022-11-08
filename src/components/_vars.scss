@@ -24,6 +24,7 @@
   --orange: #ff9720;
   --orange-light: #fff9f2;
   --shadow: rgba(0, 0, 0, 0.7);
+  --black: rgba(0, 0, 0, 1);
   --haas-display: "neue-haas-grotesk-display", "Arial", sans-serif;
   --haas-text: "neue-haas-grotesk-text", sans-serif;
   --suisse: "Suisse Works", Georgia, serif;
@@ -45,5 +46,74 @@
   --ms-12: calc(var(--ms-11) * var(--ratio));
   --br: 3px;
   --fast: 100ms;
-  --padding: min(5vw, 3rem);
+  --padding: min(2.5vw, 2rem);
+}
+
+%copy {
+  font-family: var(--suisse);
+  font-size: var(--ms-1);
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  hyphens: auto;
+  p,
+  ul,
+  ol {
+    margin-bottom: 0.75em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  li {
+    margin-bottom: 0.25em;
+  }
+  ul {
+    margin-left: 1.5em;
+  }
+  ul li {
+    list-style: none;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: -1.4em;
+      top: -0.05em;
+      content: "→";
+      font-weight: 200;
+    }
+  }
+  h2 {
+    font-size: var(--ms-3);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: calc(var(--ms-1) * 0.25);
+    font-weight: 600;
+    margin-top: calc(var(--ms-1) * 2);
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+%caption {
+  font-family: var(--haas-text);
+  font-size: var(--ms--1);
+  letter-spacing: 0.025em;
+  line-height: 1.25;
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+}
+
+%caption-caps {
+  @extend %caption;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+%copy-large {
+  font-family: var(--suisse);
+  font-family: var(--suisse);
+  font-size: var(--ms-1);
+  letter-spacing: -0.045em;
+  line-height: 1.2;
 }

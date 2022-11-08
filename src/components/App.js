@@ -11,12 +11,4 @@ function App(props) {
   );
 }
 
-export function Head({ data }) {
-  return (
-    <>
-      <link rel="stylesheet" href="https://use.typekit.net/asu6wbi.css" />
-    </>
-  );
-}
-
 export default App;

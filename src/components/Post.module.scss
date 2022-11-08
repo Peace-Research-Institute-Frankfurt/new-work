@@ -1,10 +1,10 @@
-.body {
-  color: red;
-}
+@import "vars";
 
 .header {
   min-height: 100vh;
   display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
 .header-copy {
@@ -13,16 +13,44 @@
   flex-flow: column;
   align-items: center;
   text-align: center;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: var(--padding);
 }
+.header-meta {
+  @extend %caption;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.bylines {
+  list-style: none;
+  display: flex;
+  text-align: left;
+}
+
+.byline-name {
+}
+.byline-institution {
+  display: block;
+  opacity: 0.65;
+}
+
 .title {
   font-family: var(--haas-display);
-  font-weight: 900;
-  font-size: var(--ms-7);
-  line-height: 1;
+  font-weight: 800;
+  font-size: var(--ms-6);
+  line-height: 0.9;
+  letter-spacing: -0.015em;
 }
 .intro {
-  font-family: var(--suisse);
-  font-size: var(--ms-4);
-  letter-spacing: -0.045em;
-  line-height: 1.1;
+  @extend %copy-large;
+  padding-top: 1em;
+}
+
+.body {
+  @extend %copy;
+  padding: var(--padding);
 }

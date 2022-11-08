@@ -38,7 +38,7 @@ const Index = ({ data }) => {
     <App>
       <header role="banner" className={styles.hero}>
         <h1 className={styles.title}>
-          <div className={styles.titleTop}>
+          <div>
             <span className={styles.titleMain}>
               N<span className={styles.e}>e</span><span className={styles.w}>w</span> W<span className={styles.o}>o</span>rk
             </span>

@@ -1,0 +1,18 @@
+@import "vars";
+
+.caption {
+  @extend %caption;
+}
+
+.image {
+    margin-bottom: .25rem;
+}
+
+.credit {
+  color: var(--gray);
+  display: block;
+}
+
+.container {
+  margin-bottom: calc(var(--ms-1) * 0.75);
+}

@@ -5,7 +5,9 @@ import { MDXProvider } from "@mdx-js/react";
 import * as styles from "./Post.module.scss";
 import Figure from "./Figure";
 import Quote from "./Quote";
-const shortCodes = { Figure, Quote };
+import File from "./File";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+const shortCodes = { Figure, Quote, File };
 
 export const query = graphql`
   query ($id: String!) {
@@ -16,6 +18,12 @@ export const query = graphql`
           intro
           color
           order
+          reading_time
+          hero_image {
+            childImageSharp {
+              gatsbyImageData(width: 1000)
+            }
+          }
           authors {
             frontmatter {
               name
@@ -29,6 +37,7 @@ export const query = graphql`
 `;
 const Post = ({ data, children }) => {
   const frontmatter = data.post.childMdx.frontmatter;
+  const heroImage = getImage(frontmatter.hero_image);
   const authors = data.post.childMdx.frontmatter.authors;
   const headerStyles = {
     background: `linear-gradient(to bottom, ${frontmatter.color} 45%, transparent 50%)`,
@@ -39,8 +48,8 @@ const Post = ({ data, children }) => {
       const fm = author.frontmatter;
       return (
         <li key={fm.name}>
-          <em>{fm.name}</em>
-          <span>{fm.institution}</span>
+          <span>{fm.name}</span>
+          {fm.institution && <span className={styles.bylineInstitution}>{fm.institution}</span>}
         </li>
       );
     });
@@ -48,14 +57,20 @@ const Post = ({ data, children }) => {
 
   return (
     <App>
-      <Link href="/">Home</Link>
+      <Link to="/">Home</Link>
       <article>
         <header className={styles.header} style={headerStyles}>
           <div className={styles.headerCopy}>
-            <h1 className={styles.title}>{frontmatter.title}</h1>
-            <ul>{bylines}</ul>
-            {frontmatter.intro && <p className={styles.intro}>{frontmatter.intro}</p>}
+            <div>
+              <h1 className={styles.title}>{frontmatter.title}</h1>
+              {frontmatter.intro && <p className={styles.intro}>{frontmatter.intro}</p>}
+            </div>
+            <div className={styles.headerMeta}>
+              <ul className={styles.bylines}>{bylines}</ul>
+              <span>{frontmatter.reading_time}min read</span>
+            </div>
           </div>
+          <GatsbyImage image={heroImage} alt={""}/>
         </header>
         <div className={styles.body}>
           <MDXProvider components={shortCodes}>{children}</MDXProvider>
