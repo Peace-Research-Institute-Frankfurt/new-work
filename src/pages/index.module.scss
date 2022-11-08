@@ -55,6 +55,9 @@
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
+  @include bp(l) {
+    order: 3;
+  }
 }
 
 .tagline {
@@ -67,16 +70,22 @@
   text-align: center;
   order: 2;
   height: 12vh;
-  max-width: 13em;
+  max-width: 14em;
   justify-content: center;
   font-size: var(--ms-4);
   font-weight: 400;
-  @include bp(m) {
-    font-weight: 700;
+  padding: 0 var(--padding);
+  @include bp(l) {
+    max-width: 14em;
+    font-weight: 400;
+    height: auto;
     font-size: var(--ms-3);
-    margin-top: -0.75em;
-    margin-left: 0.35em;
+    margin-left: -0.1em;
+    line-height: 1;
+    padding-top: 0.5em;
     order: 1;
+    align-self: flex-start;
+    text-align: left;
   }
 }
 
@@ -92,7 +101,12 @@
   z-index: 100;
   transform: translateX(-50%) translateY(-50%);
   @include bp(m) {
+    transform: translateX(-50%) translateY(-55%);
+    height: 65vh;
+  }
+  @include bp(l) {
     transform: translateX(-50%) translateY(-50%);
+    height: 75vh;
   }
 }
 
