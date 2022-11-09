@@ -9,14 +9,14 @@
 You only need to do these steps once, when you start working on our project. If you've never worked in software engineering before, you might want to read a [gentler introduction](https://awesomephant.github.io/untitled-coding-workshop/chapters/tools/) to the process before you move on.
 
 1. Download and install [Node.js](https://nodejs.org/en/), [git,](https://git-scm.com/) and [VS Code](https://code.visualstudio.com/)
-2. Sign up for a free [Github](https://github.com/) account using your work email
-3. Once you’re added to [our organisation](https://github.com/awesomephant/eunpdc-demo), run `git clone https://github.com/awesomephant/eunpdc-demo.git` to make a local copy of the project repository
+2. Sign up for a free [Github](https://github.com/) account using your work email and let an admin know what your username is, so they can add you to [our organisation](https://github.com/Peace-Research-Institute-Frankfurt) 
+3. Once you’ve accepted your invitation, run `git clone https://github.com/Peace-Research-Institute-Frankfurt/new-work.git` to make a local copy of the project repository
 4. Open the newly-created folder in VS Code
 5. Run `npm install` to download and install dependencies (this might take a few minutes)
 
 ### How to make changes
 
-You need to complete these steps each time you sit down to work on the project.
+You need to do these steps each time you sit down to work on the project.
 
 1. Open the project folder in VS Code
 2. Run `npm run start` in the built-in command line to start a live preview server at `localhost:8000`.
