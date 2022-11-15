@@ -16,17 +16,36 @@ exports.createPages = async function ({ actions, graphql }) {
           }
         }
       }
+      pages: allFile(filter: { sourceInstanceName: { eq: "pages" }, extension: { eq: "mdx" } }) {
+        nodes {
+          id
+          childMdx {
+            fields {
+              slug
+            }
+            internal {
+              contentFilePath
+            }
+          }
+        }
+      }
     }
   `);
 
   data.posts.nodes.forEach((node) => {
     const postTemplate = require.resolve(`./src/components/Post.js`);
-    const slug = node.childMdx.fields.slug;
-    const id = node.id;
     actions.createPage({
-      path: slug,
+      path: node.childMdx.fields.slug,
       component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
-      context: { id: id },
+      context: { id: node.id },
+    });
+  });
+  data.pages.nodes.forEach((node) => {
+    const postTemplate = require.resolve(`./src/components/Page.js`);
+    actions.createPage({
+      path: node.childMdx.fields.slug,
+      component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
+      context: { id: node.id },
     });
   });
 };
