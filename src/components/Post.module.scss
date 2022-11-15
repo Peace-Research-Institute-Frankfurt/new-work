@@ -7,6 +7,7 @@
   left: 0;
   right: 0;
   font-family: var(--haas-text);
+  display: none;
 }
 
 .header {
@@ -14,7 +15,40 @@
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  background: linear-gradient(to bottom, var(--color) 40%, transparent 60%);
+
+  @include bp(m) {
+    align-items: center;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    background: linear-gradient(to bottom, var(--color) 50%, transparent 60%);
+  }
 }
+
+.header-image {
+  @include bp(m) {
+    position: relative;
+    margin-bottom: 2em;
+    img {
+      max-height: 60vh;
+      border: 1px solid black;
+      border-radius: var(--br);
+      width: auto;
+    }
+  }
+}
+
+.hero-credit {
+  @extend %caption;
+  font-size: var(--ms--2);
+  color: var(--gray);
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right;
+  transform: rotate(90deg) translateY(-.2em);
+ }
 
 .header-placeholder {
   flex-grow: 1;
@@ -30,12 +64,18 @@
   justify-content: space-between;
   padding: var(--padding);
 }
+
 .header-meta {
   @extend %caption;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
+
+  @include bp(m) {
+    order: 3;
+    max-width: 55rem;
+  }
 }
 
 .bylines {
@@ -47,6 +87,7 @@
 .byline-name {
   @extend %caption-caps;
 }
+
 .byline-image {
   position: absolute;
   z-index: 500;
@@ -55,7 +96,13 @@
   transform-origin: center;
   transform: translateX(-50%) translateY(-40%);
   filter: grayscale(1) drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
+
+  @include bp(m) {
+    left: 30%;
+    top: 60%;
+  }
 }
+
 .byline-institution {
   display: block;
   color: var(--gray);
@@ -69,15 +116,34 @@
   letter-spacing: -0.015em;
   padding-left: 1rem;
   padding-right: 1rem;
+  max-width: 20em;
+  margin: 0 auto;
+
+  @include bp(m) {
+    font-size: var(--ms-6);
+  }
 }
+
 .intro {
   @extend %copy-large;
   padding-top: 1em;
   padding-left: 1rem;
   padding-right: 1rem;
+  max-width: 35em;
+  margin: 0 auto;
+
+  @include bp(m) {
+  }
 }
 
 .body {
   @extend %copy;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
   padding: var(--padding);
+  padding-top: 0;
+
+  * {
+    grid-column: 2/3;
+  }
 }

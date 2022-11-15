@@ -5,7 +5,7 @@
 }
 
 .image {
-    margin-bottom: .25rem;
+  margin-bottom: .25rem;
 }
 
 .credit {
@@ -15,4 +15,35 @@
 
 .container {
   margin-bottom: calc(var(--ms-1) * 0.75);
+}
+
+.medium {
+  img {
+    max-width: 100%;
+    max-height: 80vh;
+  }
+}
+
+.large {
+  grid-column: 1/4;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 100%;
+  text-align: center;
+
+  img {
+    max-height: 85vh;
+  }
+}
+
+.huge {
+  grid-column: 1/4;
+  display: flex;
+  text-align: center;
+  flex-flow: column;
+  align-items: center;
+  max-width: 100%;
+  margin-top: calc(var(--ms-1) * 1.5);
+  margin-bottom: calc(var(--ms-1) * 1.5);
 }

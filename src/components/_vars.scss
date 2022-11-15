@@ -58,13 +58,16 @@
   p,
   ul,
   ol {
-    margin-bottom: 0.75em;
+    margin-bottom: 0.5em;
     &:last-child {
       margin-bottom: 0;
     }
   }
   li {
     margin-bottom: 0.25em;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   ul {
     margin-left: 1.5em;
@@ -82,12 +85,11 @@
   }
   h2 {
     font-family: var(--haas-text);
-    font-size: var(--ms-2);
+    font-size: var(--ms-1);
     line-height: 1.1;
     letter-spacing: -0.02em;
-    margin-bottom: calc(var(--ms-1) * 0.25);
     font-weight: 700;
-    margin-top: calc(var(--ms-1) * 2);
+    margin-top: calc(var(--ms-1) * 1);
     &:first-child {
       margin-top: 0;
     }

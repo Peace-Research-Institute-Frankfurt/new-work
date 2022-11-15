@@ -6,8 +6,9 @@ import * as styles from "./Post.module.scss";
 import Figure from "./Figure";
 import Quote from "./Quote";
 import File from "./File";
+import Leadin from "./Leadin";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-const shortCodes = { Figure, Quote, File };
+const shortCodes = { Figure, Quote, File, Leadin };
 
 export const query = graphql`
   query ($id: String!) {
@@ -19,6 +20,8 @@ export const query = graphql`
           color
           order
           reading_time
+          hero_alt
+          hero_credit
           hero_image {
             childImageSharp {
               gatsbyImageData(width: 1000)
@@ -47,7 +50,7 @@ const Post = ({ data, children }) => {
   const heroImage = getImage(frontmatter.hero_image);
   const authors = data.post.childMdx.frontmatter.authors;
   const headerStyles = {
-    background: `linear-gradient(to bottom, ${frontmatter.color} 40%, transparent 60%)`,
+    "--color": frontmatter.color,
   };
   let bylines = [];
   if (authors) {
@@ -81,18 +84,23 @@ const Post = ({ data, children }) => {
               <h1 className={styles.title}>{frontmatter.title}</h1>
               {frontmatter.intro && <p className={styles.intro}>{frontmatter.intro}</p>}
             </div>
-            <div className={styles.headerMeta}>
-              <ul className={styles.bylines}>{bylines}</ul>
-              <span>{frontmatter.reading_time}min read</span>
-            </div>
           </div>
-          <GatsbyImage image={heroImage} alt={""} />
+          <div className={styles.headerMeta}>
+            <ul className={styles.bylines}>{bylines}</ul>
+            <span>{frontmatter.reading_time}min read</span>
+          </div>
+          <div className={styles.headerImage}>
+            <GatsbyImage image={heroImage} alt={frontmatter.hero_alt} />
+            <p className={styles.heroCredit}>
+              {frontmatter.hero_credit}
+            </p>
+          </div>
         </header>
         <div className={styles.body}>
           <MDXProvider components={shortCodes}>{children}</MDXProvider>
         </div>
       </article>
-    </App>
+    </App >
   );
 };
 

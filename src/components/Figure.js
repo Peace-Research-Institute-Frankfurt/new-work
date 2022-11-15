@@ -43,8 +43,6 @@ export default function Figure(props) {
     }
   });
 
-  let size = props.size;
-
   let imageEl = <>Image not found (${props.src})</>;
 
   if (image) {
@@ -56,7 +54,7 @@ export default function Figure(props) {
   }
 
   return (
-    <figure className={[styles[size], styles.container].join(" ")}>
+    <figure className={[styles[props.size], styles.container].join(" ")}>
       {imageEl}
       <figcaption className={styles.caption}>
         <span>{props.caption}</span>
