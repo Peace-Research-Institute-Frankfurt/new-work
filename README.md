@@ -21,7 +21,7 @@ You need to do these steps each time you sit down to work on the project.
 1. Open the project folder in VS Code
 2. Run `npm run start` in the built-in command line to start a live preview server at `localhost:8000`.
 3. Make your changes
-4. Use the command line or the version control panel in VS Code to commit your changes to the repository. Your changes should be automatically deployed in about a 90 seconds.
+4. Use the command line or the version control panel in VS Code to `commit` and `push` your changes to the repository. Your changes should be automatically deployed in about 60 seconds.
 
 ## Project structure
 
@@ -46,8 +46,8 @@ Federica Dall’Arche is a policy advisor to the Italian Presidency of the Counc
 #### Parameters
 
 - `name` **(Required)**
-- `author_id` **(Required)**
-- `institution`
+- `author_id` **(Required)**: This is a unique string that's used to refer to authors in other places.
+- `institution`: Organisation or company the author is affiliated with
 - `image`
 - `image_alt`
 
@@ -65,38 +65,22 @@ This is where we keep the chapter content. We keep each chapter in a numbered su
 ---
 order: 18
 title: The United Nations Disarmament Machinery
-short_title: The UN Disarmament Machinery
 intro: The unit introduction goes here.
-authors:
-  - federica-dall-arche
-  - sonia-drobysz
 hero_image: ./assets/knotted-gun.jpg
 hero_alt: Sculpture of revolver with a knot in the barrel
 hero_credit: "Gerhard Huber / CC-BY-NC 4.0"
+color: #123456
+authors:
+  - federica-dall-arche
+  - sonia-drobysz
 ---
 ```
 
 - Authors **(Required):** List of one or more `author_id` defined in `/content/authors/`.
 
-#### Chapters
-
-```yaml
----
-title: Introduction
-intro: Chapter introduction.
-order: 1
-reading_time: 3
----
-The chapter content goes here!
-```
-
 ## Components
 
-When you write learning units you can embed different components to make things more interesting. We’ll produce more of these over time.
-
-#### Parameters
-
-- `summary` (Required). Text to show when the section is collapsed.
+When you write posts you can embed different components to make things more interesting. If a component you need isn't available, we'll consider building it for you.
 
 ### Figure
 
@@ -104,7 +88,7 @@ Display an image.
 
 ```jsx
 <Figure
-  size="large"
+  size="medium"
   src="ban-is-coming.jpg"
   caption="Campaigners dressed as nuclear bombs express confidence that a treaty banning nuclear weapons is on its way."
   credit="International Campaign to Abolish Nuclear Weapons / Tim Wright"
@@ -115,24 +99,12 @@ Display an image.
 
 #### Parameters
 
-- `size` **(Required):** How big should the image appear in the layout? Possible values are `tiny`, `medium`, `large`, and `huge`.
+- `size` **(Required):** How big should the image appear in the layout? Possible values are `medium`, `large`, and `huge`.
 - `src` **(Required)**: The name of an image in the learning unit’s `assets` folder
 - `alt` **(Required)**: Short, visual description of the image.
 - `caption` (Optional)
 - `credit` (Optional)
 - `license` (Optional): Must be a `license_id` defined in `/content/data/licenses.json`
-
-### Term
-
-Show an inline definition of a pre-defined term. To edit the definition or to add a new term, edit `/content/data/terms.json`.
-
-```md
-This is achieved through a broad spectrum of unilateral, bilateral, and multilateral measures and agreements such as the <Term t="BWC">Biological Weapons Convention</Term>, which is designed to eliminate biological weapons.
-```
-
-#### Parameters
-
-- `t` **(Required):** Term to be defined. Must be a `term_id` defined in `/content/data/terms.json`
 
 ### Quote
 
@@ -148,9 +120,9 @@ This world in arms is not spending money alone. **It is spending the sweat of it
 </Quote>
 ```
 
-#### Paramters
+#### Parameters
 
-- `type` (Optional)**.** Possible values are `document` and `default`.
+- `type` (Optional). Possible values are `document` and `default`.
 - `audio` (Optional): Must be a valid `.mp3` file.
 - `fullDocument` (Optional)
 - `cite` (Optional)
@@ -171,9 +143,9 @@ Display a collapsible section of arbitrary markdown content.
 
 #### Parameters
 
-- `summary` **(Required)**: Text to appear when the section is collapsed
+- `summary` **(Required)**: Text to show when the section is collapsed
 
-Wrap multiple `<Details>` components in a `<DetailsGroup>` component to display them in a coherent unit:
+Wrap multiple `<Details>` components in a `<DetailsGroup>` component to display them as a coherent unit:
 
 ```jsx
 <DetailsGroup>
@@ -181,3 +153,16 @@ Wrap multiple `<Details>` components in a `<DetailsGroup>` component to display 
   <Details summary="...">...</Details>
 </DetailsGroup>
 ```
+
+### File
+
+Display a downloadable file. Filetype and file size are rendered automatically.
+
+```md
+<File file="lounge.jpg" title="Presentation.pdf" />
+```
+
+#### Parameters
+
+- `file` (Required): Name of a file in the `/assets` folder.
+- `title` (Optional): Title to be displayed to the user. If none is supplied, the filename is used instead.
