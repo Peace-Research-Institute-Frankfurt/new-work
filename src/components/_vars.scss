@@ -63,6 +63,15 @@
       margin-bottom: 0;
     }
   }
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--gray);
+    text-underline-offset: .15em;
+    &:hover, &:focus-visible {
+      text-decoration-color: var(--black);
+    }
+  }
   li {
     margin-bottom: 0.25em;
     &:last-child {
@@ -93,6 +102,13 @@
     &:first-child {
       margin-top: 0;
     }
+  }
+  h3 {
+    font-family: var(--haas-text);
+    font-size: .8em;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-top: calc(var(--ms-1) * 1);
   }
 }
 
