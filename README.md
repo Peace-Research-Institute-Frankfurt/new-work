@@ -35,6 +35,7 @@ This is where we keep all information related to learning unit authors. Each aut
 ---
 name: Federica Dall'Arche
 author_id: federica-dall-arche
+role: Senior Researcher
 institution: Istituto Affari Internazionali I.A.I
 image: "./assets/Federica-DallArche.jpg"
 image_alt: ""
@@ -69,7 +70,7 @@ intro: The unit introduction goes here.
 hero_image: ./assets/knotted-gun.jpg
 hero_alt: Sculpture of revolver with a knot in the barrel
 hero_credit: "Gerhard Huber / CC-BY-NC 4.0"
-color: #123456
+color: "#123456"
 authors:
   - federica-dall-arche
   - sonia-drobysz
@@ -110,7 +111,7 @@ Display an image.
 
 Display a quotation.
 
-```md
+```jsx
 <Quote type="document" fullDocument="https://en.wikisource.org/wiki/The_Chance_for_Peace" cite='Dwight D. Eisenhower, "Chance for Peace", speech to American Society of Newspaper Editors.'>
     
 [...] **Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed.**
@@ -132,7 +133,7 @@ This world in arms is not spending money alone. **It is spending the sweat of it
 
 Display a collapsible section of arbitrary markdown content.
 
-```md
+```jsx
 <Details summary="Biological weapons and materials">
 
 - 1925 Protocol for the Prohibition of Asphyxiating, Poisonous or Other Gases, and of Bacteriological Methods of Warfare
@@ -158,7 +159,7 @@ Wrap multiple `<Details>` components in a `<DetailsGroup>` component to display 
 
 Display a downloadable file. Filetype and file size are rendered automatically.
 
-```md
+```jsx
 <File file="lounge.jpg" title="Presentation.pdf" />
 ```
 
