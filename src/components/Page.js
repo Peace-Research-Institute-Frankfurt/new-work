@@ -13,6 +13,7 @@ const shortCodes = { Figure, Quote, File, Leadin };
 export const query = graphql`
   query ($id: String!) {
     post: file(id: { eq: $id }) {
+      modifiedTime(locale: "de-DE", formatString:"dddd, mm.M.yyyy")
       childMdx {
         frontmatter {
           title
