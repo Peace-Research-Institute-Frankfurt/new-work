@@ -1,11 +1,12 @@
 @import "vars";
-.container {
+a.container {
   display: flex;
   justify-content: space-between;
   background: var(--black);
   color: white;
   padding: 0.75em;
   border-radius: var(--br);
+  text-decoration: none;
 }
 
 .title {
