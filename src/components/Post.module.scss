@@ -103,11 +103,12 @@
   filter: drop-shadow(2px 2px 2px var(--shadow));
 
   @include bp(m) {
-    position: static;
+    position: static !important;
     transform: translateX(0) translateY(0);
     width: auto;
     flex-shrink: 1;
     width: 3rem;
+    left: 0;
     margin-right: 0.75rem;
   }
 }

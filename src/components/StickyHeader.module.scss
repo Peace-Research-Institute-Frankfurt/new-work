@@ -11,9 +11,9 @@
   text-align: center;
   transition: var(--fast);
   font-size: var(--ms-0);
-  @include bp(m){
-      letter-spacing: 0.01em;
-      font-size: var(--ms-1);
+  @include bp(m) {
+    letter-spacing: 0.01em;
+    font-size: var(--ms-1);
   }
 }
 
@@ -32,8 +32,8 @@
   transition: var(--fast);
   transform: translateY(30%);
   justify-content: center;
-  @include bp(m){
-      justify-content: space-between;
+  @include bp(m) {
+    justify-content: space-between;
   }
 }
 
@@ -46,13 +46,13 @@
   }
 }
 .face {
-  position: absolute;
+  position: absolute !important;
   z-index: 2000;
   left: 0;
   width: 1.8rem;
   top: 50%;
   transform: translateY(-50%);
-  filter: drop-shadow(2px 2px 1px var(--shadow))
+  filter: drop-shadow(2px 2px 1px var(--shadow));
 }
 
 .title {
