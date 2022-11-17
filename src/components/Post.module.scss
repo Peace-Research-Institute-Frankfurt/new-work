@@ -1,67 +1,5 @@
 @import "vars";
 
-.nav {
-  position: fixed;
-  padding: 0.75em var(--padding);
-  left: 0;
-  right: 0;
-  font-family: var(--haas-text);
-  font-weight: 800;
-  z-index: 1000;
-  text-align: center;
-  transition: var(--fast);
-}
-
-.nav-stuck {
-  background: white;
-  .nav-title,
-  .nav-progress {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .nav-home {
-    opacity: 0;
-    transform: translateY(-30%);
-  }
-}
-
-.nav-home {
-  display: block;
-  transition: var(--fast);
-  transform: translateY(0);
-}
-
-.nav-title {
-  position: absolute;
-  pointer-events: none;
-  left: var(--padding);
-  right: var(--padding);
-  top: 0;
-  bottom: 0;
-  text-align: center;
-  opacity: 0;
-  transition: var(--fast);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(30%);
-}
-
-.nav-progress {
-  background: rgb(255, 255, 255);
-  height: 2px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  opacity: 0;
-  transition: var(--fast);
-}
-.nav-progress-inner {
-  background: black;
-}
-
 .header {
   min-height: 100vh;
   display: flex;
@@ -100,7 +38,7 @@
   position: absolute;
   bottom: -2em;
   right: 0;
-  @include bp(l) {
+  @include bp(m) {
     right: 0;
     padding: 0;
     transform-origin: bottom right;
@@ -134,33 +72,43 @@
 
   @include bp(m) {
     order: 3;
+    align-items: center;
     max-width: 50rem;
-    padding: 0;
+    padding: 1rem 0;
   }
 }
 
 .bylines {
   list-style: none;
+}
+
+.byline {
   display: flex;
-  text-align: left;
+  @include bp(m) {
+    align-items: center;
+  }
 }
 
 .byline-name {
-  @extend %caption-caps;
+  @extend %caption-bold;
 }
 
 .byline-image {
   position: absolute;
   z-index: 500;
-  width: 6rem;
+  width: 5rem;
   left: 50%;
   transform-origin: center;
-  transform: translateX(-50%) translateY(-40%);
-  filter: grayscale(1) drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
+  transform: translateX(-50%) translateY(-20%);
+  filter: drop-shadow(2px 2px 2px var(--shadow));
 
   @include bp(m) {
-    left: 30%;
-    top: 60%;
+    position: static;
+    transform: translateX(0) translateY(0);
+    width: auto;
+    flex-shrink: 1;
+    width: 3rem;
+    margin-right: 0.75rem;
   }
 }
 
@@ -172,11 +120,9 @@
 .title {
   font-family: var(--haas-display);
   font-weight: 800;
-  font-size: var(--ms-7);
+  font-size: var(--ms-6);
   line-height: 0.85;
   letter-spacing: -0.015em;
-  padding-left: 1rem;
-  padding-right: 1rem;
   max-width: 20em;
   margin: 0 auto;
 

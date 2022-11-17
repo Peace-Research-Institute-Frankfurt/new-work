@@ -1,0 +1,75 @@
+@import "vars";
+
+.container {
+  position: fixed;
+  padding: 0.75rem var(--padding);
+  left: 0;
+  right: 0;
+  font-family: var(--haas-text);
+  font-weight: 400;
+  z-index: 1000;
+  text-align: center;
+  transition: var(--fast);
+  font-size: var(--ms-0);
+  @include bp(m){
+      letter-spacing: 0.01em;
+      font-size: var(--ms-1);
+  }
+}
+
+.stuck {
+  background: white;
+  .copy,
+  .progress {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.copy {
+  display: flex;
+  opacity: 0;
+  transition: var(--fast);
+  transform: translateY(30%);
+  justify-content: center;
+  @include bp(m){
+      justify-content: space-between;
+  }
+}
+
+.site-title {
+  padding-left: 2.5rem;
+  position: relative;
+  display: none;
+  @include bp(m) {
+    display: block;
+  }
+}
+.face {
+  position: absolute;
+  z-index: 2000;
+  left: 0;
+  width: 1.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: drop-shadow(2px 2px 1px var(--shadow))
+}
+
+.title {
+  letter-spacing: -0em;
+}
+
+.progress {
+  background: rgb(255, 255, 255);
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  opacity: 0;
+  transition: var(--fast);
+}
+.progress-inner {
+  background: black;
+}

@@ -7,8 +7,8 @@ import Figure from "./Figure";
 import Quote from "./Quote";
 import File from "./File";
 import Leadin from "./Leadin";
+import StickyHeader from "./StickyHeader";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import useScrollPosition from "./useScrollPosition";
 const shortCodes = { Figure, Quote, File, Leadin };
 
 export const query = graphql`
@@ -36,7 +36,7 @@ export const query = graphql`
               role
               image {
                 childImageSharp {
-                  gatsbyImageData(placeholder: NONE)
+                  gatsbyImageData(placeholder: NONE, width: 100, layout: CONSTRAINED)
                 }
               }
             }
@@ -50,7 +50,6 @@ const Post = ({ data, children }) => {
   const frontmatter = data.post.childMdx.frontmatter;
   const heroImage = getImage(frontmatter.hero_image);
   const authors = data.post.childMdx.frontmatter.authors;
-  const scrollPosition = useScrollPosition();
   const headerStyles = {
     "--color": frontmatter.color,
   };
@@ -60,41 +59,28 @@ const Post = ({ data, children }) => {
       const fm = author.frontmatter;
       const authorImage = getImage(fm.image);
       return (
-        <li key={fm.name}>
-          <GatsbyImage className={styles.bylineImage} image={authorImage} alt={`${fm.name} profile image`} />
-          <span className={styles.bylineName}>{fm.name}</span>
-          {fm.institution && (
-            <span className={styles.bylineInstitution}>
-              {fm.role && `${fm.role} ·`} {fm.institution}
-            </span>
-          )}
+        <li className={styles.byline} key={fm.name}>
+          <GatsbyImage objectFit="contain" className={styles.bylineImage} image={authorImage} alt={`${fm.name} profile image`} />
+          <div className={styles.bylineCopy}>
+            <span className={styles.bylineName}>{fm.name}</span>
+            {fm.institution && (
+              <span className={styles.bylineInstitution}>
+                {fm.role && `${fm.role} ·`} {fm.institution}
+              </span>
+            )}
+          </div>
         </li>
       );
     });
   }
-  const isScrolled = scrollPosition.y > 50;
-  let scrollProgress = 0;
-  if (typeof window !== "undefined") {
-    scrollProgress = Math.min(1, scrollPosition.y / (document.body.scrollHeight - window.innerHeight));
-  }
-  const progressBarStyles = {
-    width: `${scrollProgress * 100}%`,
-  };
   return (
     <App>
-      <nav className={`${styles.nav} ${isScrolled && styles.navStuck}`}>
-        <Link className={styles.navHome} to="/">
-          New Work (Eine Anleitung)
-        </Link>
-        <span className={styles.navTitle}>
-          {frontmatter.title}
-        </span>
-        <div className={styles.navProgress}>
-          <div style={progressBarStyles} className={styles.navProgressInner}></div>
-        </div>
-      </nav>
+      <StickyHeader title={frontmatter.title} chapterIndex={frontmatter.order} />
       <article>
         <header className={styles.header} style={headerStyles}>
+          <Link className={styles.navHome} to="/">
+            New Work (Eine Anleitung)
+          </Link>
           <div className={styles.headerPlaceholder}></div>
           <div className={styles.headerCopy}>
             <div>
@@ -108,7 +94,7 @@ const Post = ({ data, children }) => {
           </div>
           <div className={styles.headerImage}>
             <GatsbyImage image={heroImage} alt={frontmatter.hero_alt} />
-            <p className={styles.heroCredit}>{frontmatter.hero_credit}</p>
+            <p className={styles.heroCredit}>Bild: {frontmatter.hero_credit}</p>
           </div>
         </header>
         <div className={styles.body}>
