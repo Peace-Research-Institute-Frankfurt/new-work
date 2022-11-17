@@ -17,6 +17,11 @@ export const query = graphql`
           frontmatter {
             title
             order
+            authors {
+              frontmatter {
+                name
+              }
+            }
           }
         }
       }
@@ -26,10 +31,19 @@ export const query = graphql`
 
 const Index = ({ data }) => {
   const posts = data.posts.nodes.map((node, i) => {
+    const fm = node.childMdx.frontmatter;
+    let byline = "";
+    if (fm.authors) {
+      byline = fm.authors.map((a) => {
+        return a.frontmatter.name;
+      });
+    }
     return (
       <li key={`post-${i}`}>
         <Link className={styles.postsItem} to={node.childMdx.fields.slug}>
-          <h2 className={styles.postsTitle}>{node.childMdx.frontmatter.title}</h2>
+          <span className={styles.postIndex}>{i}</span>
+          <h2 className={styles.postsTitle}>{fm.title}</h2>
+          <span className={styles.postsMeta}>{byline}</span>
         </Link>
       </li>
     );

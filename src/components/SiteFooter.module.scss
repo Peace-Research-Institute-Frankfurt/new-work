@@ -1,13 +1,11 @@
 @import "vars";
 
 .container {
-  font-family: var(--haas-text);
+  @extend %caption;
   padding-top: var(--padding);
   margin: var(--padding);
-  font-size: var(--ms--1);
-  border-top: 1px solid var(--gray-30);
   p {
-    max-width: 30em;
+    max-width: 40em;
     opacity: 0.75;
   }
 }
@@ -22,6 +20,6 @@
 }
 
 .meta {
-  padding-top: 0.25rem;
+  padding-top: 0.5rem;
   font-size: var(--ms--2);
 }

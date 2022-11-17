@@ -33,7 +33,7 @@ export default function Footer() {
           })}
         </ul>
       </nav>
-      <p>New Work (Eine Anleitung) ist eine Publikation der Hessischen Stiftung für Friedens- und Konfliktforschung (HSFK).</p>
+      <p><em>New Work (Eine Anleitung)</em> ist eine Publikation der <a href="https://www.hsfk.de/">Hessischen Stiftung für Friedens- und Konfliktforschung (HSFK)</a>.</p>
       <p className={styles.meta}>Built {data.meta.buildTime}</p>
     </footer>
   );

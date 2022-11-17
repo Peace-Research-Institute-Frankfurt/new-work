@@ -5,7 +5,7 @@
   display: flex;
   padding-bottom: 2rem;
   position: relative;
-  background: linear-gradient(to bottom, rgb(255, 121, 31) 40%, transparent 90%);
+  background: linear-gradient(to bottom, rgb(255, 147, 53) 40%, transparent 100%);
 }
 .title {
   display: flex;
@@ -15,9 +15,7 @@
   justify-content: space-between;
   line-height: 1;
   font-family: var(--haas-display);
-  opacity: 0.9;
-  color: rgb(4, 15, 11);
-  mix-blend-mode: multiply;
+  opacity: 0.95;
 }
 
 .title-main {
@@ -96,7 +94,7 @@
     max-width: 14em;
     font-weight: 400;
     height: auto;
-    margin-left: -0.1em;
+    margin-left: -0.45em;
     line-height: 1.05;
     padding-top: 0.5em;
     order: 1;
@@ -104,11 +102,12 @@
     text-align: left;
     font-size: var(--ms-3);
     transform-origin: left;
-    transform: scaleX(0.9);
+    transform: scaleX(0.95);
     text-decoration-thickness: 1px;
   }
   @include bp(xl) {
     text-decoration-thickness: 2px;
+    max-width: 17em;
     transform: scaleX(0.95);
     font-size: var(--ms-4);
   }
@@ -119,12 +118,12 @@
   left: 50%;
   // display: none;
   top: 50%;
-  filter: drop-shadow(30px 40px 7px var(--shadow));
   pointer-events: none;
   z-index: 100;
   transform: translateX(-50%) translateY(-45%);
   height: 70vh;
   width: 90%;
+  filter: drop-shadow(30px 40px 7px var(--shadow));
   @include bp(s) {
     width: 100%;
     transform: translateX(-50%) translateY(-55%);
@@ -132,6 +131,7 @@
   @include bp(m) {
     transform: translateX(-50%) translateY(-55%);
     height: 65vh;
+    filter: drop-shadow(40px 50px 10px var(--shadow));
   }
   @include bp(l) {
     transform: translateX(-50%) translateY(-50%);
@@ -147,7 +147,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   list-style: none;
-  border-radius: 10px;
+  border-radius: var(--br);
   border: 1px solid var(--gray);
   overflow: hidden;
   li {

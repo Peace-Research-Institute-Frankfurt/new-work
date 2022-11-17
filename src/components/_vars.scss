@@ -12,7 +12,7 @@
       @content;
     }
   } @else if $point==s {
-    @media (min-width: 35rem) {
+    @media (min-width: 45rem) {
       @content;
     }
   }
@@ -23,13 +23,14 @@
   --gray-light: rgb(242, 239, 237);
   --orange: #ff9720;
   --orange-light: #fff9f2;
+  --highlight: rgb(252, 235, 188);
   --shadow: rgba(0, 0, 0, 0.7);
   --black: rgba(0, 0, 0, 1);
   --haas-display: "neue-haas-grotesk-display", "Arial", sans-serif;
   --haas-text: "neue-haas-grotesk-text", sans-serif;
-  --suisse: "Suisse Works", Georgia, serif;
+  --suisse: "Suisse Neue", Georgia, serif;
   --ratio: 1.2; // Minor 3
-  --ms-0: clamp(0.95rem, calc(1.3vw + 0.2rem), 1.15rem);
+  --ms-0: clamp(0.95rem, calc(1.3vw + 0.2rem), 1.05rem);
   --ms--2: calc(var(--ms--1) / var(--ratio));
   --ms--1: calc(var(--ms-0) / var(--ratio));
   --ms-1: calc(var(--ms-0) * var(--ratio));
@@ -52,8 +53,8 @@
 %copy {
   font-family: var(--suisse);
   font-size: var(--ms-1);
-  line-height: 1.4;
-  letter-spacing: -0.015em;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
   hyphens: auto;
   p,
   ul,
@@ -67,9 +68,10 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-decoration-color: var(--gray);
-    text-underline-offset: .15em;
-    background: #ffe8ce;
-    &:hover, &:focus-visible {
+    text-underline-offset: 0.15em;
+    background: #f0f0f5;
+    &:hover,
+    &:focus-visible {
       text-decoration-color: var(--black);
     }
   }
@@ -89,26 +91,39 @@
       position: absolute;
       left: -1.4em;
       top: -0.05em;
+      opacity: .5;
       content: "→";
       font-weight: 200;
     }
   }
   h2 {
     font-family: var(--haas-text);
-    font-size: var(--ms-1);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    font-weight: 700;
+    font-size: var(--ms-3);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 500;
     margin-top: calc(var(--ms-1) * 1);
+    margin-bottom: calc(var(--ms-1) * 0.25);
     &:first-child {
       margin-top: 0;
     }
   }
   h3 {
     font-family: var(--haas-text);
-    font-size: .8em;
+    letter-spacing: 0.01em;
+    font-size: var(--ms-2);
+    line-height: 1.1;
+    font-weight: 400;
+    margin-top: calc(var(--ms-1) * .5);
+    margin-bottom: calc(var(--ms-1) * 0.25);
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h4 {
+    font-size: 0.8em;
     text-transform: uppercase;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
     margin-top: calc(var(--ms-1) * 1);
   }
 }
@@ -136,4 +151,8 @@
   font-size: var(--ms-2);
   letter-spacing: -0.045em;
   line-height: 1.2;
+  @include bp(m) {
+    font-size: var(--ms-3);
+    line-height: 1.25;
+  }
 }

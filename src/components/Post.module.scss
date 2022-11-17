@@ -14,7 +14,8 @@
 
 .nav-stuck {
   background: white;
-  .nav-title, .nav-progress {
+  .nav-title,
+  .nav-progress {
     opacity: 1;
     transform: translateY(0);
   }
@@ -81,7 +82,7 @@
     position: relative;
     margin-bottom: 2em;
     img {
-      max-height: 60vh;
+      max-height: 50vh;
       border: 1px solid white;
       border-radius: var(--br);
       width: auto;
@@ -94,11 +95,18 @@
   font-size: var(--ms--2);
   color: var(--gray);
   display: inline-block;
+  padding-right: var(--padding);
+  padding-top: 1em;
   position: absolute;
-  bottom: 0;
+  bottom: -2em;
   right: 0;
-  transform-origin: bottom right;
-  transform: rotate(90deg) translateY(-0.2em);
+  @include bp(l) {
+    right: 0;
+    padding: 0;
+    transform-origin: bottom right;
+    bottom: 0;
+    transform: rotate(90deg) translateY(-0.2em);
+  }
 }
 
 .header-placeholder {
@@ -126,7 +134,7 @@
 
   @include bp(m) {
     order: 3;
-    max-width: 55rem;
+    max-width: 50rem;
     padding: 0;
   }
 }
@@ -173,7 +181,10 @@
   margin: 0 auto;
 
   @include bp(m) {
-    font-size: var(--ms-6);
+    font-size: var(--ms-8);
+  }
+  @include bp(l) {
+    font-size: var(--ms-9);
   }
 }
 
@@ -192,7 +203,7 @@
 .body {
   @extend %copy;
   display: grid;
-  grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
+  grid-template-columns: 1fr minmax(auto, 50rem) 1fr;
   padding: var(--padding);
   @include bp(m) {
     padding-top: 0;
