@@ -4,10 +4,10 @@ import "./global.scss";
 
 function App(props) {
   return (
-    <body lang="de-DE">
+    <>
       {props.children}
       <Footer />
-    </body>
+    </>
   );
 }
 
