@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/leibniz-head.png",
+        icon: "src/images/favicon.png",
       },
     },
     {
