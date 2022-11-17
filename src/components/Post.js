@@ -8,6 +8,7 @@ import Quote from "./Quote";
 import File from "./File";
 import Leadin from "./Leadin";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import useScrollPosition from "./useScrollPosition";
 const shortCodes = { Figure, Quote, File, Leadin };
 
 export const query = graphql`
@@ -49,6 +50,7 @@ const Post = ({ data, children }) => {
   const frontmatter = data.post.childMdx.frontmatter;
   const heroImage = getImage(frontmatter.hero_image);
   const authors = data.post.childMdx.frontmatter.authors;
+  const scrollPosition = useScrollPosition();
   const headerStyles = {
     "--color": frontmatter.color,
   };
@@ -70,11 +72,26 @@ const Post = ({ data, children }) => {
       );
     });
   }
-
+  const isScrolled = scrollPosition.y > 50;
+  let scrollProgress = 0;
+  if (typeof window !== "undefined") {
+    scrollProgress = Math.min(1, scrollPosition.y / (document.body.scrollHeight - window.innerHeight));
+  }
+  const progressBarStyles = {
+    width: `${scrollProgress * 100}%`,
+  };
   return (
     <App>
-      <nav className={styles.nav}>
-        <Link to="/">New Work (Eine Anleitung)</Link>
+      <nav className={`${styles.nav} ${isScrolled && styles.navStuck}`}>
+        <Link className={styles.navHome} to="/">
+          New Work (Eine Anleitung)
+        </Link>
+        <span className={styles.navTitle}>
+          {frontmatter.title}
+        </span>
+        <div className={styles.navProgress}>
+          <div style={progressBarStyles} className={styles.navProgressInner}></div>
+        </div>
       </nav>
       <article>
         <header className={styles.header} style={headerStyles}>
@@ -91,16 +108,14 @@ const Post = ({ data, children }) => {
           </div>
           <div className={styles.headerImage}>
             <GatsbyImage image={heroImage} alt={frontmatter.hero_alt} />
-            <p className={styles.heroCredit}>
-              {frontmatter.hero_credit}
-            </p>
+            <p className={styles.heroCredit}>{frontmatter.hero_credit}</p>
           </div>
         </header>
         <div className={styles.body}>
           <MDXProvider components={shortCodes}>{children}</MDXProvider>
         </div>
       </article>
-    </App >
+    </App>
   );
 };
 

@@ -4,7 +4,7 @@
       @content;
     }
   } @else if $point==l {
-    @media (min-width: 80rem) {
+    @media (min-width: 75rem) {
       @content;
     }
   } @else if $point==m {
@@ -46,7 +46,7 @@
   --ms-12: calc(var(--ms-11) * var(--ratio));
   --br: 3px;
   --fast: 100ms;
-  --padding: min(2.5vw, 2rem);
+  --padding: max(2.5vw, 1.5rem);
 }
 
 %copy {
@@ -68,6 +68,7 @@
     text-decoration-thickness: 1px;
     text-decoration-color: var(--gray);
     text-underline-offset: .15em;
+    background: #ffe8ce;
     &:hover, &:focus-visible {
       text-decoration-color: var(--black);
     }

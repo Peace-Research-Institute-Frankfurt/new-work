@@ -5,7 +5,7 @@
   display: flex;
   padding-bottom: 2rem;
   position: relative;
-  background: linear-gradient(to bottom, var(--orange) 50%, transparent 90%);
+  background: linear-gradient(to bottom, rgb(255, 121, 31) 40%, transparent 90%);
 }
 .title {
   display: flex;
@@ -25,15 +25,15 @@
   font-weight: 900;
   word-spacing: -0.01em;
   letter-spacing: -0.034em;
-  margin-top: -0.085em;
-  //   margin-left: -0.1em;
-  font-size: 40vw;
-  text-align: center;
+  margin-left: -0.05em;
+  margin-top: 0.05em;
+  font-size: 40.2vw;
   line-height: 0.74;
-  padding-top: 0.15em;
+  text-align: center;
   @include bp(s) {
+    margin-left: -0.075em;
     white-space: nowrap;
-    font-size: 22vw;
+    font-size: 21.75vw;
   }
   .e {
     margin-left: -0.006em;
@@ -43,49 +43,74 @@
   }
   .o {
     margin-left: -0.072em;
+    margin-right: 0.001em;
   }
 }
 
 .title-secondary {
-  letter-spacing: -0.045em;
-  font-weight: 100;
   white-space: nowrap;
-  font-size: 18vw;
   flex-grow: 1;
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
+  margin-bottom: 0.12em;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  font-size: 16vw;
+  @include bp(s) {
+    font-size: 18vw;
+    font-weight: 100;
+    letter-spacing: -0.045em;
+    margin-bottom: 0.05em;
+  }
+  @include bp(m) {
+    margin-bottom: -0.025em;
+  }
   @include bp(l) {
     order: 3;
+    font-size: 18.5vw;
+    letter-spacing: -0.051em;
+    text-align: left;
   }
 }
 
 .tagline {
   font-family: var(--suisse);
   line-height: 1.1;
-  padding-left: 0em;
   letter-spacing: -0.05em;
   display: flex;
   flex-flow: column;
   text-align: center;
   order: 2;
-  height: 12vh;
-  max-width: 14em;
   justify-content: center;
-  font-size: var(--ms-4);
   font-weight: 400;
   padding: 0 var(--padding);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  font-size: var(--ms-3);
+  max-width: 20em;
+  @include bp(m) {
+    font-size: var(--ms-4);
+  }
   @include bp(l) {
     max-width: 14em;
     font-weight: 400;
     height: auto;
-    font-size: var(--ms-3);
     margin-left: -0.1em;
-    line-height: 1;
+    line-height: 1.05;
     padding-top: 0.5em;
     order: 1;
     align-self: flex-start;
     text-align: left;
+    font-size: var(--ms-3);
+    transform-origin: left;
+    transform: scaleX(0.9);
+    text-decoration-thickness: 1px;
+  }
+  @include bp(xl) {
+    text-decoration-thickness: 2px;
+    transform: scaleX(0.95);
+    font-size: var(--ms-4);
   }
 }
 
@@ -94,12 +119,16 @@
   left: 50%;
   // display: none;
   top: 50%;
-  height: 70vh;
-  width: 100%;
   filter: drop-shadow(30px 40px 7px var(--shadow));
   pointer-events: none;
   z-index: 100;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-45%);
+  height: 70vh;
+  width: 90%;
+  @include bp(s) {
+    width: 100%;
+    transform: translateX(-50%) translateY(-55%);
+  }
   @include bp(m) {
     transform: translateX(-50%) translateY(-55%);
     height: 65vh;
