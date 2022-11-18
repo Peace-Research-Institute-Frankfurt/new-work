@@ -1,8 +1,8 @@
 @import "vars";
 
 .container {
-  margin-bottom: 1em;
-  margin-top: 1em;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .text {
@@ -13,7 +13,8 @@
   padding: 1rem;
   border-radius: var(--br);
   position: relative;
-  hyphens: none;
+  filter: drop-shadow(2px 2px 1px rgba(black, .2));
+  background: white;
   @include bp(m) {
     font-family: var(--suisse);
     font-weight: 400;
@@ -26,15 +27,34 @@
   }
   &:after {
     content: "";
-    width:  .75rem;
-    height: .75rem;
-    border-right:  1px solid var(--black);
+    width: 0.75rem;
+    height: 0.75rem;
+    border-right: 1px solid var(--black);
     border-bottom: 1px solid var(--black);
     position: absolute;
     bottom: 0;
     left: 1.5rem;
     background: white;
     transform: translateY(55%) rotate(45deg);
+  }
+}
+
+.left {
+  @include bp(l) {
+    float: left;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    margin-left: -20%;
+    max-width: 30rem;
+  }
+}
+.right {
+  @include bp(l) {
+    float: right;
+    margin-top: 0.25rem;
+    margin-left: 1rem;
+    margin-right: -20%;
+    max-width: 30rem;
   }
 }
 

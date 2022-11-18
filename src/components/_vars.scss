@@ -81,7 +81,7 @@
     }
   }
   ul {
-    margin-left: 1.5em;
+    padding-left: 1.5em;
   }
   ul li {
     list-style: none;
@@ -110,7 +110,7 @@
     @include bp(m) {
       font-weight: 500;
       font-size: var(--ms-3);
-      margin-top: calc(var(--ms-1) * .5);
+      margin-top: calc(var(--ms-1) * 0.5);
     }
     @include bp(l) {
       margin-top: calc(var(--ms-1) * 1.5);

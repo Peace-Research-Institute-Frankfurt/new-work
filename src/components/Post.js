@@ -1,15 +1,11 @@
 import React from "react";
 import App from "./App";
 import { graphql, Link } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
 import * as styles from "./Post.module.scss";
-import Figure from "./Figure";
-import Quote from "./Quote";
-import File from "./File";
-import Leadin from "./Leadin";
+
 import StickyHeader from "./StickyHeader";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-const shortCodes = { Figure, Quote, File, Leadin };
+import PostBody from "./PostBody";
 
 export const query = graphql`
   query ($id: String!) {
@@ -118,7 +114,7 @@ const Post = ({ data, children }) => {
           </div>
         </header>
         <div className={styles.body}>
-          <MDXProvider components={shortCodes}>{children}</MDXProvider>
+          <PostBody>{children}</PostBody>
         </div>
       </article>
     </App>

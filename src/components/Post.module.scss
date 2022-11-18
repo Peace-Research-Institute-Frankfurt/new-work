@@ -9,7 +9,7 @@
 
   @include bp(m) {
     align-items: center;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
     padding-top: 1rem;
     background: linear-gradient(to bottom, var(--color) 50%, transparent 60%);
   }
@@ -152,14 +152,8 @@
 
 .body {
   @extend %copy;
-  display: grid;
-  grid-template-columns: 1fr minmax(auto, 50rem) 1fr;
   padding: var(--padding);
-  @include bp(m) {
-    padding-top: 0;
-  }
-
-  * {
-    grid-column: 2/3;
-  }
+  padding-top: 0;
+  max-width: 55rem;
+  margin: 0 auto;
 }
