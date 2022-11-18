@@ -44,7 +44,6 @@
   position: relative;
   font-size: 0;
   @include bp(m) {
-    font-size: 1em;
     display: block;
   }
 }

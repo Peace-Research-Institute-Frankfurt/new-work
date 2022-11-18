@@ -53,8 +53,8 @@
 %copy {
   font-family: var(--suisse);
   font-size: var(--ms-1);
-  line-height: 1.35;
-  letter-spacing: -0.01em;
+  line-height: 1.375;
+  letter-spacing: -0.012em;
   hyphens: auto;
   p,
   ul,
@@ -103,6 +103,7 @@
     margin-top: calc(var(--ms-1) * 1);
     margin-bottom: calc(var(--ms-1) * 0.25);
     font-size: var(--ms-2);
+    hyphens: none;
     font-weight: 600;
     &:first-child {
       margin-top: 0;
@@ -117,13 +118,12 @@
     }
   }
   h3 {
-    font-family: var(--haas-text);
-    letter-spacing: 0.01em;
-    font-size: var(--ms-2);
     line-height: 1.1;
-    font-weight: 400;
-    margin-top: calc(var(--ms-1) * 0.5);
-    margin-bottom: calc(var(--ms-1) * 0.25);
+    font-weight: 500;
+    font-family: var(--haas-text);
+    margin-top: calc(var(--ms-1) * 1);
+    margin-bottom: calc(var(--ms-1) * 0.5);
+    font-size: var(--ms-2);
     &:first-child {
       margin-top: 0;
     }
@@ -138,7 +138,7 @@
 
 %caption {
   font-family: var(--haas-text);
-  font-feature-settings: "ss03" on;
+  font-feature-settings: "ss03";
   font-size: var(--ms-0);
   letter-spacing: 0.01em;
   line-height: 1.25;
