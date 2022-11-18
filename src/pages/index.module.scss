@@ -29,7 +29,7 @@
   font-size: 40vw;
   line-height: 0.73;
   text-align: center;
-  margin-top: -.02em;
+  margin-top: -0.02em;
   @include bp(s) {
     text-align: left;
     padding-left: var(--padding);
@@ -38,8 +38,8 @@
     font-size: 22.3vw;
     width: 100%;
   }
-  @include bp(m){
-    margin-top: -.04em;
+  @include bp(m) {
+    margin-top: -0.04em;
   }
   .e {
     margin-left: -0.02em;
@@ -186,9 +186,11 @@
   width: 100%;
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 2rem;
+  position: relative;
+  // justify-content: center;
+  // align-items: center;
+  padding: var(--padding);
+  font-family: var(--haas-text);
   &:hover,
   &:focus-visible {
     background-color: var(--gray-light);
@@ -198,12 +200,28 @@
 .posts-title {
   font-family: var(--haas-display);
   font-weight: 700;
-  font-size: var(--ms-4);
+  font-size: var(--ms-5);
   line-height: 1;
-  letter-spacing: -0.01em;
-  text-align: center;
+  margin-bottom: 0.25rem;
+  // letter-spacing: -0.01em;
   display: inline-block;
+  @include bp(l) {
+    font-size: var(--ms-6);
+  }
 }
+
+.posts-authors {
+  @extend %caption;
+}
+
+.byline-image {
+  width: 5rem;
+  position: absolute;
+  filter: drop-shadow(2px 2px 3px var(--shadow));
+  top: 1rem;
+  right: 1rem;
+}
+
 
 .sticker {
   display: block;

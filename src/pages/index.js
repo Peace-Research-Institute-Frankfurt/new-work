@@ -4,6 +4,7 @@ import * as styles from "./index.module.scss";
 import App from "../components/App";
 import { StaticImage } from "gatsby-plugin-image";
 import LeibnizLogo from "../images/logo-black.svg";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export const query = graphql`
   query {
@@ -20,6 +21,11 @@ export const query = graphql`
             authors {
               frontmatter {
                 name
+                image {
+                  childImageSharp {
+                    gatsbyImageData(placeholder: NONE, width: 100, layout: CONSTRAINED)
+                  }
+                }
               }
             }
           }
@@ -35,15 +41,22 @@ const Index = ({ data }) => {
     let byline = "";
     if (fm.authors) {
       byline = fm.authors.map((a) => {
-        return a.frontmatter.name;
+        const authorImage = getImage(a.frontmatter.image);
+        return (
+          <li>
+            <GatsbyImage objectFit="contain" className={styles.bylineImage} image={authorImage} alt={`${a.frontmatter.name} profile image`} />
+            <span>{a.frontmatter.name}</span>
+          </li>
+        );
       });
     }
     return (
       <li key={`post-${i}`}>
         <Link className={styles.postsItem} to={node.childMdx.fields.slug}>
-          <span className={styles.postIndex}>{i}</span>
-          <h2 className={styles.postsTitle}>{fm.title}</h2>
-          <span className={styles.postsMeta}>{byline}</span>
+          <h2 className={styles.postsTitle}>
+            {i + 1}. {fm.title}
+          </h2>
+          <ul className={styles.postsAuthors}>{byline}</ul>
         </Link>
       </li>
     );
@@ -55,7 +68,8 @@ const Index = ({ data }) => {
           <div>
             <span className={styles.titleMain}>
               N<span className={styles.e}>e</span>
-              <span className={styles.w}>w</span> W<span className={styles.o}>o</span><span className={styles.r}>r</span>k
+              <span className={styles.w}>w</span> W<span className={styles.o}>o</span>
+              <span className={styles.r}>r</span>k
             </span>
           </div>
           <div className={styles.tagline}>

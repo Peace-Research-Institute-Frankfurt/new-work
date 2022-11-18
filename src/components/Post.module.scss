@@ -9,7 +9,7 @@
 
   @include bp(m) {
     align-items: center;
-    padding-bottom: 1.5rem;
+    padding-bottom: .5rem;
     padding-top: 1rem;
     background: linear-gradient(to bottom, var(--color) 50%, transparent 60%);
   }
