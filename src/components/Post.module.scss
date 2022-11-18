@@ -16,13 +16,13 @@
 }
 
 .header-image {
+  overflow: visible;
   @include bp(m) {
     position: relative;
     margin-bottom: 2em;
+    border-radius: var(--br);
     img {
-      max-height: 50vh;
-      border: 1px solid white;
-      border-radius: var(--br);
+      max-height: 55vh;
       width: auto;
     }
   }
@@ -43,7 +43,7 @@
     padding: 0;
     transform-origin: bottom right;
     bottom: 0;
-    transform: rotate(90deg) translateY(-0.2em);
+    transform: rotate(90deg) translateY(-0.5em);
   }
 }
 
@@ -94,7 +94,7 @@
 }
 
 .byline-image {
-  position: absolute;
+  position: absolute !important;
   z-index: 500;
   width: 5rem;
   left: 50%;
@@ -120,6 +120,7 @@
 
 .title {
   font-family: var(--haas-display);
+  font-feature-settings: "ss03" on;
   font-weight: 800;
   font-size: var(--ms-6);
   line-height: 0.85;
@@ -129,6 +130,8 @@
 
   @include bp(m) {
     font-size: var(--ms-8);
+    letter-spacing: 0em;
+    max-width: 10em;
   }
   @include bp(l) {
     font-size: var(--ms-9);
@@ -140,7 +143,7 @@
   padding-top: 1em;
   padding-left: 1rem;
   padding-right: 1rem;
-  max-width: 35em;
+  max-width: 38em;
   margin: 0 auto;
 
   @include bp(m) {

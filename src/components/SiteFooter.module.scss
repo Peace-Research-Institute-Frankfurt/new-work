@@ -2,16 +2,18 @@
 
 .container {
   @extend %caption;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   padding-top: var(--padding);
   margin: var(--padding);
   p {
-    max-width: 40em;
+    max-width: 60em;
     opacity: 0.75;
   }
 }
 
 .nav {
-  margin-bottom: 0.25rem;
   ul {
     display: flex;
     gap: 0.5rem;
@@ -21,5 +23,6 @@
 
 .meta {
   padding-top: 0.5rem;
-  font-size: var(--ms--2);
+  font-family: monospace;
+  font-size: var(--ms--1);
 }

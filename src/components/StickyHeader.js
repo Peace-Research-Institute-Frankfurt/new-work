@@ -4,7 +4,7 @@ import useScrollPosition from "./useScrollPosition";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-export default function StickyHeader({ chapterIndex, title }) {
+export default function StickyHeader({ chapterIndex, title, next, prev }) {
   const scrollPosition = useScrollPosition();
   const isScrolled = scrollPosition.y > 50;
   let scrollProgress = 0;
@@ -29,7 +29,15 @@ export default function StickyHeader({ chapterIndex, title }) {
           />
           New Work (Eine Anleitung)
         </Link>
-        <span className={styles.title}>{chapterIndex}. {title}</span>
+        <div className={styles.title}>
+          <span>
+            {chapterIndex}. {title}
+          </span>
+        </div>
+        <nav className={styles.pagination}>
+          {prev && <Link to={prev.childMdx.fields.slug}>←</Link>}
+          {next && <Link to={next.childMdx.fields.slug}>→</Link>}
+        </nav>
       </div>
       <div className={styles.progress}>
         <div style={progressBarStyles} className={styles.progressInner}></div>

@@ -55,7 +55,7 @@ const Index = ({ data }) => {
           <div>
             <span className={styles.titleMain}>
               N<span className={styles.e}>e</span>
-              <span className={styles.w}>w</span> W<span className={styles.o}>o</span>rk
+              <span className={styles.w}>w</span> W<span className={styles.o}>o</span><span className={styles.r}>r</span>k
             </span>
           </div>
           <div className={styles.tagline}>
@@ -68,6 +68,7 @@ const Index = ({ data }) => {
           placeholder="none"
           layout="constrained"
           className={styles.face}
+          loading="eager"
           src="../images/leibniz-head.png"
           alt=""
         />

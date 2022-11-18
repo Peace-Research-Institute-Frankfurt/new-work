@@ -26,8 +26,8 @@
   --highlight: rgb(252, 235, 188);
   --shadow: rgba(0, 0, 0, 0.7);
   --black: rgba(0, 0, 0, 1);
-  --haas-display: "neue-haas-grotesk-display", "Arial", sans-serif;
-  --haas-text: "neue-haas-grotesk-text", sans-serif;
+  --haas-display: "forma-djr-display", serif;
+  --haas-text: "forma-djr-micro", sans-serif;
   --suisse: "Suisse Neue", Georgia, serif;
   --ratio: 1.2; // Minor 3
   --ms-0: clamp(0.9rem, calc(1.4vw + 0.1rem), 1.05rem);
@@ -47,7 +47,7 @@
   --ms-12: calc(var(--ms-11) * var(--ratio));
   --br: 3px;
   --fast: 100ms;
-  --padding: max(2.5vw, 1.5rem);
+  --padding: min(2vw, 2rem);
 }
 
 %copy {
@@ -97,8 +97,9 @@
   }
   h2 {
     font-family: var(--haas-text);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
+    line-height: 1.1;
+    font-feature-settings: "ss03";
+    letter-spacing: -0.005em;
     margin-top: calc(var(--ms-1) * 1);
     margin-bottom: calc(var(--ms-1) * 0.25);
     font-size: var(--ms-2);
@@ -107,15 +108,12 @@
       margin-top: 0;
     }
     @include bp(m) {
-      font-weight: 400;
-      letter-spacing: -0.01em;
+      font-weight: 500;
       font-size: var(--ms-3);
-      margin-bottom: calc(var(--ms-1) * 0.5);
-      margin-top: calc(var(--ms-1) * 1);
+      margin-top: calc(var(--ms-1) * .5);
     }
     @include bp(l) {
-      margin-top: calc(var(--ms-1) * 3);
-      margin-bottom: calc(var(--ms-1) * 1);
+      margin-top: calc(var(--ms-1) * 1.5);
     }
   }
   h3 {
@@ -140,12 +138,13 @@
 
 %caption {
   font-family: var(--haas-text);
-  font-size: var(--ms--1);
-  letter-spacing: 0.025em;
+  font-feature-settings: "ss03" on;
+  font-size: var(--ms-0);
+  letter-spacing: 0.01em;
   line-height: 1.25;
   a {
     text-decoration: underline;
-    text-underline-offset: 0.15em;
+    text-underline-offset: 0.075em;
   }
 }
 %caption-bold {

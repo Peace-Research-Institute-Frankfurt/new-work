@@ -6,7 +6,7 @@ export default function Footer() {
   const data = useStaticQuery(graphql`
     query {
       meta: site {
-        buildTime(formatString: "D MMMM Y, HH:mm")
+        buildTime(formatString: "D MMMM Y, HH:mm", locale: "de")
       }
       pages: allFile(filter: { extension: { eq: "mdx" }, sourceInstanceName: { eq: "pages" } }, sort: { fields: childMdx___frontmatter___order }) {
         nodes {
@@ -26,21 +26,23 @@ export default function Footer() {
   `);
   return (
     <footer className={styles.container}>
-      <nav className={styles.nav}>
-        <ul>
-          {data.pages.nodes.map((p) => {
-            return (
-              <li key={`navitem-${p.id}`}>
-                <Link to={p.childMdx.fields.slug}>{p.childMdx.frontmatter.title}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      <p>
-        <em>New Work (Eine Anleitung)</em> ist eine Publikation der{" "}
-        <a href="https://www.hsfk.de/">Hessischen Stiftung für Friedens- und Konfliktforschung (HSFK)</a>.
-      </p>
+      <div>
+        <nav className={styles.nav}>
+          <ul>
+            {data.pages.nodes.map((p) => {
+              return (
+                <li key={`navitem-${p.id}`}>
+                  <Link to={p.childMdx.fields.slug}>{p.childMdx.frontmatter.title}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        <p>
+          <em>New Work (Eine Anleitung)</em> ist eine Publikation der{" "}
+          <a href="https://www.hsfk.de/">Hessischen Stiftung für Friedens- und Konfliktforschung (HSFK)</a>.
+        </p>
+      </div>
       <p className={styles.meta}>Built {data.meta.buildTime}</p>
     </footer>
   );

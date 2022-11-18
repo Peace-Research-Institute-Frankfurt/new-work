@@ -16,32 +16,44 @@
   line-height: 1;
   font-family: var(--haas-display);
   opacity: 0.95;
+  @include bp(s) {
+  }
 }
 
 .title-main {
   display: block;
-  font-weight: 900;
+  font-weight: 800;
   word-spacing: -0.01em;
-  letter-spacing: -0.034em;
+  letter-spacing: -0.016em;
   margin-left: -0.05em;
-  margin-top: 0.05em;
-  font-size: 40.2vw;
-  line-height: 0.74;
+  font-size: 40vw;
+  line-height: 0.73;
   text-align: center;
+  margin-top: -.02em;
   @include bp(s) {
-    margin-left: -0.075em;
+    text-align: left;
+    padding-left: var(--padding);
+    margin-left: -0.12em;
     white-space: nowrap;
-    font-size: 21.75vw;
+    font-size: 22.3vw;
+    width: 100%;
+  }
+  @include bp(m){
+    margin-top: -.04em;
   }
   .e {
-    margin-left: -0.006em;
+    margin-left: -0.02em;
+    margin-right: 0.005em;
   }
   .w {
-    margin-left: -0.03em;
+    margin-left: -0.045em;
   }
   .o {
-    margin-left: -0.072em;
-    margin-right: 0.001em;
+    margin-left: -0.082em;
+    margin-right: -0.01em;
+  }
+  .r {
+    margin-right: -0.005em;
   }
 }
 
@@ -51,24 +63,24 @@
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
-  margin-bottom: 0.12em;
-  letter-spacing: -0.04em;
+  margin-bottom: 0.025em;
+  letter-spacing: -0.012em;
   font-weight: 400;
-  font-size: 16vw;
+  text-align: center;
+  width: 100%;
+  font-size: 17.5vw;
   @include bp(s) {
-    font-size: 18vw;
-    font-weight: 100;
-    letter-spacing: -0.045em;
-    margin-bottom: 0.05em;
+    font-size: 19vw;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.01em;
   }
   @include bp(m) {
-    margin-bottom: -0.025em;
+    margin-bottom: -0.1em;
   }
   @include bp(l) {
     order: 3;
-    font-size: 18.5vw;
-    letter-spacing: -0.051em;
-    text-align: left;
+    font-size: 19.25vw;
+    letter-spacing: -0.028em;
   }
 }
 
@@ -81,12 +93,13 @@
   text-align: center;
   order: 2;
   justify-content: center;
-  font-weight: 400;
+  font-weight: 100;
   padding: 0 var(--padding);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  font-size: var(--ms-3);
-  max-width: 20em;
+  text-underline-offset: 0.1em;
+  font-size: var(--ms-4);
+  max-width: 22em;
   @include bp(m) {
     font-size: var(--ms-4);
   }
@@ -94,9 +107,9 @@
     max-width: 14em;
     font-weight: 400;
     height: auto;
-    margin-left: -0.45em;
+    margin-left: -0.3em;
     line-height: 1.05;
-    padding-top: 0.5em;
+    padding-top: 1.35em;
     order: 1;
     align-self: flex-start;
     text-align: left;
@@ -108,7 +121,6 @@
   @include bp(xl) {
     text-decoration-thickness: 2px;
     max-width: 17em;
-    transform: scaleX(0.95);
     font-size: var(--ms-4);
   }
 }

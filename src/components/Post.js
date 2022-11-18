@@ -44,6 +44,20 @@ export const query = graphql`
         }
       }
     }
+    posts: allFile(filter: { extension: { eq: "mdx" }, sourceInstanceName: { eq: "posts" } }, sort: { fields: childMdx___frontmatter___order }) {
+      nodes {
+        id
+        childMdx {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            order
+          }
+        }
+      }
+    }
   }
 `;
 const Post = ({ data, children }) => {
@@ -53,6 +67,12 @@ const Post = ({ data, children }) => {
   const headerStyles = {
     "--color": frontmatter.color,
   };
+  const currentIndex = data.posts.nodes.findIndex((el) => {
+    return el.childMdx.frontmatter.order === frontmatter.order;
+  });
+
+  const next = data.posts.nodes[currentIndex + 1];
+  const previous = data.posts.nodes[currentIndex - 1];
   let bylines = [];
   if (authors) {
     bylines = authors.map((author) => {
@@ -75,7 +95,7 @@ const Post = ({ data, children }) => {
   }
   return (
     <App>
-      <StickyHeader title={frontmatter.title} chapterIndex={frontmatter.order} />
+      <StickyHeader title={frontmatter.title} chapterIndex={frontmatter.order} next={next} prev={previous} />
       <article>
         <header className={styles.header} style={headerStyles}>
           <Link className={styles.navHome} to="/">

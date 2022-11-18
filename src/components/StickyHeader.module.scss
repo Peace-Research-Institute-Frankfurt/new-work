@@ -11,6 +11,7 @@
   text-align: center;
   transition: var(--fast);
   font-size: var(--ms-0);
+  font-feature-settings: "ss03" ,"tnum";
   @include bp(m) {
     letter-spacing: 0.01em;
     font-size: var(--ms-1);
@@ -31,7 +32,8 @@
   opacity: 0;
   transition: var(--fast);
   transform: translateY(30%);
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   @include bp(m) {
     justify-content: space-between;
   }
@@ -40,8 +42,9 @@
 .site-title {
   padding-left: 2.5rem;
   position: relative;
-  display: none;
+  font-size: 0;
   @include bp(m) {
+    font-size: 1em;
     display: block;
   }
 }
@@ -49,14 +52,29 @@
   position: absolute !important;
   z-index: 2000;
   left: 0;
-  width: 1.8rem;
+  width: 1.6rem;
   top: 50%;
   transform: translateY(-50%);
-  filter: drop-shadow(2px 2px 1px var(--shadow));
+  filter: drop-shadow(2px 2px 1px rgba(black, 0.2));
+  @include bp(m) {
+    width: 1.75rem;
+  }
 }
 
 .title {
-  letter-spacing: -0em;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pagination {
+  font-family: var(--suisse);
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  top: -.1em;
+  font-weight: 400;
 }
 
 .progress {
@@ -68,7 +86,7 @@
   bottom: 0;
   display: flex;
   opacity: 0;
-  transition: var(--fast);
+  transition: opacity var(--fast);
 }
 .progress-inner {
   background: black;
