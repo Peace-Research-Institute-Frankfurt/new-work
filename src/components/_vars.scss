@@ -22,7 +22,7 @@
   --gray: rgb(87, 94, 101);
   --gray-light: rgb(242, 239, 237);
   --orange: #ff9720;
-  --orange-light: #fff9f2;
+  --orange-light: #feeedc;
   --highlight: rgb(252, 235, 188);
   --shadow: rgba(0, 0, 0, 0.7);
   --black: rgba(0, 0, 0, 1);
@@ -143,7 +143,7 @@
   line-height: 1.25;
   a {
     text-decoration: underline;
-    text-underline-offset: 0.075em;
+    text-underline-offset: 0.1em;
   }
 }
 %caption-bold {

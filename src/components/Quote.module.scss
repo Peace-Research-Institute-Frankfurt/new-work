@@ -41,20 +41,16 @@
 
 .left {
   @include bp(l) {
-    float: left;
-    margin-right: 1rem;
-    margin-top: 0.25rem;
-    margin-left: -20%;
-    max-width: 30rem;
+    margin: 0;
+    grid-column: 1/2;
+    grid-row: span 4;
   }
 }
 .right {
   @include bp(l) {
-    float: right;
-    margin-top: 0.25rem;
-    margin-left: 1rem;
-    margin-right: -20%;
-    max-width: 30rem;
+    margin: 0;
+    grid-column: 3/4;
+    grid-row: span 4;
   }
 }
 

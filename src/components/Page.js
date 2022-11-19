@@ -1,14 +1,9 @@
 import React from "react";
 import App from "./App";
 import { graphql, Link } from "gatsby";
-import { MDXProvider } from "@mdx-js/react";
+import PostBody from "./PostBody";
+import Logo from "./Logo";
 import * as styles from "./Post.module.scss";
-import Figure from "./Figure";
-import Quote from "./Quote";
-import File from "./File";
-import Leadin from "./Leadin";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-const shortCodes = { Figure, Quote, File, Leadin };
 
 export const query = graphql`
   query ($id: String!) {
@@ -29,7 +24,7 @@ const Page = ({ data, children }) => {
     <App>
       <article>
         <header className={styles.header}>
-          <div className={styles.headerPlaceholder}></div>
+          <Logo/>
           <div className={styles.headerCopy}>
             <div>
               <h1 className={styles.title}>{frontmatter.title}</h1>
@@ -38,7 +33,7 @@ const Page = ({ data, children }) => {
           </div>
         </header>
         <div className={styles.body}>
-          <MDXProvider components={shortCodes}>{children}</MDXProvider>
+          <PostBody>{children}</PostBody>
         </div>
       </article>
     </App >

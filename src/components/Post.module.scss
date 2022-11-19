@@ -9,8 +9,9 @@
 
   @include bp(m) {
     align-items: center;
+    min-height: 100%;
     padding-bottom: 0.5rem;
-    padding-top: 1rem;
+    padding-top: 3rem;
     background: linear-gradient(to bottom, var(--color) 50%, transparent 60%);
   }
 }
@@ -132,9 +133,11 @@
     font-size: var(--ms-8);
     letter-spacing: 0em;
     max-width: 10em;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
   @include bp(l) {
-    font-size: var(--ms-9);
+    font-size: var(--ms-10);
   }
 }
 
@@ -147,6 +150,8 @@
   margin: 0 auto;
 
   @include bp(m) {
+    max-width: 32em;
+    margin-bottom: 1rem;
   }
 }
 
@@ -154,6 +159,11 @@
   @extend %copy;
   padding: var(--padding);
   padding-top: 0;
-  max-width: 55rem;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 50rem) 1fr;
   margin: 0 auto;
+  column-gap: var(--padding);
+  * {
+    grid-column: 2/3;
+  }
 }

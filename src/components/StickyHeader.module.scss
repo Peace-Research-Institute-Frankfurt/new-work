@@ -2,7 +2,7 @@
 
 .container {
   position: fixed;
-  padding: 0.75rem var(--padding);
+  padding: 0.5rem var(--padding);
   left: 0;
   right: 0;
   font-family: var(--haas-text);
@@ -11,7 +11,9 @@
   text-align: center;
   transition: var(--fast);
   font-size: var(--ms-0);
-  font-feature-settings: "ss03" ,"tnum";
+  font-feature-settings: "ss03", "tnum";
+  pointer-events: none;
+  border-bottom: 1px solid transparent;
   @include bp(m) {
     letter-spacing: 0.01em;
     font-size: var(--ms-1);
@@ -19,7 +21,9 @@
 }
 
 .stuck {
+  border-bottom: 1px solid black;
   background: white;
+  pointer-events: all;
   .copy,
   .progress {
     opacity: 1;
@@ -40,20 +44,20 @@
 }
 
 .site-title {
-  padding-left: 2.5rem;
   position: relative;
   font-size: 0;
-  @include bp(m) {
-    display: block;
+  border-radius: 100%;
+  padding: 0.2rem 0;
+  padding-left: 0.3rem;
+  &:hover,
+  &:focus-visible {
+    background: var(--gray-light);
   }
 }
 .face {
-  position: absolute !important;
   z-index: 2000;
   left: 0;
   width: 1.6rem;
-  top: 50%;
-  transform: translateY(-50%);
   filter: drop-shadow(2px 2px 1px rgba(black, 0.2));
   @include bp(m) {
     width: 1.75rem;
@@ -72,7 +76,7 @@
   display: flex;
   gap: 1rem;
   position: relative;
-  top: -.1em;
+  top: -0.1em;
   font-weight: 400;
 }
 

@@ -1,0 +1,31 @@
+@import "vars";
+
+.container {
+  font-family: var(--haas-display);
+  font-size: 1.7rem;
+  line-height: 0.9;
+  text-align: center;
+  padding: .5rem;
+  transition: var(--fast);
+  border-radius: var(--br);
+//   background: rgba(white, .65);
+  border: 1px solid black;
+  &:hover, &:focus-visible {
+      background: rgba(white, .85);
+  }
+  span {
+  }
+}
+
+.face {
+  display: none;
+}
+
+.top {
+  font-weight: 700;
+  margin-right: .4em;
+}
+
+.bottom {
+  font-weight: 400;
+}

@@ -6,6 +6,7 @@ import * as styles from "./Post.module.scss";
 import StickyHeader from "./StickyHeader";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PostBody from "./PostBody";
+import Logo from "./Logo";
 
 export const query = graphql`
   query ($id: String!) {
@@ -94,9 +95,7 @@ const Post = ({ data, children }) => {
       <StickyHeader title={frontmatter.title} chapterIndex={frontmatter.order} next={next} prev={previous} />
       <article>
         <header className={styles.header} style={headerStyles}>
-          <Link className={styles.navHome} to="/">
-            New Work (Eine Anleitung)
-          </Link>
+          <Logo/>
           <div className={styles.headerPlaceholder}></div>
           <div className={styles.headerCopy}>
             <div>

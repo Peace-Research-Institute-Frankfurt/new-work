@@ -54,7 +54,7 @@ const Index = ({ data }) => {
       <li key={`post-${i}`}>
         <Link className={styles.postsItem} to={node.childMdx.fields.slug}>
           <h2 className={styles.postsTitle}>
-            {i + 1}. {fm.title}
+            {fm.order}. {fm.title}
           </h2>
           <ul className={styles.postsAuthors}>{byline}</ul>
         </Link>
