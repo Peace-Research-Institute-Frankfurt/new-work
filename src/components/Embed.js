@@ -27,7 +27,7 @@ function Embed({ src, caption, title, provider }) {
   }
 
   return (
-    <figure className={styles.container}>
+    <figure>
       {!isActive && (
         <div className={styles.consent}>
           <MarkdownRenderer markdown={providerData.description} />
@@ -36,8 +36,8 @@ function Embed({ src, caption, title, provider }) {
               Eingebetteten Inhalt laden
             </button>
             <label htmlFor="remember">
-              <input type="checkbox" id="remember" />
               Remember choice?
+              <input type="checkbox" id="remember" />
             </label>
           </div>
         </div>
