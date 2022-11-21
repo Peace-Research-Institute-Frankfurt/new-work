@@ -13,7 +13,7 @@ export default function Footer() {
           title
         }
       }
-      pages: allFile(filter: { extension: { eq: "mdx" }, sourceInstanceName: { eq: "pages" } }, sort: { fields: childMdx___frontmatter___order }) {
+      pages: allFile(filter: { extension: { eq: "mdx" }, sourceInstanceName: { eq: "pages" } }, sort: { childMdx: { frontmatter: { order: ASC } } }) {
         nodes {
           id
           childMdx {
