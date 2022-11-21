@@ -6,12 +6,17 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
-    "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-json",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        implementation: require("sass"),
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -73,8 +78,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
-        rule: {
-        },
+        rule: {},
       },
     },
   ],
