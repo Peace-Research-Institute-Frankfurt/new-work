@@ -4,8 +4,9 @@
   min-height: 100vh;
   display: flex;
   padding-bottom: 2rem;
+  margin-bottom: 5rem;
   position: relative;
-  background: linear-gradient(to bottom, rgb(255, 113, 18) 40%, transparent 100%);
+  background: linear-gradient(to bottom, rgb(255, 146, 13) 50%, transparent 80%);
 }
 .title {
   display: flex;
@@ -22,7 +23,7 @@
 
 .title-main {
   display: block;
-  font-weight: 800;
+  font-weight: 900;
   word-spacing: -0.01em;
   letter-spacing: -0.016em;
   margin-left: -0.05em;
@@ -35,9 +36,9 @@
     padding-left: var(--padding);
     margin-left: -0.12em;
     white-space: nowrap;
-    font-size: 22.4vw;
+    font-size: 27.8vw;
     width: 100%;
-    letter-spacing: -.025em;
+    letter-spacing: -.05em;
   }
   @include bp(m) {
     margin-top: -0.04em;
@@ -66,13 +67,13 @@
   justify-content: flex-end;
   margin-bottom: 0.025em;
   letter-spacing: -0.012em;
-  font-weight: 400;
   text-align: center;
   width: 100%;
   font-size: 17.5vw;
+  font-weight: 200;
   @include bp(s) {
     font-size: 19vw;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.075em;
     margin-bottom: 0.01em;
   }
   @include bp(m) {
@@ -80,8 +81,9 @@
   }
   @include bp(l) {
     order: 3;
-    font-size: 19.25vw;
-    letter-spacing: -0.028em;
+    font-size: 25vw;
+    margin-left: -.05em;
+    letter-spacing: -0.082em;
   }
 }
 
@@ -108,7 +110,7 @@
     max-width: 14em;
     font-weight: 400;
     height: auto;
-    margin-left: -0.3em;
+    margin-left: -0.2em;
     line-height: 1.05;
     padding-top: 1.35em;
     order: 1;
@@ -199,13 +201,12 @@
 }
 
 .posts-title {
-  font-family: var(--haas-display);
-  font-weight: 700;
   font-size: var(--ms-5);
+  font-weight:600;
   line-height: 1;
   margin-bottom: 0.25rem;
-  // letter-spacing: -0.01em;
   display: inline-block;
+  letter-spacing: -.04em;
   @include bp(l) {
     font-size: var(--ms-6);
   }

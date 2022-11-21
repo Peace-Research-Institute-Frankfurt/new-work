@@ -1,20 +1,18 @@
 @import "vars";
 
 .container {
-  font-family: var(--haas-display);
-  font-size: 1.7rem;
-  line-height: 0.9;
+  font-family: var(--haas-text);
+  font-size: 1.2rem;
+  line-height: 1;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.3rem .5rem;
+  padding-bottom: 0.4rem;
   transition: var(--fast);
   border-radius: var(--br);
-  //   background: rgba(white, .65);
   border: 1px solid black;
   &:hover,
   &:focus-visible {
-    background: rgba(white, 0.85);
-  }
-  span {
+    background: rgba(white, 0.5);
   }
 }
 
@@ -23,5 +21,5 @@
 }
 
 .top {
-  font-weight: 600;
+  font-weight: 500;
 }

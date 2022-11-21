@@ -120,20 +120,19 @@
 }
 
 .title {
-  font-family: var(--haas-display);
+  font-family: var(--haas-text);
   font-feature-settings: "ss03" on;
-  font-weight: 800;
   font-size: var(--ms-6);
   line-height: 0.85;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.05em;
+  font-weight: 900;
   max-width: 20em;
   margin: 0 auto;
 
   @include bp(m) {
     font-size: var(--ms-8);
-    letter-spacing: 0em;
+    letter-spacing: -.05em;
     max-width: 10em;
-    margin-top: 2rem;
     margin-bottom: 0.5rem;
   }
   @include bp(l) {

@@ -4,7 +4,7 @@
       @content;
     }
   } @else if $point==l {
-    @media (min-width: 75rem) {
+    @media (min-width: 80rem) {
       @content;
     }
   } @else if $point==m {
@@ -26,8 +26,8 @@
   --highlight: rgb(252, 235, 188);
   --shadow: rgba(0, 0, 0, 0.7);
   --black: rgba(0, 0, 0, 1);
-  --haas-display: "forma-djr-display", serif;
-  --haas-text: "forma-djr-micro", sans-serif;
+  --haas-display: "acumin-pro-condensed", serif;
+  --haas-text: "acumin-pro", sans-serif;
   --suisse: "Suisse Neue", Georgia, serif;
   --ratio: 1.2; // Minor 3
   --ms-0: clamp(0.9rem, calc(1.4vw + 0.1rem), 1.05rem);
@@ -108,7 +108,8 @@
       margin-top: 0;
     }
     @include bp(m) {
-      font-weight: 500;
+      font-weight: 600;
+      letter-spacing: -.01em;
       font-size: var(--ms-3);
       margin-top: calc(var(--ms-1) * 0.5);
     }
