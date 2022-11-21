@@ -1,7 +1,7 @@
+import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import * as styles from "./Figure.module.scss";
-import React from "react";
 
 export default function Figure(props) {
   const data = useStaticQuery(graphql`

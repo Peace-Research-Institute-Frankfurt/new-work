@@ -64,6 +64,12 @@
       margin-bottom: 0;
     }
   }
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-weight: 600;
+  }
   a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
