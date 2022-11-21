@@ -5,13 +5,14 @@
   font-size: 1.7rem;
   line-height: 0.9;
   text-align: center;
-  padding: .5rem;
+  padding: 0.5rem;
   transition: var(--fast);
   border-radius: var(--br);
-//   background: rgba(white, .65);
+  //   background: rgba(white, .65);
   border: 1px solid black;
-  &:hover, &:focus-visible {
-      background: rgba(white, .85);
+  &:hover,
+  &:focus-visible {
+    background: rgba(white, 0.85);
   }
   span {
   }
@@ -22,10 +23,5 @@
 }
 
 .top {
-  font-weight: 700;
-  margin-right: .4em;
-}
-
-.bottom {
-  font-weight: 400;
+  font-weight: 600;
 }

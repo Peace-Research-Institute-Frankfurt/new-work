@@ -8,6 +8,11 @@ export default function Footer() {
       meta: site {
         buildTime(formatString: "D MMMM Y, HH:mm", locale: "de")
       }
+      site: site {
+        siteMetadata {
+          title
+        }
+      }
       pages: allFile(filter: { extension: { eq: "mdx" }, sourceInstanceName: { eq: "pages" } }, sort: { fields: childMdx___frontmatter___order }) {
         nodes {
           id
@@ -39,7 +44,7 @@ export default function Footer() {
           </ul>
         </nav>
         <p>
-          <em>New Work (Eine Anleitung)</em> ist eine Publikation der{" "}
+          <em>{data.site.siteMetadata.title}</em> ist eine Publikation der{" "}
           <a href="https://www.hsfk.de/">Hessischen Stiftung für Friedens- und Konfliktforschung (HSFK)</a>.
         </p>
       </div>

@@ -1,8 +1,8 @@
+import { graphql } from "gatsby";
 import React from "react";
 import App from "./App";
-import { graphql, Link } from "gatsby";
-import PostBody from "./PostBody";
 import Logo from "./Logo";
+import PostBody from "./PostBody";
 import * as styles from "./Post.module.scss";
 
 export const query = graphql`

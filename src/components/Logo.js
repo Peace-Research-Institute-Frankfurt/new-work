@@ -1,14 +1,21 @@
 import React from "react";
 import * as styles from "./Logo.module.scss";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql, Link, useStaticQuery } from "gatsby";
 
 export default function Logo() {
+  const data = useStaticQuery(graphql`
+    query {
+      site: site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
   return (
     <Link className={styles.container} to="/">
-      <div className={styles.type}>
-        <span className={styles.top}>New Work</span>
-        <span className={styles.bottom}>(Eine Anleitung)</span>
+      <div>
+        <span className={styles.top}>{data.site.siteMetadata.title}</span>
       </div>
     </Link>
   );

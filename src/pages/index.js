@@ -8,6 +8,11 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export const query = graphql`
   query {
+    site: site {
+      siteMetadata {
+        title
+      }
+    }
     posts: allFile(filter: { extension: { eq: "mdx" }, sourceInstanceName: { eq: "posts" } }, sort: { fields: childMdx___frontmatter___order }) {
       nodes {
         id
@@ -66,11 +71,7 @@ const Index = ({ data }) => {
       <header role="banner" className={styles.hero}>
         <h1 className={styles.title}>
           <div>
-            <span className={styles.titleMain}>
-              N<span className={styles.e}>e</span>
-              <span className={styles.w}>w</span> W<span className={styles.o}>o</span>
-              <span className={styles.r}>r</span>k
-            </span>
+            <span className={styles.titleMain}>Work New</span>
           </div>
           <div className={styles.tagline}>
             <p>Wie man Räume, Kulturen und Netzwerke für eine neue Generation gestaltet.</p>
@@ -99,4 +100,4 @@ const Index = ({ data }) => {
 
 export default Index;
 
-export const Head = () => <title>New Work (Eine Anleitung)</title>;
+export const Head = ({ data }) => <title>{data.site.siteMetadata.title}</title>;

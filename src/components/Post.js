@@ -1,15 +1,19 @@
 import React from "react";
 import App from "./App";
-import { graphql, Link } from "gatsby";
-import * as styles from "./Post.module.scss";
-
+import { graphql } from "gatsby";
 import StickyHeader from "./StickyHeader";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import PostBody from "./PostBody";
 import Logo from "./Logo";
+import PostBody from "./PostBody";
+import * as styles from "./Post.module.scss";
 
 export const query = graphql`
   query ($id: String!) {
+    site: site {
+      siteMetadata {
+        title
+      }
+    }
     post: file(id: { eq: $id }) {
       childMdx {
         frontmatter {
@@ -78,7 +82,7 @@ const Post = ({ data, children }) => {
       return (
         <li className={styles.byline} key={fm.name}>
           <GatsbyImage objectFit="contain" className={styles.bylineImage} image={authorImage} alt={`${fm.name} profile image`} />
-          <div className={styles.bylineCopy}>
+          <div>
             <span className={styles.bylineName}>{fm.name}</span>
             {fm.institution && (
               <span className={styles.bylineInstitution}>
@@ -95,7 +99,7 @@ const Post = ({ data, children }) => {
       <StickyHeader title={frontmatter.title} chapterIndex={frontmatter.order} next={next} prev={previous} />
       <article>
         <header className={styles.header} style={headerStyles}>
-          <Logo/>
+          <Logo />
           <div className={styles.headerPlaceholder}></div>
           <div className={styles.headerCopy}>
             <div>
@@ -124,7 +128,7 @@ export function Head({ data }) {
   const frontmatter = data.post.childMdx.frontmatter;
   return (
     <>
-      <title>{`${frontmatter.title} – New Work (Eine Anleitung)`}</title>
+      <title>{`${frontmatter.title} – ${data.site.siteMetadata.title}`}</title>
       <meta name="description" content={`${frontmatter.intro}`} />
     </>
   );

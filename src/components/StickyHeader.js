@@ -1,8 +1,8 @@
 import React from "react";
-import * as styles from "./StickyHeader.module.scss";
 import useScrollPosition from "./useScrollPosition";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import * as styles from "./StickyHeader.module.scss";
 
 export default function StickyHeader({ chapterIndex, title, next, prev }) {
   const scrollPosition = useScrollPosition();

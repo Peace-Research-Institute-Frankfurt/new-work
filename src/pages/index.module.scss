@@ -35,8 +35,9 @@
     padding-left: var(--padding);
     margin-left: -0.12em;
     white-space: nowrap;
-    font-size: 22.3vw;
+    font-size: 22.4vw;
     width: 100%;
+    letter-spacing: -.025em;
   }
   @include bp(m) {
     margin-top: -0.04em;
