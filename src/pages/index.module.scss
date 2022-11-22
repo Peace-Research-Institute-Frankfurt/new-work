@@ -77,11 +77,10 @@
   line-height: 0.8;
   @include bp(s) {
     white-space: nowrap;
-    font-size: 25vw;
+    font-size: 26vw;
     letter-spacing: -0.078em;
     margin-bottom: 0.1em;
-  }
-  @include bp(m) {
+    margin-left: -0.1em;
   }
   @include bp(l) {
     font-weight: 200;

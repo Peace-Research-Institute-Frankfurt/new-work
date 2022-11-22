@@ -115,7 +115,7 @@
     }
     @include bp(m) {
       font-weight: 600;
-      letter-spacing: -.01em;
+      letter-spacing: -0.02em;
       font-size: var(--ms-3);
       margin-top: calc(var(--ms-1) * 0.5);
     }

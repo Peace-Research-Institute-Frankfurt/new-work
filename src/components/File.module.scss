@@ -4,15 +4,17 @@ a.container {
   justify-content: space-between;
   background: var(--black);
   color: white;
-  padding: 0.75em;
+  padding: 1rem;
   border-radius: var(--br);
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .title {
-  margin-bottom: 0.5em;
   font-family: var(--haas-text);
-  letter-spacing: 0.02em;
+  font-size: var(--ms-2);
+  font-weight: 100;
+  letter-spacing: 0em;
+  line-height: 1
 }
 
 .meta {
