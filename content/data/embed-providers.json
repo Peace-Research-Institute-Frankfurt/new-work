@@ -1,14 +1,17 @@
 [
     {
         "provider": "youtube",
-        "description": "Hier findest du einen eingebetteten Inhalt von Youtube, der Daten über dich sammeln und an Drittplattformen übermitteln kann. Tippe auf **Eingebetteten Inhalt laden** um diesen Inhalt anzuzeigen, oder lies die [Datenschutzhinweise von Google](https://policies.google.com/?hl=en) um mehr zu erfahren."
+        "title": "Youtube",
+        "description": "Hier finden Sie ein eingebettetes Youtube-Video, das Daten über dich sammeln und an Drittplattformen übermitteln kann. Tippe auf **Eingebetteten Inhalt laden** um das Video anzuzeigen, oder lies die [Datenschutzhinweise von Google](https://policies.google.com/?hl=en) um mehr zu erfahren."
     },
     {
         "provider": "vimeo",
-        "description": "Hier findest du einen eingebetteten Inhalt von Vimeo, der Daten über dich sammeln und an Drittplattformen übermitteln kann. Tippe auf <strong>Eingebetteten Inhalt laden</strong> um diesen Inhalt anzuzeigen, oder lies <a href='https://vimeo.com/privacy'>die Datenschutzhinweise von Vimeo</a> um mehr zu erfahren."
+        "title": "Vimeo",
+        "description": "Hier finden Sie ein eingebettetes Vimeo-Video, das Daten über dich sammeln und an Drittplattformen übermitteln kann. Tippe auf **Eingebetteten Inhalt laden** um das Video anzuzeigen, oder lies die [Datenschutzhinweise von Vimeo](https://vimeo.com/privacy) um mehr zu erfahren."
     },
     {
         "provider": "spotify",
+        "title": "Spotify",
         "description": "Hier findest du einen eingebetteten Inhalt von Spotify, der Daten über dich sammeln und an Drittplattformen übermitteln kann. Tippe auf <strong>Eingebetteten Inhalt laden</strong> um diesen Inhalt anzuzeigen, oder lies <a href='https://www.spotify.com/us/privacy'>die Datenschutzhinweise von Spotify</a> um mehr zu erfahren."
     },
     {

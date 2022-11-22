@@ -1,0 +1,41 @@
+@import "vars";
+
+.container {
+  border: 1px solid var(--gray);
+  padding-left: 0 !important;
+  border-radius: var(--br);
+  margin: 1em 0;
+  margin-bottom: 1.5em !important;
+  li {
+    margin-bottom: 0 !important;
+    &:before {
+      display: none;
+    }
+    &:last-of-type {
+      .choice {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+.choice {
+  margin-left: 0;
+  padding: 0.75em;
+  border-bottom: 1px solid var(--gray);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  &:hover,
+  &:focus-visible {
+    background: var(--gray-light);
+    text-decoration: underline;
+  }
+  &:before {
+    display: none;
+  }
+}
+
+.checkbox {
+  width: 1.4rem;
+}

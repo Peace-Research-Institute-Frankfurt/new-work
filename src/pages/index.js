@@ -74,7 +74,7 @@ const Index = ({ data }) => {
             <span className={styles.titleMain}>Work New</span>
           </div>
           <div className={styles.tagline}>
-            <p>Wie man Räume, Kulturen und Netzwerke für eine neue Generation gestaltet.</p>
+            <p>Wie man Räume, Kulturen und Netzwerke für eine neue Generation gestaltet</p>
           </div>
           <span className={styles.titleSecondary}>Eine Anleitung</span>
         </h1>
