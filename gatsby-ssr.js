@@ -1,7 +1,14 @@
+import React from "react";
+import { EmbedChoicesProvider } from "./src/components/EmbedChoicesContext";
+
 const HtmlAttributes = {
   lang: "de-DE",
 };
 
-exports.onRenderBody = ({ setHtmlAttributes }, pluginOptions) => {
+export const onRenderBody = ({ setHtmlAttributes }, pluginOptions) => {
   setHtmlAttributes(HtmlAttributes);
+};
+
+export const wrapRootElement = ({ element }) => {
+  return <EmbedChoicesProvider>{element}</EmbedChoicesProvider>;
 };
