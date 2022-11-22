@@ -6,7 +6,7 @@
   padding-bottom: 2rem;
   margin-bottom: 5rem;
   position: relative;
-  background: linear-gradient(to bottom, rgb(255, 146, 13) 50%, transparent 80%);
+  background: linear-gradient(to bottom, rgb(255, 152, 26) 55%, transparent 80%);
 }
 .title {
   display: flex;
@@ -25,23 +25,27 @@
   display: block;
   font-weight: 900;
   word-spacing: -0.01em;
-  letter-spacing: -0.016em;
   margin-left: -0.05em;
-  font-size: 40vw;
-  line-height: 0.73;
+  font-size: 46vw;
+  letter-spacing: -0.06em;
   text-align: center;
   margin-top: -0.02em;
+  line-height: 0.7;
+  text-transform: uppercase;
   @include bp(s) {
+    line-height: 0.73;
     text-align: left;
+    text-transform: none;
     padding-left: var(--padding);
     margin-left: -0.12em;
     white-space: nowrap;
-    font-size: 27.8vw;
+    font-size: 27vw;
     width: 100%;
-    letter-spacing: -.05em;
+    letter-spacing: -0.05em;
   }
   @include bp(m) {
-    margin-top: -0.04em;
+    margin-top: -0.05em;
+    font-size: 27.5vw;
   }
   .e {
     margin-left: -0.02em;
@@ -60,29 +64,31 @@
 }
 
 .title-secondary {
-  white-space: nowrap;
   flex-grow: 1;
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
-  margin-bottom: 0.025em;
-  letter-spacing: -0.012em;
   text-align: center;
   width: 100%;
-  font-size: 17.5vw;
-  font-weight: 200;
+  letter-spacing: -0.07em;
+  font-weight: 300;
+  margin-bottom: 0.15em;
+  font-size: 25vw;
+  line-height: 0.8;
   @include bp(s) {
-    font-size: 19vw;
-    letter-spacing: -0.075em;
-    margin-bottom: 0.01em;
+    white-space: nowrap;
+    font-size: 25vw;
+    letter-spacing: -0.078em;
+    margin-bottom: 0.1em;
   }
   @include bp(m) {
-    margin-bottom: -0.1em;
   }
   @include bp(l) {
+    font-weight: 200;
     order: 3;
-    font-size: 27.9vw;
-    margin-left: -.075em;
+    font-size: 27.8vw;
+    margin-left: -0.075em;
+    margin-bottom: 0;
     letter-spacing: -0.082em;
   }
 }
@@ -98,32 +104,34 @@
   justify-content: center;
   font-weight: 100;
   padding: 0 var(--padding);
-  text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.1em;
-  font-size: var(--ms-4);
-  max-width: 22em;
-  @include bp(m) {
-    font-size: var(--ms-4);
+  text-underline-offset: 0.125em;
+  font-size: var(--ms-3);
+  text-decoration: underline;
+  max-width: 16em;
+  @include bp(s) {
+    max-width: 20em;
+    letter-spacing: -0.075em;
+    font-size: var(--ms-5);
   }
   @include bp(l) {
-    max-width: 14em;
+    max-width: 15em;
     font-weight: 400;
     height: auto;
-    margin-left: -0.2em;
     line-height: 1.05;
     padding-top: 1.35em;
     order: 1;
     align-self: flex-start;
     text-align: left;
+    letter-spacing: -.05em;
     font-size: var(--ms-3);
     transform-origin: left;
-    transform: scaleX(0.95);
+    transform: scaleX(0.9) skewX(-10deg);
     text-decoration-thickness: 1px;
+    margin-left: .4em;
   }
   @include bp(xl) {
     text-decoration-thickness: 2px;
-    max-width: 17em;
     font-size: var(--ms-4);
   }
 }
@@ -131,26 +139,24 @@
 .face {
   position: absolute !important;
   left: 50%;
-  // display: none;
   top: 50%;
   pointer-events: none;
   z-index: 100;
   transform: translateX(-50%) translateY(-45%);
   height: 70vh;
-  width: 90%;
+  width: 95%;
   filter: drop-shadow(30px 40px 7px var(--shadow));
   @include bp(s) {
-    width: 100%;
     transform: translateX(-50%) translateY(-55%);
   }
   @include bp(m) {
-    transform: translateX(-50%) translateY(-55%);
-    height: 65vh;
+    transform: translateX(-50%) translateY(-60%);
+    height: 60vh;
     filter: drop-shadow(40px 50px 10px var(--shadow));
   }
   @include bp(l) {
-    transform: translateX(-50%) translateY(-50%);
-    height: 75vh;
+    transform: translateX(-50%) translateY(-47.5%);
+    height: 72.5vh;
   }
 }
 
@@ -202,11 +208,11 @@
 
 .posts-title {
   font-size: var(--ms-5);
-  font-weight:600;
+  font-weight: 600;
   line-height: 1;
   margin-bottom: 0.25rem;
   display: inline-block;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
   @include bp(l) {
     font-size: var(--ms-6);
   }
@@ -223,7 +229,6 @@
   top: 1rem;
   right: 1rem;
 }
-
 
 .sticker {
   display: block;
