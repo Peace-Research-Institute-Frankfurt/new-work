@@ -7,8 +7,14 @@ import * as styles from "./Post.module.scss";
 
 export const query = graphql`
   query ($id: String!) {
+    site: site {
+      host
+      siteMetadata {
+        title
+      }
+    }
     post: file(id: { eq: $id }) {
-      modifiedTime(locale: "de-DE", formatString:"dddd, D.M.YYYY")
+      modifiedTime(locale: "de-DE", formatString: "dddd, D.M.YYYY")
       childMdx {
         frontmatter {
           title
@@ -24,7 +30,7 @@ const Page = ({ data, children }) => {
     <App>
       <article>
         <header className={styles.header}>
-          <Logo/>
+          <Logo />
           <div className={styles.headerCopy}>
             <div>
               <h1 className={styles.title}>{frontmatter.title}</h1>
@@ -36,7 +42,7 @@ const Page = ({ data, children }) => {
           <PostBody>{children}</PostBody>
         </div>
       </article>
-    </App >
+    </App>
   );
 };
 
