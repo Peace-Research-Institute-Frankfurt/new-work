@@ -8,9 +8,9 @@ import * as styles from "./Post.module.scss";
 export const query = graphql`
   query ($id: String!) {
     site: site {
-      host
       siteMetadata {
         title
+        siteUrl
       }
     }
     post: file(id: { eq: $id }) {
