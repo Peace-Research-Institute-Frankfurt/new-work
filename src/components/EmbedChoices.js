@@ -1,6 +1,6 @@
-import React, { useState, useContext, useId } from "react";
+import React, {  useContext, useId } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { EmbedChoicesContext } from "./EmbedChoicesContext";
+import { EmbedChoicesContext } from "../context/EmbedChoicesContext";
 import * as styles from "./EmbedChoices.module.scss";
 
 export default function EmbedChoices() {
@@ -16,7 +16,6 @@ export default function EmbedChoices() {
     }
   `);
   const baseId = useId();
-  const [isActive, setIsActive] = useState(false);
   const { embedChoices, toggleEmbedChoice } = useContext(EmbedChoicesContext);
 
   const providers = data.providers.nodes.map((p, i) => {
@@ -43,6 +42,7 @@ export default function EmbedChoices() {
         </li>
       );
     }
+    return null;
   });
 
   return <ul className={styles.container}>{providers}</ul>;

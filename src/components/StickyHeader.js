@@ -1,5 +1,5 @@
 import React from "react";
-import useScrollPosition from "./useScrollPosition";
+import useScrollPosition from "../hooks/useScrollPosition";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import * as styles from "./StickyHeader.module.scss";

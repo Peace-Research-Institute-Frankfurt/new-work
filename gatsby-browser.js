@@ -1,5 +1,5 @@
 import React from "react";
-import { EmbedChoicesProvider } from "./src/components/EmbedChoicesContext";
+import { EmbedChoicesProvider } from "./src/context/EmbedChoicesContext";
 
 export const wrapRootElement = ({ element }) => {
   return <EmbedChoicesProvider>{element}</EmbedChoicesProvider>;

@@ -1,5 +1,5 @@
 import React from "react";
-import { EmbedChoicesProvider } from "./src/components/EmbedChoicesContext";
+import { EmbedChoicesProvider } from "./src/context/EmbedChoicesContext";
 
 const HtmlAttributes = {
   lang: "de-DE",

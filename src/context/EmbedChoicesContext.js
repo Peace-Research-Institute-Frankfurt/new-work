@@ -1,5 +1,5 @@
-import React, { createContext, useEffect, useState } from "react";
-import useLocalStorage from "./useLocalStorage";
+import React, { createContext } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export const EmbedChoicesContext = createContext();
 

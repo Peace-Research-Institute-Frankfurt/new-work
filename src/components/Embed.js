@@ -2,7 +2,7 @@ import React, { useContext, useId, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import MarkdownRenderer from "react-markdown-renderer";
 import * as styles from "./Embed.module.scss";
-import { EmbedChoicesContext } from "./EmbedChoicesContext";
+import { EmbedChoicesContext } from "../context/EmbedChoicesContext";
 
 function Embed({ src, caption, title, provider }) {
   const data = useStaticQuery(graphql`
