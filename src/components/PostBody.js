@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React from "react";
 import Figure from "./Figure";
 import Quote from "./Quote";
 import File from "./File";

@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React from "react";
 import Footer from "./Footer";
 import "./global.scss";
 
