@@ -2,14 +2,16 @@
 
 .container {
   font-family: var(--haas-text);
-  font-size: var(--ms-0);
   line-height: 1;
   text-align: center;
   transition: var(--fast);
   border-radius: var(--br);
   border: 1px solid black;
   padding: 0.2rem .4rem;
+  padding-bottom: 0.35rem;
+  font-size: var(--ms-1);
   @include bp(m){
+    font-size: var(--ms-0);
     padding: 0.3rem .5rem;
     padding-bottom: 0.4rem;
   }

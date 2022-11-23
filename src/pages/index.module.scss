@@ -190,7 +190,7 @@
   font-family: var(--haas-text);
   align-items: center;
   padding: 0.5rem 0;
-  padding-right: 2rem;
+  padding-right: 3rem;
   @include bp(m) {
     padding: 1rem 0;
     padding-right: 6rem;
@@ -208,10 +208,12 @@
   display: inline-block;
   letter-spacing: -0.045em;
   font-weight: 700;
+  hyphens: auto;
   @include bp(s) {
     font-size: var(--ms-5);
   }
   @include bp(m) {
+    hyphens: none;
     font-size: var(--ms-6);
     line-height: 0.9;
   }

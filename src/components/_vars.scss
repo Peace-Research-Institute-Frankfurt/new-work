@@ -106,10 +106,10 @@
   }
   h2 {
     font-family: var(--haas-text);
-    line-height: 1.1;
-    letter-spacing: -0.015em;
+    line-height: 1;
+    letter-spacing: -0.02em;
     margin-top: calc(var(--ms-1) * 1);
-    margin-bottom: calc(var(--ms-1) * 0.25);
+    margin-bottom: calc(var(--ms-1) * 0.5);
     font-size: var(--ms-3);
     hyphens: none;
     font-weight: 700;
