@@ -99,17 +99,16 @@ const Post = ({ data, children }) => {
       <StickyHeader title={frontmatter.title} chapterIndex={frontmatter.order} next={next} prev={previous} />
       <article>
         <header className={styles.header} style={headerStyles}>
-          <Logo />
-          <div className={styles.headerPlaceholder}></div>
           <div className={styles.headerCopy}>
-            <div>
+            <Logo />
+            <div className={styles.headerCopyInner}>
               <h1 className={styles.title}>{frontmatter.title}</h1>
               {frontmatter.intro && <p className={styles.intro}>{frontmatter.intro}</p>}
             </div>
-          </div>
-          <div className={styles.headerMeta}>
-            <ul className={styles.bylines}>{bylines}</ul>
-            <span>{frontmatter.reading_time}min read</span>
+            <div className={styles.headerMeta}>
+              <ul className={styles.bylines}>{bylines}</ul>
+              <span>{frontmatter.reading_time}min read</span>
+            </div>
           </div>
           <div className={styles.headerImage}>
             <GatsbyImage image={heroImage} alt={frontmatter.hero_alt} />

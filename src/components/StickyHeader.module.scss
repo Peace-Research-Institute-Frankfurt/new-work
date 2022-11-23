@@ -5,12 +5,13 @@
   padding: 0.5rem var(--padding);
   left: 0;
   right: 0;
+  top: 0;
   font-family: var(--haas-text);
   font-weight: 400;
   z-index: 1000;
   text-align: center;
   transition: var(--fast);
-  font-size: var(--ms-0);
+  font-size: var(--ms-1);
   font-feature-settings: "ss03", "tnum";
   pointer-events: none;
   border-bottom: 1px solid transparent;
@@ -58,26 +59,33 @@
   z-index: 2000;
   left: 0;
   width: 1.6rem;
+  margin-right: 1rem;
   filter: drop-shadow(2px 2px 1px rgba(black, 0.2));
   @include bp(m) {
+    margin-right: 0;
     width: 1.75rem;
   }
 }
 
 .title {
   font-weight: 500;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  @include bp(m) {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+  }
 }
 
 .pagination {
   font-family: var(--suisse);
-  display: flex;
   gap: 1rem;
   position: relative;
   top: -0.1em;
   font-weight: 400;
+  display: none;
+  @include bp(m) {
+    display: flex;
+  }
 }
 
 .progress {

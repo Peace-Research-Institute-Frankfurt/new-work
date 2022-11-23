@@ -2,10 +2,19 @@
 
 .caption {
   @extend %caption;
+  padding: 0 var(--padding);
+  text-align: left;
+  max-width: 36em;
+  align-self: flex-start;
+  @include bp(m) {
+    max-width: 55em;
+    text-align: center;
+    align-self: center;
+  }
 }
 
 .image {
-  margin-bottom: .25rem;
+  margin-bottom: 0.5rem;
 }
 
 .credit {
@@ -14,6 +23,7 @@
 }
 
 .container {
+  margin-top: calc(var(--ms-1) *    0.75);
   margin-bottom: calc(var(--ms-1) * 0.75);
 }
 
@@ -44,6 +54,8 @@
   flex-flow: column;
   align-items: center;
   max-width: 100%;
-  margin-top: calc(var(--ms-1) * 1.5);
-  margin-bottom: calc(var(--ms-1) * 1.5);
+  @include bp(m) {
+    margin-top: calc(var(--ms-1) * 1.5);
+    margin-bottom: calc(var(--ms-1) * 1.5);
+  }
 }

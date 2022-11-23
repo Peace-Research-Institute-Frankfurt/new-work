@@ -4,16 +4,21 @@
   @extend %caption;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   padding-top: var(--padding);
   margin: var(--padding);
-  p {
-    max-width: 60em;
-    opacity: 0.75;
+  flex-flow: column;
+  @include bp(m) {
+    flex-flow: row;
+    align-items: flex-end;
   }
 }
 
 .nav {
+  font-weight: 600;
+  a {
+    text-underline-offset: .1em;
+    text-decoration-color: var(--gray);
+  }
   ul {
     display: flex;
     gap: 0.5rem;
@@ -23,6 +28,5 @@
 
 .meta {
   padding-top: 0.5rem;
-  font-family: monospace;
   font-size: var(--ms--1);
 }

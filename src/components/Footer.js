@@ -43,12 +43,8 @@ export default function Footer() {
             })}
           </ul>
         </nav>
-        <p>
-          <em>{data.site.siteMetadata.title}</em> ist eine Publikation der{" "}
-          <a href="https://www.hsfk.de/">Hessischen Stiftung für Friedens- und Konfliktforschung (HSFK)</a>.
-        </p>
       </div>
-      <p className={styles.meta}>Built {data.meta.buildTime}</p>
+      <p className={styles.meta}>© HSFK {new Date().getFullYear()}</p>
     </footer>
   );
 }

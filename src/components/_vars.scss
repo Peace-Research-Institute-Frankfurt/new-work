@@ -15,11 +15,15 @@
     @media (min-width: 45rem) {
       @content;
     }
+  } @else if $point==xs {
+    @media (min-width: 35rem) {
+      @content;
+    }
   }
 }
 
 :root {
-  --gray: rgb(136, 141, 146);
+  --gray: rgb(98, 98, 98);
   --gray-light: rgb(244, 241, 241);
   --orange: #ff9720;
   --orange-light: #feeedc;
@@ -47,7 +51,7 @@
   --ms-12: calc(var(--ms-11) * var(--ratio));
   --br: 3px;
   --fast: 100ms;
-  --padding: min(2vw, 2rem);
+  --padding: max(2vw, 1.5rem);
 }
 
 %copy {
@@ -103,19 +107,17 @@
   h2 {
     font-family: var(--haas-text);
     line-height: 1.1;
-    font-feature-settings: "ss03";
-    letter-spacing: -0.005em;
+    letter-spacing: -0.015em;
     margin-top: calc(var(--ms-1) * 1);
     margin-bottom: calc(var(--ms-1) * 0.25);
-    font-size: var(--ms-2);
+    font-size: var(--ms-3);
     hyphens: none;
-    font-weight: 600;
+    font-weight: 700;
     &:first-child {
       margin-top: 0;
     }
     @include bp(m) {
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.015em;
       font-size: var(--ms-3);
       margin-top: calc(var(--ms-1) * 0.5);
     }
@@ -127,7 +129,7 @@
     line-height: 1.1;
     font-weight: 600;
     font-family: var(--haas-text);
-    margin-top: calc(var(--ms-1) * .5);
+    margin-top: calc(var(--ms-1) * 0.5);
     margin-bottom: calc(var(--ms-1) * 0.5);
     font-size: var(--ms-2);
     &:first-child {
@@ -146,11 +148,10 @@
   font-family: var(--haas-text);
   font-feature-settings: "ss03";
   font-size: var(--ms-0);
-  letter-spacing: 0.01em;
-  line-height: 1.25;
+  line-height: 1.1;
   a {
     text-decoration: underline;
-    text-underline-offset: 0.1em;
+    text-underline-offset: 0.075em;
   }
 }
 %caption-bold {
@@ -167,11 +168,11 @@
 
 %copy-large {
   font-family: var(--suisse);
-  font-family: var(--suisse);
   font-size: var(--ms-2);
   letter-spacing: -0.045em;
   line-height: 1.2;
-  @include bp(m) {
+  hyphens: auto;
+  @include bp(s) {
     font-size: var(--ms-3);
     line-height: 1.25;
   }

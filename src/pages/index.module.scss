@@ -3,7 +3,7 @@
 .hero {
   min-height: 100vh;
   display: flex;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   margin-bottom: 5rem;
   position: relative;
   background: linear-gradient(to bottom, rgb(255, 152, 26) 55%, transparent 80%);
@@ -16,9 +16,7 @@
   justify-content: space-between;
   line-height: 1;
   font-family: var(--haas-display);
-  opacity: 0.95;
-  @include bp(s) {
-  }
+  opacity: 0.99;
 }
 
 .title-main {
@@ -32,7 +30,7 @@
   margin-top: -0.02em;
   line-height: 0.7;
   text-transform: uppercase;
-  @include bp(s) {
+  @include bp(xs) {
     line-height: 0.73;
     text-align: left;
     text-transform: none;
@@ -103,15 +101,16 @@
   justify-content: center;
   font-weight: 100;
   padding: 0 var(--padding);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.125em;
-  font-size: var(--ms-3);
   text-decoration: underline;
+  text-underline-offset: .1em;
+  font-size: var(--ms-3);
+  text-decoration-thickness: 1px;
   max-width: 16em;
   @include bp(s) {
     max-width: 20em;
     letter-spacing: -0.075em;
     font-size: var(--ms-5);
+    text-decoration-thickness: 2px;
   }
   @include bp(l) {
     max-width: 15em;
@@ -141,16 +140,16 @@
   top: 50%;
   pointer-events: none;
   z-index: 100;
-  transform: translateX(-50%) translateY(-45%);
-  height: 70vh;
+  transform: translateX(-50%) translateY(-40%);
+  height: 55vh;
   width: 95%;
   filter: drop-shadow(30px 40px 7px var(--shadow));
-  @include bp(s) {
+  @include bp(xs) {
     transform: translateX(-50%) translateY(-55%);
+    height: 65vh;
   }
   @include bp(m) {
     transform: translateX(-50%) translateY(-60%);
-    height: 60vh;
     filter: drop-shadow(40px 50px 10px var(--shadow));
   }
   @include bp(l) {
@@ -239,7 +238,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  border: 5px solid white;
+  border: 4px solid rgb(252, 251, 248);
   box-shadow: 2px 1px 1px rgba(black, 0.2);
   top: 28%;
   width: 7rem;

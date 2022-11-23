@@ -2,14 +2,17 @@
 
 .container {
   font-family: var(--haas-text);
-  font-size: 1.2rem;
+  font-size: var(--ms-0);
   line-height: 1;
   text-align: center;
-  padding: 0.3rem .5rem;
-  padding-bottom: 0.4rem;
   transition: var(--fast);
   border-radius: var(--br);
   border: 1px solid black;
+  padding: 0.2rem .4rem;
+  @include bp(m){
+    padding: 0.3rem .5rem;
+    padding-bottom: 0.4rem;
+  }
   &:hover,
   &:focus-visible {
     background: rgba(white, 0.5);
@@ -21,5 +24,5 @@
 }
 
 .top {
-  font-weight: 500;
+  font-weight: 600;
 }
