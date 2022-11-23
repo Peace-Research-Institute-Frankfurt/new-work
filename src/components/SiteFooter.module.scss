@@ -4,8 +4,8 @@
   @extend %caption;
   display: flex;
   justify-content: space-between;
-  padding-top: var(--padding);
   margin: var(--padding);
+  margin-top: 0;
   flex-flow: column;
   @include bp(m) {
     flex-flow: row;
@@ -16,7 +16,7 @@
 .nav {
   font-weight: 600;
   a {
-    text-underline-offset: .1em;
+    text-underline-offset: 0.1em;
     text-decoration-color: var(--gray);
   }
   ul {

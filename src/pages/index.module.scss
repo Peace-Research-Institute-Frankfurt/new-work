@@ -6,7 +6,7 @@
   padding-bottom: 1rem;
   margin-bottom: 5rem;
   position: relative;
-  background: linear-gradient(to bottom, rgb(255, 152, 26) 55%, transparent 80%);
+  background: linear-gradient(to bottom, rgb(255, 152, 26) 55%, transparent 70%);
 }
 .title {
   display: flex;
@@ -43,21 +43,18 @@
   }
   @include bp(m) {
     margin-top: -0.05em;
-    font-size: 27.5vw;
-  }
-  .e {
-    margin-left: -0.02em;
-    margin-right: 0.005em;
+    font-size: 27.75vw;
+    margin-left: -0.15em;
   }
   .w {
-    margin-left: -0.045em;
+    margin-right: -0.03em;
   }
   .o {
-    margin-left: -0.082em;
-    margin-right: -0.01em;
+    margin-right: -0.006em;
   }
-  .r {
-    margin-right: -0.005em;
+  .e {
+    margin-left: -0.012em;
+    margin-right: -0.006em;
   }
 }
 
@@ -77,7 +74,7 @@
     white-space: nowrap;
     font-size: 26vw;
     letter-spacing: -0.078em;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.05em;
     margin-left: -0.1em;
   }
   @include bp(l) {
@@ -85,7 +82,7 @@
     order: 3;
     font-size: 27.8vw;
     margin-left: -0.075em;
-    margin-bottom: 0;
+    margin-bottom: 0.05em;
     letter-spacing: -0.082em;
   }
 }
@@ -102,7 +99,7 @@
   font-weight: 100;
   padding: 0 var(--padding);
   text-decoration: underline;
-  text-underline-offset: .1em;
+  text-underline-offset: 0.1em;
   font-size: var(--ms-3);
   text-decoration-thickness: 1px;
   max-width: 16em;
@@ -114,19 +111,18 @@
   }
   @include bp(l) {
     max-width: 15em;
-    font-weight: 400;
+    font-weight: 100;
     height: auto;
     line-height: 1.05;
     padding-top: 1.35em;
     order: 1;
     align-self: flex-start;
     text-align: left;
-    letter-spacing: -.05em;
+    letter-spacing: -0.05em;
     font-size: var(--ms-3);
     transform-origin: left;
-    transform: scaleX(0.9) skewX(-10deg);
+    transform: scaleX(0.9);
     text-decoration-thickness: 1px;
-    margin-left: .4em;
   }
   @include bp(xl) {
     text-decoration-thickness: 2px;
@@ -140,8 +136,8 @@
   top: 50%;
   pointer-events: none;
   z-index: 100;
-  transform: translateX(-50%) translateY(-40%);
-  height: 55vh;
+  transform: translateX(-50%) translateY(-35%);
+  height: 50vh;
   width: 95%;
   filter: drop-shadow(30px 40px 7px var(--shadow));
   @include bp(xs) {
@@ -149,7 +145,7 @@
     height: 65vh;
   }
   @include bp(m) {
-    transform: translateX(-50%) translateY(-60%);
+    transform: translateX(-50%) translateY(-55%);
     filter: drop-shadow(40px 50px 10px var(--shadow));
   }
   @include bp(l) {
@@ -160,44 +156,30 @@
 
 .content {
   padding: var(--padding);
+  padding-top: 0;
 }
 
 .posts {
-  display: grid;
-  grid-template-columns: 50% 50%;
   list-style: none;
   border-radius: var(--br);
-  border: 1px solid var(--gray);
-  overflow: hidden;
   li {
-    list-style: none;
     display: flex;
-    border-bottom: 1px solid var(--gray);
-    grid-column: span 2;
-    @include bp(m) {
-      grid-column: span 1;
-      border-right: 1px solid var(--gray);
-    }
-    &:nth-of-type(2n) {
-      border-right: 0;
-    }
-    &:nth-last-of-type(1) {
-      grid-column: span 2;
-      border-bottom: 0;
-      border-right: 0;
-    }
   }
 }
 
 .posts-item {
+  list-style: none;
+  border-bottom: 1px dotted var(--black);
   width: 100%;
   display: flex;
   flex-flow: column;
   position: relative;
-  // justify-content: center;
-  // align-items: center;
-  padding: var(--padding);
   font-family: var(--haas-text);
+  padding: 0.5rem 0;
+  @include bp(m) {
+    padding: 1rem 0;
+    padding-right: 6rem;
+  }
   &:hover,
   &:focus-visible {
     background-color: var(--gray-light);
@@ -206,13 +188,21 @@
 
 .posts-title {
   font-size: var(--ms-5);
-  font-weight: 600;
   line-height: 1;
   margin-bottom: 0.25rem;
   display: inline-block;
-  letter-spacing: -0.04em;
-  @include bp(l) {
+  letter-spacing: -0.045em;
+  font-weight: 700;
+  @include bp(m) {
     font-size: var(--ms-6);
+    font-weight: 800;
+    line-height: 0.9;
+  }
+  @include bp(l) {
+    font-size: var(--ms-7);
+  }
+  @include bp(xl) {
+    font-size: var(--ms-8);
   }
 }
 
@@ -221,33 +211,45 @@
 }
 
 .byline-image {
-  width: 5rem;
   position: absolute;
   filter: drop-shadow(2px 2px 3px var(--shadow));
-  top: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   right: 1rem;
+  width: 4rem;
+  z-index: 1000;
+  @include bp(m) {
+    width: 5rem;
+  }
 }
 
 .sticker {
   display: block;
   position: absolute;
   right: 5%;
-  transform: rotate(30deg);
-  background: rgb(12, 255, 81);
+  transform: rotate(-10deg);
+  background: rgb(222, 155, 255);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  border: 4px solid rgb(252, 251, 248);
-  box-shadow: 2px 1px 1px rgba(black, 0.2);
-  top: 28%;
+  border: 3px solid rgb(252, 251, 248);
+  box-shadow: 2px 2px 1px rgba(black, 0.5);
+  top: 12%;
   width: 7rem;
   height: 7rem;
   padding: 0.5rem;
   @include bp(m) {
-    padding: 1rem;
-    width: 10rem;
+    top: 15%;
+    width:  10rem;
     height: 10rem;
-    top: 50%;
+    padding: 1rem;
+  }
+  @include bp(l) {
+    padding: 1.5rem;
+    width: 12rem;
+    height: 12rem;
+    top: 25%;
+    right: 15%;
   }
 }

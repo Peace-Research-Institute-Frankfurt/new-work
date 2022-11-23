@@ -50,7 +50,6 @@ const Index = ({ data }) => {
         return (
           <li>
             <GatsbyImage objectFit="contain" className={styles.bylineImage} image={authorImage} alt={`${a.frontmatter.name} profile image`} />
-            <span>{a.frontmatter.name}</span>
           </li>
         );
       });
@@ -71,7 +70,16 @@ const Index = ({ data }) => {
       <header role="banner" className={styles.hero}>
         <h1 className={styles.title}>
           <div>
-            <span className={styles.titleMain}>Work New</span>
+            <span className={styles.titleMain}>
+              <span className={styles.w}>W</span>
+              <span className={styles.o}>o</span>
+              <span className={styles.r}>r</span>
+              <span className={styles.k}>k</span>
+              <span className={styles.space}> </span>
+              <span className={styles.n}>N</span>
+              <span className={styles.e}>e</span>
+              <span className={styles.w}>w</span>
+            </span>
           </div>
           <div className={styles.tagline}>
             <p>Wie man Räume, Kulturen und Netzwerke für eine neue Generation gestaltet</p>
