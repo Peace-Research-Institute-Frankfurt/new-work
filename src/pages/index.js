@@ -5,6 +5,7 @@ import App from "../components/App";
 import { StaticImage } from "gatsby-plugin-image";
 import LeibnizLogo from "../images/logo-black.svg";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { gri } from "../components/util";
 
 export const query = graphql`
   query {
@@ -47,9 +48,18 @@ const Index = ({ data }) => {
     if (fm.authors) {
       byline = fm.authors.map((a) => {
         const authorImage = getImage(a.frontmatter.image);
+        const imageStyles = {
+          transform: `rotate(${gri(-30, 10)}deg)`,
+        };
         return (
           <li>
-            <GatsbyImage objectFit="contain" className={styles.bylineImage} image={authorImage} alt={`${a.frontmatter.name} profile image`} />
+            <GatsbyImage
+              style={imageStyles}
+              objectFit="contain"
+              className={styles.bylineImage}
+              image={authorImage}
+              alt={`${a.frontmatter.name} profile image`}
+            />
           </li>
         );
       });

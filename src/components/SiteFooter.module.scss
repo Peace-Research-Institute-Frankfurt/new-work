@@ -6,11 +6,6 @@
   justify-content: space-between;
   margin: var(--padding);
   margin-top: 0;
-  flex-flow: column;
-  @include bp(m) {
-    flex-flow: row;
-    align-items: flex-end;
-  }
 }
 
 .nav {
