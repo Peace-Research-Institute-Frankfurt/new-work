@@ -136,12 +136,12 @@
   top: 50%;
   pointer-events: none;
   z-index: 100;
-  transform: translateX(-50%) translateY(-35%);
+  transform: translateX(-50%) translateY(-40%);
   height: 50vh;
   width: 95%;
   filter: drop-shadow(30px 40px 7px var(--shadow));
   @include bp(xs) {
-    transform: translateX(-50%) translateY(-55%);
+    transform: translateX(-50%) translateY(-50%);
     height: 65vh;
   }
   @include bp(m) {

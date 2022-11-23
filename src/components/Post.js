@@ -3,8 +3,9 @@ import App from "./App";
 import { graphql } from "gatsby";
 import StickyHeader from "./StickyHeader";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Logo from "./Logo";
 import PostBody from "./PostBody";
+import PostHeader from "./PostHeader";
+import PostMeta from "./PostMeta";
 import * as styles from "./Post.module.scss";
 
 export const query = graphql`
@@ -63,58 +64,32 @@ export const query = graphql`
 `;
 const Post = ({ data, children }) => {
   const frontmatter = data.post.childMdx.frontmatter;
-  const heroImage = getImage(frontmatter.hero_image);
-  const authors = data.post.childMdx.frontmatter.authors;
-  const headerStyles = {
-    "--color": frontmatter.color,
-  };
   const currentIndex = data.posts.nodes.findIndex((el) => {
     return el.childMdx.frontmatter.order === frontmatter.order;
   });
 
+  const heroImage = (
+    <div className={styles.image}>
+      <GatsbyImage image={getImage(frontmatter.hero_image)} alt={frontmatter.hero_alt} />
+      <p className={styles.credit}>Bild: {frontmatter.hero_credit}</p>
+    </div>
+  );
+
   const next = data.posts.nodes[currentIndex + 1];
   const previous = data.posts.nodes[currentIndex - 1];
-  let bylines = [];
-  if (authors) {
-    bylines = authors.map((author) => {
-      const fm = author.frontmatter;
-      const authorImage = getImage(fm.image);
-      return (
-        <li className={styles.byline} key={fm.name}>
-          <GatsbyImage objectFit="contain" className={styles.bylineImage} image={authorImage} alt={`${fm.name} profile image`} />
-          <div>
-            <span className={styles.bylineName}>{fm.name}</span>
-            {fm.institution && (
-              <span className={styles.bylineInstitution}>
-                {fm.role && `${fm.role} ·`} {fm.institution}
-              </span>
-            )}
-          </div>
-        </li>
-      );
-    });
-  }
+
   return (
     <App>
       <StickyHeader title={frontmatter.title} chapterIndex={frontmatter.order} next={next} prev={previous} />
       <article>
-        <header className={styles.header} style={headerStyles}>
-          <div className={styles.headerCopy}>
-            <Logo />
-            <div className={styles.headerCopyInner}>
-              <h1 className={styles.title}>{frontmatter.title}</h1>
-              {frontmatter.intro && <p className={styles.intro}>{frontmatter.intro}</p>}
-            </div>
-            <div className={styles.headerMeta}>
-              <ul className={styles.bylines}>{bylines}</ul>
-              <span>{frontmatter.reading_time}min read</span>
-            </div>
-          </div>
-          <div className={styles.headerImage}>
-            <GatsbyImage image={heroImage} alt={frontmatter.hero_alt} />
-            <p className={styles.heroCredit}>Bild: {frontmatter.hero_credit}</p>
-          </div>
-        </header>
+        <PostHeader
+          meta={<PostMeta readingTime={frontmatter.reading_time} authors={frontmatter.authors} />}
+          intro={frontmatter.intro}
+          image={heroImage}
+          title={frontmatter.title}
+          fullHeight={true}
+          color={frontmatter.color}
+        />
         <div className={styles.body}>
           <PostBody>{children}</PostBody>
         </div>

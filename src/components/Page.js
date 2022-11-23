@@ -1,8 +1,8 @@
 import { graphql } from "gatsby";
 import React from "react";
 import App from "./App";
-import Logo from "./Logo";
 import PostBody from "./PostBody";
+import PostHeader from "./PostHeader";
 import * as styles from "./Post.module.scss";
 
 export const query = graphql`
@@ -29,15 +29,7 @@ const Page = ({ data, children }) => {
   return (
     <App>
       <article>
-        <header className={styles.header}>
-          <Logo />
-          <div className={styles.headerCopy}>
-            <div>
-              <h1 className={styles.title}>{frontmatter.title}</h1>
-              {frontmatter.intro && <p className={styles.intro}>{frontmatter.intro}</p>}
-            </div>
-          </div>
-        </header>
+        <PostHeader title={frontmatter.title} />
         <div className={styles.body}>
           <PostBody>{children}</PostBody>
         </div>

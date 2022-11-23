@@ -12,7 +12,7 @@
   text-align: center;
   transition: var(--fast);
   font-size: var(--ms-1);
-  font-feature-settings: "ss03", "tnum";
+  font-feature-settings: "tnum";
   pointer-events: none;
   border-bottom: 1px solid transparent;
   @include bp(m) {
@@ -72,6 +72,8 @@
   @include bp(m) {
     transform: translateX(-50%);
     left: 50%;
+    letter-spacing: 0;
+    font-weight: 600;
     position: absolute;
   }
 }
@@ -90,7 +92,7 @@
 
 .progress {
   background: rgb(255, 255, 255);
-  height: 2px;
+  height: 1px;
   position: absolute;
   left: 0;
   right: 0;

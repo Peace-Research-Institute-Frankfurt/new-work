@@ -1,0 +1,51 @@
+@import "vars";
+
+.container {
+  @extend %caption;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+  align-items: center;
+}
+
+.bylines {
+  list-style: none;
+}
+
+.byline {
+  display: flex;
+  line-height: 1;
+  @include bp(m) {
+    align-items: center;
+  }
+}
+
+.byline-name {
+  @extend %caption-bold;
+}
+
+.byline-image {
+  position: absolute !important;
+  z-index: 500;
+  width: 5rem;
+  left: 50%;
+  transform-origin: center;
+  transform: translateX(-50%) translateY(-20%);
+  filter: drop-shadow(2px 2px 2px rgba(black, 0.4));
+
+  @include bp(m) {
+    position: static !important;
+    transform: translateX(0) translateY(0);
+    width: auto;
+    flex-shrink: 1;
+    width: 3.5rem;
+    left: 0;
+    margin-right: 0.75rem;
+  }
+}
+
+.byline-institution {
+  display: block;
+  color: var(--gray);
+}
