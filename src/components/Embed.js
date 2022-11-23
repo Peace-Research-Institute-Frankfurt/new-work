@@ -81,7 +81,7 @@ function Embed({ src, caption, title, provider, width, height }) {
 }
 
 function Vimeo({ url, width, height, caption }) {
-  const matches = url.match(/(?:player.vimeo.com\/video\/)(\d+)/);
+  const matches = url.match(/(?:vimeo.com\/)(\d+)/);
   let src = null;
   if (matches && matches[1]) {
     src = `https://player.vimeo.com/video/${matches[1]}?h=0e92d36ba9&title=0&byline=0&portrait=0`;
