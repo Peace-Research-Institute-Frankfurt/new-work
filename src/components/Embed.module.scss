@@ -1,19 +1,23 @@
 @import "vars";
 .container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .consent {
-  //   border: 1px solid var(--black);
   background: var(--gray-light);
   border-radius: var(--br);
   padding: 1.25em;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 
 .iframe-container {
   width: 100%;
+  position: relative;
   iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
   }
 }
@@ -23,7 +27,7 @@
   align-items: baseline;
   font-family: var(--haas-text);
   flex-flow: column;
-  gap: .5em;
+  gap: 0.5em;
   @include bp(m) {
     gap: 1em;
     flex-flow: row;
@@ -39,7 +43,7 @@
   input {
     display: inline-block;
     margin-left: 0.2rem;
-    @include bp(m){
+    @include bp(m) {
       height: 1.5rem;
       width: 1.5rem;
     }
@@ -60,4 +64,9 @@
   &:focus-visible {
     background: rgb(33, 33, 33);
   }
+}
+
+.caption {
+  @extend %caption;
+  padding-top: 0.5rem;
 }
