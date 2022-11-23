@@ -73,10 +73,10 @@ const Index = ({ data }) => {
             <span className={styles.titleMain}>
               <span className={styles.w}>W</span>
               <span className={styles.o}>o</span>
-              <span className={styles.r}>r</span>
-              <span className={styles.k}>k</span>
-              <span className={styles.space}> </span>
-              <span className={styles.n}>N</span>
+              <span>r</span>
+              <span>k</span>
+              <span> </span>
+              <span>N</span>
               <span className={styles.e}>e</span>
               <span className={styles.w}>w</span>
             </span>

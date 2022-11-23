@@ -24,7 +24,7 @@
   font-weight: 900;
   word-spacing: -0.01em;
   margin-left: -0.05em;
-  font-size: 46vw;
+  font-size: 47vw;
   letter-spacing: -0.06em;
   text-align: center;
   margin-top: -0.02em;
@@ -47,14 +47,24 @@
     margin-left: -0.15em;
   }
   .w {
-    margin-right: -0.03em;
+    @include bp(m){
+      margin-right: -0.03em;
+    }
   }
   .o {
-    margin-right: -0.006em;
+    margin-left: -0.01em;
+    @include bp(m){
+      margin-left: 0.001em;
+      margin-right: -0.006em;
+    }
   }
   .e {
+    margin-right: 0.025em;
     margin-left: -0.012em;
-    margin-right: -0.006em;
+    @include bp(m){
+      margin-left: -0.012em;
+      margin-right: -0.006em;
+    }
   }
 }
 
