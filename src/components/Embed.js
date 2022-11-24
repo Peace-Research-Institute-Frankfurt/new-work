@@ -70,6 +70,7 @@ function Embed({ src, caption, title, provider, width, height }) {
               src={src}
               frameBorder="0"
               allowFullScreen
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
