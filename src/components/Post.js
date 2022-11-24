@@ -27,7 +27,7 @@ export const query = graphql`
           hero_credit
           hero_image {
             childImageSharp {
-              gatsbyImageData(width: 1000)
+              gatsbyImageData(width: 1000, placeholder: BLURRED)
             }
           }
           authors {
