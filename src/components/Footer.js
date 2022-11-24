@@ -44,7 +44,7 @@ export default function Footer() {
           </ul>
         </nav>
       </div>
-      <p className={styles.meta}>© HSFK {new Date().getFullYear()}</p>
+      <p className={styles.meta}>© HSFK und die Autor*innen {new Date().getFullYear()}</p>
     </footer>
   );
 }
