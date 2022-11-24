@@ -8,9 +8,16 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
     "gatsby-transformer-json",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          formats: ["auto", "webp", "avif"],
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-sass",
       options: {
