@@ -11,7 +11,7 @@ export default function PostHeader({ intro, title, color, image, meta, fullHeigh
       <div className={styles.headerCopy}>
         <Logo />
         <div className={styles.headerCopyInner}>
-          <h1 className={styles.title}>{title}</h1>
+        <h1 className={styles.title}>{title}</h1>
           {intro && <p className={styles.intro}>{intro}</p>}
         </div>
         {meta && <div className={styles.headerMeta}>{meta}</div>}

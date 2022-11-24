@@ -55,9 +55,6 @@
   }
   .title {
     margin-bottom: 0;
-    @include bp(m){
-      margin-top: 1em;
-    }
   }
 }
 
@@ -81,7 +78,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-top: -2rem;
+  margin-top: 2rem;
   @include bp(m) {
     margin-bottom: 2rem;
   }
