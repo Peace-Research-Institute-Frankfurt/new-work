@@ -27,6 +27,7 @@ export const query = graphql`
             authors {
               frontmatter {
                 name
+                author_id
                 image {
                   childImageSharp {
                     gatsbyImageData(placeholder: NONE, width: 100, layout: CONSTRAINED)
@@ -46,13 +47,13 @@ const Index = ({ data }) => {
     const fm = node.childMdx.frontmatter;
     let byline = "";
     if (fm.authors) {
-      byline = fm.authors.map((a) => {
+      byline = fm.authors.map((a, j) => {
         const authorImage = getImage(a.frontmatter.image);
         const imageStyles = {
           transform: `rotate(${gri(-30, 10)}deg)`,
         };
         return (
-          <li>
+          <li key={`authors-${i}-${fm.author_id}`}>
             <GatsbyImage
               style={imageStyles}
               objectFit="contain"
