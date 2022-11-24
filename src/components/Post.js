@@ -6,6 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PostBody from "./PostBody";
 import PostHeader from "./PostHeader";
 import PostMeta from "./PostMeta";
+import Pagination from "./PostPagination";
 import * as styles from "./Post.module.scss";
 
 export const query = graphql`
@@ -56,6 +57,7 @@ export const query = graphql`
           frontmatter {
             title
             order
+            intro
           }
         }
       }
@@ -92,6 +94,7 @@ const Post = ({ data, children }) => {
         />
         <div className={styles.body}>
           <PostBody>{children}</PostBody>
+          <Pagination next={next} previous={previous} />
         </div>
       </article>
     </App>

@@ -54,6 +54,19 @@
   --padding: max(2vw, 1.25rem);
 }
 
+%h2 {
+  font-family: var(--haas-text);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-size: var(--ms-3);
+  hyphens: none;
+  font-weight: 700;
+  @include bp(m) {
+    letter-spacing: -0.018em;
+    font-size: var(--ms-3);
+  }
+}
+
 %copy {
   font-family: var(--suisse);
   font-size: var(--ms-1);
@@ -105,20 +118,14 @@
     }
   }
   h2 {
-    font-family: var(--haas-text);
-    line-height: 1;
-    letter-spacing: -0.02em;
+    @extend %h2;
     margin-top: calc(var(--ms-1) * 1);
     margin-bottom: calc(var(--ms-1) * 0.5);
-    font-size: var(--ms-3);
-    hyphens: none;
-    font-weight: 700;
+
     &:first-child {
       margin-top: 0;
     }
     @include bp(m) {
-      letter-spacing: -0.015em;
-      font-size: var(--ms-3);
       margin-top: calc(var(--ms-1) * 0.5);
     }
     @include bp(l) {
