@@ -21,7 +21,7 @@ export default function Figure(props) {
           extension
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, placeholder: DOMINANT_COLOR)
+            gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }
