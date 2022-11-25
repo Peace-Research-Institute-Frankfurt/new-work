@@ -15,7 +15,6 @@
     letter-spacing: -0.06em;
     hyphens: none;
     max-width: 10em;
-    margin-bottom: 1em;
   }
   @include bp(l) {
     font-size: var(--ms-9);
@@ -39,8 +38,10 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2.5rem;
+  align-items: flex-start;
+  max-width: 50rem;
+  margin: 0 auto;
   @include bp(m) {
-    align-items: center;
     padding-top: 4rem;
     margin-bottom: 1.5rem;
     min-height: 0;
@@ -50,11 +51,14 @@
 
 .is-full-height {
   min-height: calc(100vh);
+  max-width: none;
+  align-items: center;
   @include bp(m) {
     min-height: 0;
   }
   .title {
     margin-bottom: 0;
+    text-align: center;
   }
 }
 
