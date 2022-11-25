@@ -34,6 +34,9 @@ export default function Footer() {
       <div>
         <nav className={styles.nav}>
           <ul>
+            <li>
+              <Link to="/">Startseite</Link>
+            </li>
             {data.pages.nodes.map((p) => {
               return (
                 <li key={`navitem-${p.id}`}>
