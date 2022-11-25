@@ -2,7 +2,7 @@
     {
         "provider": "youtube",
         "title": "Youtube",
-        "description": "Hier finden Sie ein eingebettetes Youtube-Video, das Daten über dich sammeln und an Drittplattformen übermitteln kann. Tippe auf **Eingebetteten Inhalt laden** um das Video anzuzeigen, oder lies die [Datenschutzhinweise von Google](https://policies.google.com/?hl=en) um mehr zu erfahren."
+        "description": "Hier finden Sie ein eingebettetes Youtube-Video, das Daten über Sie sammeln und an Dritte übermitteln kann. Tippen Sie auf **Eingebetteten Inhalt laden** um das Video anzuzeigen, oder lesen Sie die [Datenschutzhinweise von Google](https://policies.google.com/?hl=en) um mehr zu erfahren."
     },
     {
         "provider": "vimeo",
@@ -12,10 +12,10 @@
     {
         "provider": "spotify",
         "title": "Spotify",
-        "description": "Hier findest du einen eingebetteten Inhalt von Spotify, der Daten über dich sammeln und an Drittplattformen übermitteln kann. Tippe auf <strong>Eingebetteten Inhalt laden</strong> um diesen Inhalt anzuzeigen, oder lies <a href='https://www.spotify.com/us/privacy'>die Datenschutzhinweise von Spotify</a> um mehr zu erfahren."
+        "description": "Hier finden Sie einen eingebetteten Inhalt von Spotify, der Daten über Sie sammeln und an Dritte übermitteln kann. Tippen Sie auf **Eingebetteten Inhalt laden** um diesen Inhalt anzuzeigen, oder lesen Sie [die Datenschutzhinweise von Spotify](https://www.spotify.com/us/privacy) um mehr zu erfahren."
     },
     {
         "provider": "default",
-        "description": "Hier findest du einen externen Inhalt, der personenbezogene Daten sammeln und an Drittplattformen übermitteln kann. Tippe auf <strong>Eingebetteten Inhalt laden</strong> um diesen Inhalt anzuzeigen."
+        "description": "Hier finden Sie einen externen Inhalt, der Daten über Sie sammeln und an Dritte übermitteln kann. Tippen Sie auf **Eingebetteten Inhalt laden** um diesen Inhalt anzuzeigen."
     }
 ]

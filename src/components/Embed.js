@@ -4,7 +4,7 @@ import MarkdownRenderer from "react-markdown-renderer";
 import * as styles from "./Embed.module.scss";
 import { EmbedChoicesContext } from "../context/EmbedChoicesContext";
 
-function Embed({ src, caption, title, provider, width, height }) {
+function Embed({ url, caption, title, provider, width, height }) {
   const data = useStaticQuery(graphql`
     query {
       providers: allEmbedProvidersJson {
@@ -19,6 +19,7 @@ function Embed({ src, caption, title, provider, width, height }) {
   const { embedChoices, setEmbedChoices } = useContext(EmbedChoicesContext);
   const [rememberChoiceActive, setRememberChoiceActive] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  if (!provider) provider = "default";
 
   let providerData = null;
   data.providers.nodes.forEach((p) => {
@@ -43,6 +44,7 @@ function Embed({ src, caption, title, provider, width, height }) {
         return newChoices;
       });
     }
+    setIsActive(true);
     setRememberChoiceActive();
   }
   function toggleRememberChoice() {
@@ -58,17 +60,19 @@ function Embed({ src, caption, title, provider, width, height }) {
             <button className={styles.button} onClick={handleLoadClick}>
               Eingebetteten Inhalt laden
             </button>
-            <label htmlFor={`embed-choice-${baseId}`}>
-              Entscheidung speichern
-              <input
-                type="checkbox"
-                id={`embed-choice-${baseId}`}
-                checked={rememberChoiceActive}
-                onChange={(e) => {
-                  toggleRememberChoice();
-                }}
-              />
-            </label>
+            {provider !== "default" && (
+              <label htmlFor={`embed-choice-${baseId}`}>
+                Entscheidung speichern
+                <input
+                  type="checkbox"
+                  id={`embed-choice-${baseId}`}
+                  checked={rememberChoiceActive}
+                  onChange={(e) => {
+                    toggleRememberChoice();
+                  }}
+                />
+              </label>
+            )}
           </div>
         </div>
       )}
@@ -77,7 +81,7 @@ function Embed({ src, caption, title, provider, width, height }) {
           <div className={styles.iframeContainer} style={embedStyles}>
             <iframe
               title={title}
-              src={src}
+              src={url}
               frameBorder="0"
               allowFullScreen
               loading="lazy"
@@ -97,7 +101,7 @@ function Vimeo({ url, width, height, caption }) {
   if (matches && matches[1]) {
     src = `https://player.vimeo.com/video/${matches[1]}?h=0e92d36ba9&title=0&byline=0&portrait=0`;
   }
-  return <Embed provider="vimeo" width={width} height={height} src={src} caption={caption} />;
+  return <Embed provider="vimeo" width={width} height={height} url={src} caption={caption} />;
 }
 
 function Youtube({ url, title, caption, width, height }) {
@@ -107,11 +111,11 @@ function Youtube({ url, title, caption, width, height }) {
       width={width}
       height={height}
       title={title}
-      src={`https://www.youtube-nocookie.com/embed/${matches[1]}`}
+      url={`https://www.youtube-nocookie.com/embed/${matches[1]}`}
       caption={caption}
       provider="youtube"
     />
   );
 }
 
-export { Vimeo, Youtube };
+export { Vimeo, Youtube, Embed };
