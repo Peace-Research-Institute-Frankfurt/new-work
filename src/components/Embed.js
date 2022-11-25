@@ -1,4 +1,4 @@
-import React, { useContext, useId, useState } from "react";
+import React, { useContext, useEffect, useId, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import MarkdownRenderer from "react-markdown-renderer";
 import * as styles from "./Embed.module.scss";
@@ -15,14 +15,10 @@ function Embed({ src, caption, title, provider, width, height }) {
       }
     }
   `);
-  const { embedChoices, toggleEmbedChoice } = useContext(EmbedChoicesContext);
-  const [temporaryActive, setTemporaryActive] = useState(false);
-  let isActive = false;
-  if (embedChoices[provider] === true) {
-    isActive = true;
-  }
-
   const baseId = useId();
+  const { embedChoices, setEmbedChoices } = useContext(EmbedChoicesContext);
+  const [rememberChoiceActive, setRememberChoiceActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   let providerData = null;
   data.providers.nodes.forEach((p) => {
@@ -31,12 +27,26 @@ function Embed({ src, caption, title, provider, width, height }) {
     }
   });
 
+  useEffect(() => {
+    setIsActive(embedChoices[provider] || false);
+  }, [embedChoices, provider]);
+
   const embedStyles = {
     paddingTop: `${(height / width) * 100}%`,
   };
 
   function handleLoadClick() {
-    setTemporaryActive(true);
+    if (rememberChoiceActive) {
+      setEmbedChoices((prev) => {
+        let newChoices = { ...prev };
+        newChoices[provider] = true;
+        return newChoices;
+      });
+    }
+    setRememberChoiceActive();
+  }
+  function toggleRememberChoice() {
+    setRememberChoiceActive((prev) => !prev);
   }
 
   return (
@@ -49,13 +59,13 @@ function Embed({ src, caption, title, provider, width, height }) {
               Eingebetteten Inhalt laden
             </button>
             <label htmlFor={`embed-choice-${baseId}`}>
-              Entscheidung speichern?
+              Entscheidung speichern
               <input
                 type="checkbox"
                 id={`embed-choice-${baseId}`}
-                checked={isActive}
+                checked={rememberChoiceActive}
                 onChange={(e) => {
-                  toggleEmbedChoice(provider);
+                  toggleRememberChoice();
                 }}
               />
             </label>
