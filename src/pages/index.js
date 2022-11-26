@@ -24,6 +24,7 @@ export const query = graphql`
           frontmatter {
             title
             order
+            intro
             authors {
               frontmatter {
                 name
@@ -68,10 +69,9 @@ const Index = ({ data }) => {
     return (
       <li key={`post-${i}`}>
         <Link className={styles.postsItem} to={node.childMdx.fields.slug}>
-          <h2 className={styles.postsTitle}>
-            {fm.order}. {fm.title}
-          </h2>
+          <h2 className={styles.postsTitle}>{fm.order}. {fm.title}</h2>
           <ul className={styles.postsAuthors}>{byline}</ul>
+          <p className={styles.postsIntro}>{fm.intro}</p>
         </Link>
       </li>
     );
@@ -106,9 +106,9 @@ const Index = ({ data }) => {
           src="../images/leibniz-head.png"
           alt=""
         />
-        <Link to="#1" className={styles.sticker}>
+        <a href="https://www.leibniz-gemeinschaft.de/" className={styles.sticker}>
           <LeibnizLogo />
-        </Link>
+        </a>
       </header>
       <section className={styles.content}>
         <ol className={styles.posts}>{posts}</ol>

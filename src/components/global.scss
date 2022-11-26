@@ -30,6 +30,11 @@ button {
   letter-spacing: inherit;
 }
 
+:focus-visible {
+  outline-offset: 0px;
+  outline: 5px solid rgb(0, 81, 255);
+}
+
 ::selection {
   background-color: black;
   color: white;

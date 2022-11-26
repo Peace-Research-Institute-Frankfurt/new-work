@@ -7,8 +7,9 @@
   position: relative;
   background: linear-gradient(to bottom, rgb(255, 152, 26) 55%, transparent 70%);
   margin-bottom: 1rem;
+  position: relative;
   @include bp(m) {
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
   }
 }
 .title {
@@ -174,16 +175,24 @@
 .posts {
   list-style: none;
   border-radius: var(--br);
-  max-width: 90rem;
   margin: 0 auto;
+  display: grid;
+  mix-blend-mode: multiply;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
   @include bp(m) {
     border: 1px solid var(--gray);
   }
   li {
     display: flex;
     border-bottom: 1px dotted var(--black);
+    grid-column: span 2;
     @include bp(m) {
+      grid-column: span 1;
       border-bottom: 1px solid var(--gray);
+      &:nth-child(2n-1) {
+        border-right: 1px solid var(--gray);
+      }
     }
     &:last-child {
       border-bottom: 0;
@@ -196,18 +205,29 @@
   width: 100%;
   display: flex;
   position: relative;
-  justify-content: space-between;
   font-family: var(--haas-text);
-  align-items: center;
-  padding: 0.35rem 0;
-  padding-right: 3rem;
+  padding: 0.5rem 0;
+  padding-right: 3.5rem;
+  flex-flow: column;
+  align-items: flex-start;
   @include bp(m) {
     padding: 1rem;
-    padding-right: 6rem;
+    padding-right: 4rem;
+  }
+  @include bp(l) {
+    padding: 1.5rem;
+    padding-right: 4rem;
   }
   &:hover,
   &:focus-visible {
     background-color: var(--gray-light);
+    .posts-title {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      @include bp(l){
+        text-decoration-thickness: 2px;
+      }
+    }
   }
 }
 
@@ -224,7 +244,6 @@
   }
   @include bp(m) {
     hyphens: none;
-    font-size: var(--ms-6);
     line-height: 0.9;
   }
   @include bp(l) {
@@ -239,19 +258,28 @@
   @extend %caption;
 }
 
+.posts-intro {
+  font-family: var(--suisse);
+  font-size: var(--ms-1);
+  padding-top: 0.15rem;
+  @include bp(m) {
+    padding-top: 0.5rem;
+  }
+}
+
 .byline-image {
   filter: drop-shadow(2px 2px 2px rgba(black, 0.3));
-  right: 0.5remrem;
+  right: 0.5rem;
   top: 0.5rem;
   transform-origin: center;
   width: 3rem;
   z-index: 1000;
   position: absolute !important;
   @include bp(m) {
-    width: 4.5rem;
+    width: 4rem;
   }
   @include bp(l) {
-    width: 6rem;
+    width: 4.5rem;
   }
 }
 

@@ -16,10 +16,13 @@
   a {
     text-underline-offset: 0.15em;
     text-decoration-color: var(--gray);
+    &:hover, &:focus-visible {
+      text-decoration-color: var(--black);
+    }
   }
   ul {
     display: flex;
-    gap: 0.4em;
+    gap: 0.65em;
     list-style: none;
   }
 }
