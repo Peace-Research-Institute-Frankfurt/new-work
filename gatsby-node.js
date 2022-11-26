@@ -1,4 +1,6 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const slug = require("slug");
+slug.extend({ "—": "-", "–": "-" });
 
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
@@ -9,6 +11,9 @@ exports.createPages = async function ({ actions, graphql }) {
           childMdx {
             fields {
               slug
+            }
+            frontmatter {
+              title
             }
             internal {
               contentFilePath
@@ -23,6 +28,9 @@ exports.createPages = async function ({ actions, graphql }) {
             fields {
               slug
             }
+            frontmatter {
+              title
+            }
             internal {
               contentFilePath
             }
@@ -34,16 +42,18 @@ exports.createPages = async function ({ actions, graphql }) {
 
   data.posts.nodes.forEach((node) => {
     const postTemplate = require.resolve(`./src/components/Post.js`);
+    const path = node.childMdx.fields.slug;
     actions.createPage({
-      path: node.childMdx.fields.slug,
+      path: path,
       component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
       context: { id: node.id },
     });
   });
   data.pages.nodes.forEach((node) => {
     const postTemplate = require.resolve(`./src/components/Page.js`);
+    const path = node.childMdx.fields.slug;
     actions.createPage({
-      path: node.childMdx.fields.slug,
+      path: path,
       component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
       context: { id: node.id },
     });
@@ -64,10 +74,15 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNode }) => {
     });
   }
   if (node.internal.type === "Mdx") {
+    let path = createFilePath({ node, getNode });
+    if (node.frontmatter.title) {
+      path = slug(node.frontmatter.title);
+    }
+    console.log(`/${path}`);
     actions.createNodeField({
       node,
       name: "slug",
-      value: createFilePath({ node, getNode }),
+      value: path,
     });
   }
 };
