@@ -40,7 +40,7 @@ export default function Footer() {
             {data.pages.nodes.map((p) => {
               return (
                 <li key={`navitem-${p.id}`}>
-                  <Link to={p.childMdx.fields.slug}>{p.childMdx.frontmatter.title}</Link>
+                  <Link to={`../${p.childMdx.fields.slug}`}>{p.childMdx.frontmatter.title}</Link>
                 </li>
               );
             })}
