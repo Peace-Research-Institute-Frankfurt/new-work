@@ -23,7 +23,7 @@
 }
 
 :root {
-  --gray: rgb(98, 98, 98);
+  --gray: rgb(80, 80, 80);
   --gray-light: rgb(244, 241, 241);
   --orange: #ff9720;
   --orange-light: #feeedc;
@@ -115,6 +115,18 @@
       top: -0.05em;
       content: "→";
       font-weight: 200;
+    }
+  }
+  sup {
+    font-size: var(--ms--1);
+    vertical-align: baseline;
+    position: relative;
+    display: inline-block;
+    top: -.4em;
+    font-weight: 600;
+    font-feature-settings: "tnum" 1;
+    a {
+      text-decoration: none;
     }
   }
   h2 {

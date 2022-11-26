@@ -78,7 +78,6 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNode }) => {
     if (node.frontmatter.title) {
       path = slug(node.frontmatter.title);
     }
-    console.log(`/${path}`);
     actions.createNodeField({
       node,
       name: "slug",

@@ -9,6 +9,32 @@
   * {
     grid-column: 2/3;
   }
+  :global(.footnotes) {
+    margin-top: 2rem;
+    font-size: var(--ms-0);
+    color: var(--gray);
+    counter-reset: fn;
+    h2 {
+      display: none;
+    }
+    ol {
+      @include bp(m) {
+        columns: 2;
+      }
+    }
+    li {
+      display: inline-block;
+      counter-increment: fn;
+      padding-left: 1.5em;
+      position: relative;
+      margin-bottom: .5em;
+      &:before {
+        position: absolute;
+        left: 0;
+        content: counter(fn);
+      }
+    }
+  }
 }
 
 .image {

@@ -65,7 +65,7 @@ module.exports = {
           // remarkPlugins: [require("remark-gfm")],
           // rehypePlugins: [wrapESMPlugin("rehype-slug")],
         },
-        // gatsbyRemarkPlugins: ["gatsby-remark-smartypants", "gatsby-plugin-remark-footnotes"],
+        gatsbyRemarkPlugins: ["gatsby-remark-smartypants", "gatsby-plugin-remark-footnotes"],
       },
     },
     {
