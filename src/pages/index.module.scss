@@ -224,9 +224,6 @@
     .posts-title {
       text-decoration: underline;
       text-decoration-thickness: 1px;
-      @include bp(l){
-        text-decoration-thickness: 2px;
-      }
     }
   }
 }
