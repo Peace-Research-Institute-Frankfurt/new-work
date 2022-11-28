@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    title: `Work New (Eine Anleitung)`,
+    title: `Work New @Leibniz`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
