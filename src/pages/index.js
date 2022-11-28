@@ -93,9 +93,9 @@ const Index = ({ data }) => {
             </span>
           </div>
           <div className={styles.tagline}>
-            <p>Wie man Räume, Kulturen und Netzwerke für eine neue Generation gestaltet</p>
+            <p>Wie man Räume, Kulturen und Netzwerke für die Zukunft gestaltet</p>
           </div>
-          <span className={styles.titleSecondary}>Eine Anleitung</span>
+          <span className={styles.titleSecondary}><span className={styles.at}>@</span>Leibniz</span>
         </h1>
         <StaticImage
           imgStyle={{ objectFit: "contain" }}

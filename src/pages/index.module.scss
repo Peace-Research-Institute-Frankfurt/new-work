@@ -80,29 +80,38 @@
 
 .title-secondary {
   flex-grow: 1;
-  display: flex;
-  flex-flow: column;
-  justify-content: flex-end;
   text-align: center;
   width: 100%;
-  letter-spacing: -0.07em;
-  font-weight: 300;
-  margin-bottom: 0.15em;
-  font-size: 23.5vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  letter-spacing: -0.06em;
+  font-weight: 100;
+  font-size: 40vw;
   line-height: 0.8;
+  margin-bottom: 0.1em;
+  margin-left: -0.08em;
   @include bp(s) {
+    font-family: var(--haas-text);
     white-space: nowrap;
-    font-size: 26vw;
-    letter-spacing: -0.078em;
-    margin-bottom: 0.05em;
-    margin-left: -0.075em;
+    letter-spacing: -0.1em;
+    margin-bottom: 0.1em;
+    font-size: 30vw;
+    font-weight: 100;
+    margin-left: -0.15em;
   }
   @include bp(l) {
-    font-weight: 200;
+    font-weight: 100;
     order: 3;
-    font-size: 27.5vw;
-    margin-left: -0.075em;
-    letter-spacing: -0.082em;
+  }
+  .at {
+    position: relative;
+    top: -0.125em;
+    font-size: .9em;
+    @include bp(m) {
+      font-size: 1em;
+      margin-right: 0.01em;
+    }
   }
 }
 
@@ -121,12 +130,13 @@
   text-underline-offset: 0.1em;
   font-size: var(--ms-3);
   text-decoration-thickness: 1px;
-  max-width: 16em;
+  max-width: 18em;
   @include bp(s) {
-    max-width: 20em;
+    max-width: 22em;
     letter-spacing: -0.075em;
     font-size: var(--ms-5);
     text-decoration-thickness: 2px;
+    padding-bottom: .5em;
   }
   @include bp(l) {
     max-width: 15em;
@@ -160,16 +170,16 @@
   width: 95%;
   filter: drop-shadow(30px 40px 7px var(--shadow));
   @include bp(xs) {
-    transform: translateX(-50%) translateY(-50%);
-    height: 65vh;
+    transform: translateX(-50%) translateY(-55%);
+    height: 60vh;
   }
   @include bp(m) {
     transform: translateX(-50%) translateY(-55%);
     filter: drop-shadow(40px 50px 10px var(--shadow));
   }
   @include bp(l) {
-    transform: translateX(-50%) translateY(-47.5%);
-    height: 72.5vh;
+    transform: translateX(-50%) translateY(-55%);
+    height: 60vh;
   }
 }
 
@@ -278,7 +288,7 @@
   position: absolute !important;
   top: 0.25rem;
   @include bp(s) {
-    width: 3rem
+    width: 3rem;
   }
   @include bp(m) {
     top: 0.5rem;
