@@ -93,7 +93,7 @@ const Index = ({ data }) => {
             </span>
           </div>
           <div className={styles.tagline}>
-            <p>Wie man Räume, Kulturen und Netzwerke für die Zukunft gestaltet</p>
+            <p>Wie wir Räume, Kulturen und Netzwerke für die Zukunft gestalten</p>
           </div>
           <span className={styles.titleSecondary}><span className={styles.at}>@</span>Leibniz</span>
         </h1>
