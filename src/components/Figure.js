@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import * as styles from "./Figure.module.scss";
 
-export default function Figure(props) {
+export default function Figure({ caption, credit, size, alt, ...props }) {
   const data = useStaticQuery(graphql`
     query ImageQuery {
       licenses: allLicensesJson {
@@ -38,7 +38,7 @@ export default function Figure(props) {
   // Let's find our license
   let license = null;
   data.licenses.nodes.forEach((l) => {
-    if (l.license_id === props.license) {
+    if (l.license_id === license) {
       license = l;
     }
   });
@@ -47,26 +47,26 @@ export default function Figure(props) {
 
   if (image) {
     if (image.extension === "svg") {
-      imageEl = <img className={styles.image} alt={props.alt} src={image.publicURL} />;
+      imageEl = <img className={styles.image} alt={alt} src={image.publicURL} />;
     } else {
-      imageEl = <GatsbyImage className={styles.image} image={getImage(image)} alt={props.alt}/>;
+      imageEl = <GatsbyImage className={styles.image} image={getImage(image)} alt={props.alt} />;
     }
   }
 
   return (
-    <figure className={[styles[props.size], styles.container].join(" ")}>
+    <figure className={[styles[size], styles.container].join(" ")}>
       {imageEl}
-      <figcaption className={styles.caption}>
-        <span>{props.caption}</span>
-        <span className={styles.credit}>
-          <>{props.credit}</>
+      {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
+      {credit && (
+        <figcaption className={styles.credit}>
+          <>{credit}</>
           {license && (
             <>
               {","} <a href={license.url}>{license.title}</a>
             </>
           )}
-        </span>
-      </figcaption>
+        </figcaption>
+      )}
     </figure>
   );
 }
