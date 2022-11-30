@@ -73,7 +73,7 @@ const Post = ({ data, children }) => {
   const heroImage = (
     <div className={styles.image}>
       <GatsbyImage image={getImage(frontmatter.hero_image)} alt={frontmatter.hero_alt} />
-      <p className={styles.credit}>Bild: {frontmatter.hero_credit}</p>
+      {frontmatter.hero_credit && <p className={styles.credit}>Bild: {frontmatter.hero_credit}</p>}
     </div>
   );
 

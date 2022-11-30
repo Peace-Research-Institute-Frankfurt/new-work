@@ -27,7 +27,7 @@ export default function PostMeta({ authors, readingTime }) {
   return (
     <div className={styles.container}>
       <ul className={styles.bylines}>{bylines}</ul>
-      <span>{readingTime} Minuten</span>
+      {readingTime && <span>{readingTime} Minuten</span>}
     </div>
   );
 }

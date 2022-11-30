@@ -31,7 +31,7 @@ export default function Figure(props) {
   // Let's find our image
   let image = null;
   data.images.nodes.forEach((img) => {
-    if (img.base === props.src) {
+    if (img.base.toLowerCase() === props.src.toLowerCase()) {
       image = img;
     }
   });
@@ -43,7 +43,7 @@ export default function Figure(props) {
     }
   });
 
-  let imageEl = <>Image not found (${props.src})</>;
+  let imageEl = <>Image not found ({props.src})</>;
 
   if (image) {
     if (image.extension === "svg") {
