@@ -18,6 +18,7 @@
 }
 
 .credit {
+  @extend %caption;
   color: var(--gray);
   display: block;
 }
