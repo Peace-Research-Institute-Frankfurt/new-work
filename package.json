@@ -5,11 +5,11 @@
   "description": "new-work",
   "author": "Max Kohler",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
     "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "start": "gatsby develop"
   },
   "dependencies": {
     "@mdx-js/react": "^2.1.5",
