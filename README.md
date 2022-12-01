@@ -50,8 +50,8 @@ Federica Dall’Arche is a policy advisor to the Italian Presidency of the Counc
 - `name` **(Required)**
 - `author_id` **(Required)**: This is a unique string that's used to refer to authors in other places.
 - `institution`: Organisation or company the author is affiliated with
-- `image`
-- `image_alt`
+- `image`: Path for the author's profile image. The file has to be stored in `/content/authos/assets/`
+- `image_alt`: Alternative text for the author's profile image
 
 ### `/data`
 
@@ -78,7 +78,7 @@ authors:
 ---
 ```
 
-- Authors **(Required):** List of one or more `author_id` defined in `/content/authors/`.
+- Authors: List of one or more `author_id`s defined in `/content/authors/`.
 
 ## Components
 
@@ -86,7 +86,7 @@ When you write posts you can embed different components to make things more inte
 
 ### Figure
 
-Display an image.
+Display an image. Both raster images (JPG, PNG) and vector images (SVG) are supported.
 
 ```jsx
 <Figure
@@ -158,7 +158,7 @@ Wrap multiple `<Details>` components in a `<DetailsGroup>` component to display 
 
 ### File
 
-Display a downloadable file. Filetype and file size are rendered automatically.
+Display a downloadable file.
 
 ```jsx
 <File file="lounge.jpg" title="Presentation.pdf" />
@@ -167,4 +167,4 @@ Display a downloadable file. Filetype and file size are rendered automatically.
 #### Parameters
 
 - `file` (Required): Name of a file in the `/assets` folder.
-- `title` (Optional): Title to be displayed to the user. If none is supplied, the filename is used instead.
+- `title` (Optional): Title to be displayed to the user. If none is supplied, the filename is used.
