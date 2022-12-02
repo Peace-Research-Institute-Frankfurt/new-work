@@ -42,6 +42,8 @@
   border-radius: var(--br);
   font-size: var(--ms-0);
   line-height: 1.5;
+  background: white;
+  box-shadow: 0 1px 3px -2px rgba(black, .2);
   @include bp(m) {
     padding: 0.25rem 0.65rem;
     padding-bottom: 0.35rem;
