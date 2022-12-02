@@ -19,12 +19,12 @@
 
 .credit {
   @extend %caption;
-  color: var(--gray);
+  color: var(--gray-dark);
   display: block;
 }
 
 .container {
-  margin-top: calc(var(--ms-1) *    0.75);
+  margin-top: calc(var(--ms-1) * 0.75);
   margin-bottom: calc(var(--ms-1) * 0.75);
 }
 
@@ -58,6 +58,9 @@
   flex-flow: column;
   align-items: center;
   max-width: 100%;
+  .image {
+    margin-bottom: 1rem;
+  }
   @include bp(m) {
     margin-top: calc(var(--ms-1) * 1.5);
     margin-bottom: calc(var(--ms-1) * 1.5);
