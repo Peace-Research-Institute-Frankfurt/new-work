@@ -49,7 +49,7 @@ export default function Figure({ caption, credit, size, alt, ...props }) {
     if (image.extension === "svg") {
       imageEl = <img className={styles.image} alt={alt} src={image.publicURL} />;
     } else {
-      imageEl = <GatsbyImage className={styles.image} image={getImage(image)} alt={props.alt} />;
+      imageEl = <GatsbyImage className={styles.image} image={getImage(image)} alt={alt} />;
     }
   }
 
