@@ -25,7 +25,7 @@ export default function StickyHeader({ chapterIndex, title, next, prev }) {
             layout="constrained"
             className={styles.face}
             src="../images/leibniz-head.png"
-            alt="logo"
+            alt="New Work Logo"
           />
           New Work (Eine Anleitung)
         </Link>
