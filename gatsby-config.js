@@ -72,8 +72,14 @@ module.exports = {
       resolve: "gatsby-omni-font-loader",
       options: {
         mode: "async",
-        enableListener: false,
+        enableListener: true,
         preconnect: ["https://use.typekit.net"],
+        custom: [
+          {
+            name: ["Suisse"],
+            file: "/fonts/suisse.css",
+          },
+        ],
         web: [
           {
             name: "haas",

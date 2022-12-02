@@ -32,7 +32,7 @@
   --black: rgba(0, 0, 0, 1);
   --haas-display: "acumin-pro-condensed", serif;
   --haas-text: "acumin-pro", sans-serif;
-  --suisse: "Suisse Neue", Georgia, serif;
+  --suisse: "Suisse", sans-serif, serif;
   --ratio: 1.2; // Minor 3
   --ms-0: clamp(0.9rem, calc(1.4vw + 0.1rem), 1.05rem);
   --ms--2: calc(var(--ms--1) / var(--ratio));
@@ -73,6 +73,7 @@
   line-height: 1.375;
   letter-spacing: -0.012em;
   hyphens: auto;
+  font-weight: 500;
   p,
   ul,
   ol {
@@ -190,6 +191,7 @@
   font-size: var(--ms-2);
   letter-spacing: -0.045em;
   line-height: 1.2;
+  font-weight: 200;
   hyphens: auto;
   @include bp(s) {
     font-size: var(--ms-3);

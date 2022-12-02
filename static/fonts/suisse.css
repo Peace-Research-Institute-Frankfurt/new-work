@@ -1,0 +1,57 @@
+
+@font-face {
+    font-family: "Suisse";
+    src: url(./SuisseNeue-Light-WebS.woff) format("woff");
+    font-weight: 200;
+    font-style: ;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Suisse";
+    src: url(./SuisseNeue-Light-WebS.woff2) format("woff2");
+    font-weight: 200;
+    font-style: ;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Suisse";
+    src: url(./SuisseNeue-LightItalic-WebS.woff) format("woff");
+    font-weight: 200;
+    font-style: Italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Suisse";
+    src: url(./SuisseNeue-LightItalic-WebS.woff2) format("woff2");
+    font-weight: 200;
+    font-style: Italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Suisse";
+    src: url(./SuisseNeue-Regular-WebS.woff) format("woff");
+    font-weight: 400;
+    font-style: ;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Suisse";
+    src: url(./SuisseNeue-Regular-WebS.woff2) format("woff2");
+    font-weight: 400;
+    font-style: ;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Suisse";
+    src: url(./SuisseNeue-RegularItalic-WebS.woff) format("woff");
+    font-weight: 400;
+    font-style: Italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Suisse";
+    src: url(./SuisseNeue-RegularItalic-WebS.woff2) format("woff2");
+    font-weight: 400;
+    font-style: Italic;
+    font-display: swap;
+}
