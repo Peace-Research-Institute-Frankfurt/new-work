@@ -25,7 +25,6 @@
   border-bottom: 1px solid var(--gray);
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
   &:hover,
   &:focus-visible {
     background: var(--gray-light);
@@ -34,8 +33,4 @@
   &:before {
     display: none;
   }
-}
-
-.checkbox {
-  width: 1.4rem;
 }

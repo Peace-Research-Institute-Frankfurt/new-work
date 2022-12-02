@@ -32,7 +32,7 @@ button {
 
 :focus-visible {
   outline-offset: 0px;
-  outline: 5px solid rgb(0, 81, 255);
+  outline: 5px solid var(--focus-color);
 }
 
 ::selection {

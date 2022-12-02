@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useId, useState } from "react";
+import React, { useContext } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import MarkdownRenderer from "react-markdown-renderer";
 import * as styles from "./Embed.module.scss";
 import { EmbedChoicesContext } from "../context/EmbedChoicesContext";
+import Toggle from "./Toggle";
 
 function Embed({ url, caption, title, provider, width, height }) {
   const data = useStaticQuery(graphql`
@@ -11,14 +12,12 @@ function Embed({ url, caption, title, provider, width, height }) {
         nodes {
           description
           provider
+          title
         }
       }
     }
   `);
-  const baseId = useId();
   const { embedChoices, setEmbedChoices } = useContext(EmbedChoicesContext);
-  const [rememberChoiceActive, setRememberChoiceActive] = useState(false);
-  const [isActive, setIsActive] = useState(false);
   if (!provider) provider = "default";
 
   let providerData = null;
@@ -28,27 +27,20 @@ function Embed({ url, caption, title, provider, width, height }) {
     }
   });
 
-  useEffect(() => {
-    setIsActive(embedChoices[provider] || false);
-  }, [embedChoices, provider]);
+  const isActive = embedChoices[provider] || false;
 
   const embedStyles = {
     paddingTop: `${(height / width) * 100}%`,
   };
 
-  function handleLoadClick() {
-    if (rememberChoiceActive) {
+  function handleLoadClick(e) {
+    if (provider !== "default") {
       setEmbedChoices((prev) => {
         let newChoices = { ...prev };
-        newChoices[provider] = true;
+        newChoices[provider] = !newChoices[provider];
         return newChoices;
       });
     }
-    setIsActive(true);
-    setRememberChoiceActive();
-  }
-  function toggleRememberChoice() {
-    setRememberChoiceActive((prev) => !prev);
   }
 
   return (
@@ -57,22 +49,7 @@ function Embed({ url, caption, title, provider, width, height }) {
         <div className={styles.consent}>
           <MarkdownRenderer markdown={providerData.description} />
           <div className={styles.controls}>
-            <button className={styles.button} onClick={handleLoadClick}>
-              Eingebetteten Inhalt laden
-            </button>
-            {provider !== "default" && (
-              <label htmlFor={`embed-choice-${baseId}`}>
-                Entscheidung speichern
-                <input
-                  type="checkbox"
-                  id={`embed-choice-${baseId}`}
-                  checked={rememberChoiceActive}
-                  onChange={(e) => {
-                    toggleRememberChoice();
-                  }}
-                />
-              </label>
-            )}
+            <Toggle className={styles.button} checked={isActive} label={`${providerData.title}-Inhalte anzeigen`} onChange={handleLoadClick} />
           </div>
         </div>
       )}
@@ -88,7 +65,10 @@ function Embed({ url, caption, title, provider, width, height }) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
-          <figcaption className={styles.caption}>{caption}</figcaption>
+          <figcaption className={styles.caption}>
+            <div>{caption}</div>
+            <Toggle size="small" checked={isActive} label={`${providerData.title}-Inhalte anzeigen`} onChange={handleLoadClick} />
+          </figcaption>
         </>
       )}
     </figure>

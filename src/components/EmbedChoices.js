@@ -1,6 +1,7 @@
 import React, { useContext, useId } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { EmbedChoicesContext } from "../context/EmbedChoicesContext";
+import Toggle from "./Toggle";
 import * as styles from "./EmbedChoices.module.scss";
 
 export default function EmbedChoices() {
@@ -21,27 +22,22 @@ export default function EmbedChoices() {
   const handleChange = (e, provider) => {
     setEmbedChoices((prev) => {
       let newChoices = { ...prev };
-      newChoices[provider] = e.target.checked;
+      newChoices[provider] = !newChoices[provider];
       return newChoices;
     });
   };
 
   const providers = data.providers.nodes.map((p, i) => {
-    const inputId = `${baseId}-choice-${i}`;
     return (
       <li key={`${baseId}-${i}`}>
-        <label htmlFor={inputId} className={styles.choice}>
-          {p.title}
-          <input
-            className={styles.checkbox}
-            id={inputId}
-            type="checkbox"
-            checked={embedChoices[p.provider] || false}
-            onChange={(e) => {
-              handleChange(e, p.provider);
-            }}
-          />
-        </label>
+        <Toggle
+          label={p.title}
+          className={styles.choice}
+          checked={embedChoices[p.provider] || false}
+          onChange={(e) => {
+            handleChange(e, p.provider);
+          }}
+        />
       </li>
     );
   });
