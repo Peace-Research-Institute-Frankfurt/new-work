@@ -40,12 +40,14 @@
   padding-bottom: 0.35rem;
   margin-top: 1.5rem;
   border-radius: var(--br);
-  @include bp(m){
-    padding: 0.15rem 0.65rem;
-    padding-bottom: 0.25rem;
-
-  } 
-  &:hover, &:focus-within {
+  font-size: var(--ms-0);
+  @include bp(m) {
+    padding: 0.25rem 0.65rem;
+    padding-bottom: 0.35rem;
+    padding-right: .5rem;
+  }
+  &:hover,
+  &:focus-within {
     border-color: var(--black);
   }
 }
@@ -57,8 +59,8 @@
   justify-content: space-between;
   align-items: baseline;
   flex-flow: column;
-  gap: .2rem;
-  @include bp(m){
+  gap: 0.2rem;
+  @include bp(m) {
     flex-flow: row;
   }
 }
