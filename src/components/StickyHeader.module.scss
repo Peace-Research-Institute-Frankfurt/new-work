@@ -81,6 +81,62 @@
   }
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bookmarks-toggle {
+  border-radius: var(--br);
+  padding: 0em 0.4em;
+  padding-bottom: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: var(--gray-light);
+  &:hover,
+  &:focus-visible {
+    border: 1px solid var(--black);
+  }
+}
+
+.bookmarks-container {
+  position: absolute;
+  border: 1px solid var(--black);
+  background: white;
+  top: 3rem;
+  z-index: 100;
+  right: 3rem;
+  border-radius: var(--br);
+  box-shadow: 0px 2px 4px -1px rgba(black, 0.2);
+  &:before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    position: absolute;
+    right: 2.5rem;
+    top: 0;
+    background: white;
+    border-left: 1px solid var(--black);
+    border-top: 1px solid var(--black);
+    transform: translateY(-50%) rotate(45deg);
+  }
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: var(--fast);
+}
+
+.bookmarks-container-active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0px);
+}
+
 .pagination {
   font-family: var(--suisse);
   gap: 1rem;
@@ -88,6 +144,7 @@
   top: -0.1em;
   font-weight: 400;
   display: none;
+  margin-left: 0.5em;
   @include bp(m) {
     display: flex;
   }
@@ -102,6 +159,7 @@
   bottom: 0;
   display: flex;
   opacity: 0;
+  z-index: -100;
   transition: opacity var(--fast);
 }
 .progress-inner {

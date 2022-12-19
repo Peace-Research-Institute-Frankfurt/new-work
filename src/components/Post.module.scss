@@ -37,6 +37,10 @@
   }
 }
 
+.actions {
+  margin-bottom: .5rem;
+}
+
 .image {
   overflow: visible;
   @include bp(m) {

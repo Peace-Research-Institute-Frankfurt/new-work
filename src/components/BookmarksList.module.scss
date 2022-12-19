@@ -1,0 +1,58 @@
+@import "vars";
+.item {
+  max-width: 35rem;
+  text-align: left;
+  border-bottom: 1px dotted var(--black);
+  padding: 0.5rem 0.75rem;
+  list-style: none;
+  padding-right: 3.5rem;
+  position: relative;
+}
+
+.title {
+  font-weight: 800;
+  font-size: var(--ms-3);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.authors {
+  @extend %caption;
+}
+
+.remove {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.65rem;
+  font-size: 0;
+  cursor: pointer;
+  svg {
+    width: 1.25rem;
+  }
+  path {
+    fill: var(--gray);
+  }
+  &:hover,
+  &:focus-visible {
+    path {
+      fill: var(--black);
+    }
+  }
+}
+
+.actions {
+  padding: 0.5rem;
+  display: flex;
+  a {
+    border: 1px solid var(--black);
+    display: inline-flex;
+    padding: 0.2em 0.4em;
+    padding-bottom: .3em;
+    letter-spacing: .0em;
+    line-height: 1;
+    border-radius: var(--br);
+    &:hover, &:focus-visible {
+        background-color: var(--gray-light);
+    }
+  }
+}

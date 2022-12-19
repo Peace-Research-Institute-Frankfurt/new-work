@@ -7,6 +7,9 @@ import PostBody from "./PostBody";
 import PostHeader from "./PostHeader";
 import PostMeta from "./PostMeta";
 import Pagination from "./PostPagination";
+import BookmarkToggle from "./BookmarkToggle";
+import BookmarksList from "./BookmarksList";
+import useLocalStorage from "../hooks/useLocalStorage";
 import * as styles from "./Post.module.scss";
 
 export const query = graphql`
@@ -18,6 +21,9 @@ export const query = graphql`
     }
     post: file(id: { eq: $id }) {
       childMdx {
+        fields {
+          slug
+        }
         frontmatter {
           title
           intro
@@ -66,6 +72,8 @@ export const query = graphql`
 `;
 const Post = ({ data, children }) => {
   const frontmatter = data.post.childMdx.frontmatter;
+  const [bookmarks, setBookmarks] = useLocalStorage("bookmarks", []);
+
   const currentIndex = data.posts.nodes.findIndex((el) => {
     return el.childMdx.frontmatter.order === frontmatter.order;
   });
@@ -82,7 +90,14 @@ const Post = ({ data, children }) => {
 
   return (
     <App>
-      <StickyHeader title={frontmatter.title} chapterIndex={frontmatter.order} next={next} prev={previous} />
+      <StickyHeader
+        title={frontmatter.title}
+        chapterIndex={frontmatter.order}
+        next={next}
+        prev={previous}
+        bookmarks={bookmarks}
+        setBookmarks={setBookmarks}
+      />
       <article>
         <PostHeader
           meta={<PostMeta readingTime={frontmatter.reading_time} authors={frontmatter.authors} />}
@@ -93,6 +108,9 @@ const Post = ({ data, children }) => {
           color={frontmatter.color}
         />
         <div className={styles.body}>
+          <aside className={styles.actions}>
+            <BookmarkToggle post={data.post} bookmarks={bookmarks} setBookmarks={setBookmarks} />
+          </aside>
           <PostBody>{children}</PostBody>
           <Pagination next={next} previous={previous} />
         </div>
