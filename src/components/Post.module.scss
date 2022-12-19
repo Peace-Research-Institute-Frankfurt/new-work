@@ -38,7 +38,11 @@
 }
 
 .actions {
-  margin-bottom: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .75rem;
+  @include bp(m){
+    margin-bottom: 1rem;
+  }
 }
 
 .image {
@@ -60,12 +64,11 @@
   display: inline-block;
   padding-left: var(--padding);
   padding-top: 1em;
-  position: absolute;
-  bottom: -2em;
   left: 0;
   @include bp(m) {
     right: 0;
     padding: 0;
+    position: absolute;
     transform-origin: bottom right;
     bottom: 0;
     left: auto;

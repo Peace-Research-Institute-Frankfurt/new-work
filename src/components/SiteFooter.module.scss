@@ -4,8 +4,8 @@
   @extend %caption;
   display: flex;
   justify-content: space-between;
-  margin: var(--padding);
-  margin-top: 0;
+  margin: 0 var(--padding);
+  padding-bottom: 1rem;
   flex-flow: column;
   @include bp(s) {
     flex-flow: row;
@@ -22,7 +22,7 @@
     }
   }
   ul {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     display: flex;
     line-height: 1.5;
     list-style: none;

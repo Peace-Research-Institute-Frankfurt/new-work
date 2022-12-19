@@ -11,6 +11,9 @@
     padding: 0.5rem 0.75rem;
     padding-right: 3.5rem;
   }
+  &:hover, &:focus-visible {
+    background: var(--gray-light);
+  }
 }
 
 .title {
