@@ -74,11 +74,15 @@ export default function BookmarksList({ bookmarks, setBookmarks }) {
     );
   });
 
+  const emailTitle = `Work New @ Leibniz`;
+  const emailBody = posts.map((p) => `${p.childMdx.frontmatter.title} – https://leibniz-nw.netlify.app/${p.childMdx.fields.slug}`).join(`\n`);
+  const mailto = `mailto:?subject=${emailTitle}&body=${encodeURIComponent(emailBody + "\n\n")}`;
+
   return (
-    <aside className={styles.container}>
+    <aside>
       <ul>{bookmarksItems}</ul>
       <div className={styles.actions}>
-        <a href="#1">Per Email teilen</a>
+        <a href={mailto}>Per Email teilen</a>
       </div>
     </aside>
   );

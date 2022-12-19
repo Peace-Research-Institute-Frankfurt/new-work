@@ -4,7 +4,6 @@ import RemoveIcon from "../images/cross.svg";
 import * as styles from "./BookmarkToggle.module.scss";
 
 export default function BookmarkToggle({ post, bookmarks, setBookmarks }) {
-  const frontmatter = post.childMdx.frontmatter;
   const bookmarkIndex = bookmarks.findIndex((el) => {
     return el.slug === post.childMdx.fields.slug;
   });
@@ -25,12 +24,12 @@ export default function BookmarkToggle({ post, bookmarks, setBookmarks }) {
 
   const addInner = (
     <>
-      <span className={styles.label}>Als Favorit speichern</span> <AddIcon />
+      <span>Als Favorit speichern</span> <AddIcon />
     </>
   );
   const removeInner = (
     <>
-      <span className={styles.label}>Favorit löschen</span> <RemoveIcon />
+      <span>Favorit löschen</span> <RemoveIcon />
     </>
   );
 

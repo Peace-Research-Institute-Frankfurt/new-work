@@ -7,7 +7,7 @@ import * as styles from "./StickyHeader.module.scss";
 import Counter from "./Counter";
 
 export default function StickyHeader({ chapterIndex, title, next, prev, bookmarks, setBookmarks }) {
-  const [bookmarksActive, setBookmarksActive] = useState(false);
+  const [bookmarksActive, setBookmarksActive] = useState(true);
   const scrollPosition = useScrollPosition();
   const isScrolled = scrollPosition.y > 50;
   let scrollProgress = 0;
