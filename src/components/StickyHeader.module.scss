@@ -96,10 +96,10 @@
   gap: 0.25em;
   border: 1px solid transparent;
   cursor: pointer;
-  background: var(--gray-light);
+  border: 1px solid var(--black);
   &:hover,
   &:focus-visible {
-    border: 1px solid var(--black);
+    background: var(--gray-light);
   }
 }
 
