@@ -91,7 +91,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-
 }
 
 .bookmarks-toggle {
@@ -196,6 +195,9 @@
   opacity: 0;
   pointer-events: none;
   transition: var(--fast);
+  @include bp(m) {
+    display: none;
+  }
 }
 
 .backdrop-active {
