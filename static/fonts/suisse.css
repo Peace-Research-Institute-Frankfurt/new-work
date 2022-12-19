@@ -31,14 +31,14 @@
     font-family: "Suisse";
     src: url(./SuisseNeue-Regular-WebS.woff) format("woff");
     font-weight: 400;
-    font-style: ;
+    font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "Suisse";
     src: url(./SuisseNeue-Regular-WebS.woff2) format("woff2");
     font-weight: 400;
-    font-style: ;
+    font-style: normal;
     font-display: swap;
 }
 @font-face {
