@@ -45,8 +45,8 @@ export default function StickyHeader({ chapterIndex, title, next, prev, bookmark
             <BookmarksList bookmarks={bookmarks} setBookmarks={setBookmarks} />
           </div>
           <nav className={styles.pagination}>
-            {prev && <Link to={prev.childMdx.fields.slug}>←</Link>}
-            {next && <Link to={next.childMdx.fields.slug}>→</Link>}
+            {prev && <Link to={`/${prev.childMdx.fields.slug}`}>←</Link>}
+            {next && <Link to={`/${next.childMdx.fields.slug}`}>→</Link>}
           </nav>
         </div>
       </div>
