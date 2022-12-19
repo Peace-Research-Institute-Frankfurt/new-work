@@ -46,6 +46,7 @@
   @include bp(m) {
     margin-bottom: 1rem;
     position: relative;
+    max-width: calc(100% - 4rem);
     img {
       width: auto;
     }

@@ -1,14 +1,14 @@
 @import "vars";
 .title {
   font-family: var(--haas-text);
-  font-size: var(--ms-6);
+  font-size: var(--ms-7);
   line-height: 0.85;
   letter-spacing: -0.05em;
   font-weight: 800;
   max-width: 20em;
-  hyphens: auto;
+  hyphens: none;
   @include bp(xs) {
-    font-size: var(--ms-7);
+    font-size: var(--ms-8);
   }
   @include bp(m) {
     font-size: var(--ms-8);

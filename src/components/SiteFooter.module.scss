@@ -15,15 +15,18 @@
 .nav {
   a {
     text-underline-offset: 0.15em;
+    margin-right: .65em;
     text-decoration-color: var(--gray);
     &:hover, &:focus-visible {
       text-decoration-color: var(--black);
     }
   }
   ul {
+    margin-bottom: 1em;
     display: flex;
-    gap: 0.65em;
+    line-height: 1.5;
     list-style: none;
+    flex-wrap: wrap;
   }
 }
 

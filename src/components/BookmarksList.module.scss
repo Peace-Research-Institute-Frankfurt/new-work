@@ -3,17 +3,26 @@
   max-width: 35rem;
   text-align: left;
   border-bottom: 1px dotted var(--black);
-  padding: 0.5rem 0.75rem;
   list-style: none;
+  padding: .75rem;
   padding-right: 3.5rem;
   position: relative;
+  @include bp(m) {
+    padding: 0.5rem 0.75rem;
+    padding-right: 3.5rem;
+  }
 }
 
 .title {
-  font-weight: 800;
+  display: block;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  margin-bottom: 0.2rem;
   font-size: var(--ms-3);
-  letter-spacing: -0.02em;
-  line-height: 1;
+  font-weight: 700;
+  @include bp(m) {
+    font-weight: 800;
+  }
 }
 
 .authors {
@@ -47,12 +56,13 @@
     border: 1px solid var(--black);
     display: inline-flex;
     padding: 0.2em 0.4em;
-    padding-bottom: .3em;
-    letter-spacing: .0em;
+    padding-bottom: 0.3em;
+    letter-spacing: 0em;
     line-height: 1;
     border-radius: var(--br);
-    &:hover, &:focus-visible {
-        background-color: var(--gray-light);
+    &:hover,
+    &:focus-visible {
+      background-color: var(--gray-light);
     }
   }
 }
