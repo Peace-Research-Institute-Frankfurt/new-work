@@ -3,3 +3,5 @@ node_modules/
 public
 documentation/
 .env
+# Local Netlify folder
+.netlify

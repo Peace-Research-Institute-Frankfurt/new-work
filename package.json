@@ -1,3 +1,4 @@
+
 {
   "name": "new-work",
   "version": "1.0.0",
@@ -41,6 +42,12 @@
     "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "cheerio": "^1.0.0-rc.12",
+    "form-data": "^4.0.0",
+    "handlebars": "^4.7.7",
+    "mailgun.js": "^8.0.6",
+    "postmark": "^3.0.15",
     "webpack": "^5.75.0"
   }
 }
