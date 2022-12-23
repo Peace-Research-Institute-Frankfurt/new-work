@@ -1,0 +1,26 @@
+@import "vars";
+.container {
+  border: 1px solid var(--gray);
+  display: inline-flex;
+  font-family: var(--haas-text);
+  padding: 0.35em 0.5em;
+  padding-bottom: .4em;
+  letter-spacing: 0;
+  line-height: 1;
+  cursor: pointer;
+  align-items: center;
+  font-size: var(--ms-1);
+  border-radius: var(--br);
+  background: white;
+  box-shadow: 0 2px 2px 0px rgba(black, .05);
+  &:hover,
+  &:focus-visible {
+    border-color: var(--black);
+  }
+  svg {
+    height: 1.2em;
+    margin-left: .125em;
+    position: relative;
+    top: .05em;
+  }
+}

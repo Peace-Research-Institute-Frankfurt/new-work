@@ -1,7 +1,7 @@
 @import "../components/vars";
 
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   padding-bottom: 1rem;
   position: relative;
@@ -96,7 +96,7 @@
     white-space: nowrap;
     letter-spacing: -0.1em;
     margin-bottom: 0.1em;
-    font-size: 30vw;
+    font-size: 25vw;
     font-weight: 100;
     margin-left: -0.15em;
   }

@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
+import EmailShareForm from "./EmailShareForm";
 import CrossIcon from "../images/cross.svg";
 import * as styles from "./BookmarksList.module.scss";
 
@@ -74,15 +75,11 @@ export default function BookmarksList({ bookmarks, setBookmarks }) {
     );
   });
 
-  const emailTitle = `Work New @ Leibniz`;
-  const emailBody = posts.map((p) => `${p.childMdx.frontmatter.title} – https://leibniz-nw.netlify.app/${p.childMdx.fields.slug}`).join(`\n`);
-  const mailto = `mailto:?subject=${emailTitle}&body=${encodeURIComponent(emailBody + "\n\n")}`;
-
   return (
     <aside>
       <ul>{bookmarksItems}</ul>
       <div className={styles.actions}>
-        <a href={mailto}>Per Email teilen</a>
+        <EmailShareForm posts={posts}/>
       </div>
     </aside>
   );

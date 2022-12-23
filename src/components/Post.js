@@ -8,7 +8,6 @@ import PostHeader from "./PostHeader";
 import PostMeta from "./PostMeta";
 import Pagination from "./PostPagination";
 import BookmarkToggle from "./BookmarkToggle";
-import BookmarksList from "./BookmarksList";
 import useLocalStorage from "../hooks/useLocalStorage";
 import * as styles from "./Post.module.scss";
 

@@ -8,15 +8,22 @@
   >
     <div
       style="
-        background-color: white;
+        background-color: pink;
         display: inline-block;
         text-align: center;
       "
     >
-      <h1>{{name}} has RSVP'd</h1>
-      <button style="border-radius: 10px;">
-        Visit dashboard
-      </button>
+      <h1>{{name}} hat {{postCount}} Artikel aus der Publikation "New Work" mit dir geteilt:</h1>
+      <ul>
+        {{#each posts}}
+        <li><a href="#1">
+          <em>
+            {{this}}
+            {{title}}
+        </em>
+        </a></li>
+        {{/each}}
+      </ul>
     </div>
   </body>
 </html>

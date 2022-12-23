@@ -101,7 +101,7 @@
   gap: 0.25em;
   border: 1px solid transparent;
   cursor: pointer;
-  border: 1px solid var(--black);
+  border: 1px solid var(--gray);
   font-size: var(--ms-0);
   @include bp(m) {
     font-size: var(--ms-1);
@@ -114,11 +114,7 @@
 
 .bookmarks-container {
   position: absolute;
-  border: 1px solid var(--black);
-  background: white;
   z-index: 100;
-  border-radius: var(--br);
-  box-shadow: 0px 2px 4px -1px rgba(black, 0.2);
   right: 0;
   top: 3.5rem;
   @include bp(m) {
@@ -148,6 +144,14 @@
   opacity: 1;
   pointer-events: all;
   transform: translateY(0px);
+}
+
+.bookmarks-container-inner {
+  overflow: hidden;
+  background: white;
+  border-radius: var(--br);
+  box-shadow: 0px 1px 4px 0 rgba(black, 0.1);
+  border: 1px solid var(--black);
 }
 
 .pagination {

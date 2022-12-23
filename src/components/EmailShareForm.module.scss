@@ -1,0 +1,49 @@
+@import "vars";
+
+.toggle {
+    display: flex;
+}
+
+.container {
+  text-align: left;
+  padding: 0.5rem;
+  display: none;
+  &.active {
+      display: block;
+  }
+}
+
+
+.section {
+  margin-bottom: 0.75rem;
+  label {
+    @extend %caption;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  input, textarea {
+    width: 100%;
+    display: block;
+    font-family: inherit;
+    border-radius: var(--br);
+    padding: 0.2em 0.5em;
+    padding-bottom: 0.3em;
+    line-height: 1;
+    border: 1px solid var(--gray);
+    background: white;
+    &:hover {
+      border: 1px solid var(--black);
+    }
+  }
+  textarea {
+    padding: .5em;
+    resize: vertical;
+  }
+}
+
+.submit {
+  padding-top: 0.35rem;
+  font-weight: bold;
+  display: flex;
+  gap: .5rem
+}

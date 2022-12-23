@@ -1,6 +1,7 @@
 import React from "react";
 import AddIcon from "../images/bookmark-add.svg";
 import RemoveIcon from "../images/cross.svg";
+import Button from "./Button.js"
 import * as styles from "./BookmarkToggle.module.scss";
 
 export default function BookmarkToggle({ post, bookmarks, setBookmarks }) {
@@ -34,8 +35,8 @@ export default function BookmarkToggle({ post, bookmarks, setBookmarks }) {
   );
 
   return (
-    <button className={styles.container} onClick={toggleBookmark}>
+    <Button onClick={toggleBookmark}>
       {bookmarkIndex === -1 ? addInner : removeInner}
-    </button>
+    </Button>
   );
 }

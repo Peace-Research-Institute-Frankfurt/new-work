@@ -20,7 +20,6 @@
   display: block;
   letter-spacing: -0.025em;
   line-height: 0.95;
-  margin-bottom: 0.2rem;
   font-size: var(--ms-3);
   font-weight: 700;
   @include bp(m) {
@@ -30,6 +29,7 @@
 
 .authors {
   @extend %caption;
+  padding-top: 0.35rem;
 }
 
 .remove {
@@ -53,19 +53,8 @@
 }
 
 .actions {
-  padding: 0.5rem;
+  padding: .5rem;
   display: flex;
-  a {
-    border: 1px solid var(--black);
-    display: inline-flex;
-    padding: 0.2em 0.4em;
-    padding-bottom: 0.3em;
-    letter-spacing: 0em;
-    line-height: 1;
-    border-radius: var(--br);
-    &:hover,
-    &:focus-visible {
-      background-color: var(--gray-light);
-    }
-  }
+  flex-flow: column;
+  background: var(--gray-light)
 }
