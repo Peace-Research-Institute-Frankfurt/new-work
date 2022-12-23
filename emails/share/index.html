@@ -8,18 +8,18 @@
   >
     <div
       style="
-        background-color: pink;
+        background-color: yellow;
         display: inline-block;
         text-align: center;
       "
     >
-      <h1>{{name}} hat {{postCount}} Artikel aus der Publikation "New Work" mit dir geteilt:</h1>
+      <h1>{{userEmail}} hat Artikel aus der Publikation "New Work" mit dir geteilt:</h1>
+      <p>{{message}}</p>
       <ul>
         {{#each posts}}
         <li><a href="#1">
           <em>
-            {{this}}
-            {{title}}
+            This is the post title
         </em>
         </a></li>
         {{/each}}

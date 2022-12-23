@@ -7,7 +7,7 @@ export default function EmailShareForm({ posts }) {
     posts = [];
   }
   const [isActive, setIsActive] = useState(true);
-  const [formData, setFormData] = useState({ userEmail: "", targetEmails: "" });
+  const [formData, setFormData] = useState({ userEmail: "", targetEmails: "", message: ""});
 
   function handleChange(e) {
     e.preventDefault();
@@ -21,7 +21,16 @@ export default function EmailShareForm({ posts }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(e);
+    console.log("Submitting email form")
+    fetch("/.netlify/functions/triggerShareEmail", {
+        method: "POST",
+        body: JSON.stringify({
+            userEmail: formData["userEmail"],
+            targetEmails: formData["targetEmails"].split(","),
+            message: formData["message"],
+            posts: posts
+        })
+    })
   }
   return (
     <>
