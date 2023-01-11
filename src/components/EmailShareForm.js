@@ -8,17 +8,20 @@ export default function EmailShareForm({ posts }) {
   }
   const [isActive, setIsActive] = useState(true);
   const [formData, setFormData] = useState({ userEmail: "", targetEmails: "", message: "" });
-  const flattenedPosts = posts.map((p) => {
-    return {
-      title: p.childMdx.frontmatter.title,
-      authors: p.childMdx.frontmatter.authors
-        .map((a) => {
-          return a.frontmatter.name;
-        })
-        .join(", "),
-      link: "http://www.example.com",
-    };
-  });
+  let flattenedPosts = [];
+  if (posts && posts.length > 0) {
+    flattenedPosts = posts.map((p) => {
+      return {
+        title: p.childMdx.frontmatter.title,
+        authors: p.childMdx.frontmatter.authors
+          .map((a) => {
+            return a.frontmatter.name;
+          })
+          .join(", "),
+        link: "http://www.example.com",
+      };
+    });
+  }
 
   function handleChange(e) {
     e.preventDefault();
