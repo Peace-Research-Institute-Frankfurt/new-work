@@ -1,6 +1,5 @@
 @import "vars";
 .container {
-  border: 1px solid var(--gray);
   display: inline-flex;
   font-family: var(--haas-text);
   padding: 0 0.4em;
@@ -11,7 +10,8 @@
   align-items: center;
   font-size: var(--ms-0);
   border-radius: var(--br);
-  background: white;
+  background: var(--gray-light);
+  border: 1px solid var(--gray-light);
   box-shadow: 0 2px 2px 0px rgba(black, 0.05);
   gap: 0.25rem;
   font-weight: 600;
