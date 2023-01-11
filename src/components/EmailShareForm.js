@@ -9,7 +9,6 @@ export default function EmailShareForm({ posts }) {
   const [isActive, setIsActive] = useState(true);
   const [formData, setFormData] = useState({ userEmail: "", targetEmails: "", message: "" });
   const flattenedPosts = posts.map((p) => {
-    console.log(p)
     return {
       title: p.childMdx.frontmatter.title,
       authors: p.childMdx.frontmatter.authors
@@ -53,7 +52,6 @@ export default function EmailShareForm({ posts }) {
           <input onChange={handleChange} required placeholder="you@work.com" type="email" id="userEmail" value={formData["userEmail"]} />
         </div>
         <div className={styles.section}>
-          {JSON.stringify(flattenedPosts)}
           <label htmlFor="targetEmails">Empfänger</label>
           <input
             onChange={handleChange}
@@ -69,7 +67,7 @@ export default function EmailShareForm({ posts }) {
           <textarea name="message" id="message" rows="3"></textarea>
         </div>
         <div className={styles.submit}>
-          <Button as="input" label={`${posts.length} Artikel teilen`} />
+          <Button state="primary" as="input" label={`${posts.length} Artikel teilen`} />
           <Button onClick={() => setIsActive(false)}>Abbrechen</Button>
         </div>
       </form>

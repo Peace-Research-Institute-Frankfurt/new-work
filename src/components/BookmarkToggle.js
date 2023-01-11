@@ -2,7 +2,6 @@ import React from "react";
 import HeartIcon from "../images/heart-stroke.svg";
 import RemoveIcon from "../images/heart-filled.svg";
 import Button from "./Button.js";
-import * as styles from "./BookmarkToggle.module.scss";
 
 export default function BookmarkToggle({ post, bookmarks, setBookmarks }) {
   const bookmarkIndex = bookmarks.findIndex((el) => {

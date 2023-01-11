@@ -27,6 +27,12 @@
   }
 }
 
+.primary {
+  background: var(--black);
+  border: 1px solid var(--black);
+  color: white;
+}
+
 .icon {
   padding: 0.35em;
   span {

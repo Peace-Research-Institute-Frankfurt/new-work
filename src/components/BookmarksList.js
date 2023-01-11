@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import EmailShareForm from "./EmailShareForm";
 import CrossIcon from "../images/cross.svg";
@@ -75,12 +75,16 @@ export default function BookmarksList({ bookmarks, setBookmarks }) {
     );
   });
 
-  return (
-    <aside>
+  const bookmarksContent = (
+    <>
       <ul>{bookmarksItems}</ul>
       <div className={styles.actions}>
-        <EmailShareForm posts={posts}/>
+        <EmailShareForm posts={posts} />
       </div>
-    </aside>
+    </>
   );
+
+  const emptyState = <p className={styles.empty}>Wenn du Artikel zu deinen Favoriten hinzufügst, erscheinen sie hier.</p>;
+
+  return <aside>{bookmarksItems.length > 0 ? bookmarksContent : emptyState}</aside>;
 }
