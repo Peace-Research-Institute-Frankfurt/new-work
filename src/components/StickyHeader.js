@@ -3,10 +3,12 @@ import useScrollPosition from "../hooks/useScrollPosition";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import BookmarksList from "./BookmarksList";
-import * as styles from "./StickyHeader.module.scss";
 import Counter from "./Counter";
+import Button from "./Button"
+import BookmarkToggle from "./BookmarkToggle.js"
+import * as styles from "./StickyHeader.module.scss";
 
-export default function StickyHeader({ chapterIndex, title, next, prev, bookmarks, setBookmarks }) {
+export default function StickyHeader({ chapterIndex, title, next, prev, post, bookmarks, setBookmarks }) {
   const [bookmarksActive, setBookmarksActive] = useState(false);
   const scrollPosition = useScrollPosition();
   const isScrolled = scrollPosition.y > 50;
@@ -41,9 +43,10 @@ export default function StickyHeader({ chapterIndex, title, next, prev, bookmark
             </div>
           </div>
           <div className={styles.controls}>
-            <button className={styles.bookmarksToggle} onClick={() => setBookmarksActive(!bookmarksActive)}>
+            <BookmarkToggle post={post} bookmarks={bookmarks} setBookmarks={setBookmarks} />            
+            <Button onClick={() => setBookmarksActive(!bookmarksActive)}>
               Favoriten <Counter n={bookmarks.length} />
-            </button>
+            </Button>
             <div className={`${styles.bookmarksContainer} ${bookmarksActive && styles.bookmarksContainerActive}`}>
               <div className={styles.bookmarksContainerInner}>
                 <BookmarksList bookmarks={bookmarks} setBookmarks={setBookmarks} />

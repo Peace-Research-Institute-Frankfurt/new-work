@@ -4,15 +4,17 @@
   display: inline-flex;
   font-family: var(--haas-text);
   padding: 0.35em 0.5em;
-  padding-bottom: .4em;
+  padding-bottom: .3em;
   letter-spacing: 0;
   line-height: 1;
   cursor: pointer;
   align-items: center;
-  font-size: var(--ms-1);
+  font-size: var(--ms-0);
   border-radius: var(--br);
   background: white;
   box-shadow: 0 2px 2px 0px rgba(black, .05);
+  gap: .5rem;
+  align-items: center;
   &:hover,
   &:focus-visible {
     border-color: var(--black);

@@ -7,7 +7,6 @@ import PostBody from "./PostBody";
 import PostHeader from "./PostHeader";
 import PostMeta from "./PostMeta";
 import Pagination from "./PostPagination";
-import BookmarkToggle from "./BookmarkToggle";
 import useLocalStorage from "../hooks/useLocalStorage";
 import * as styles from "./Post.module.scss";
 
@@ -96,6 +95,7 @@ const Post = ({ data, children }) => {
         prev={previous}
         bookmarks={bookmarks}
         setBookmarks={setBookmarks}
+        post={data.post}
       />
       <article>
         <PostHeader
@@ -107,9 +107,6 @@ const Post = ({ data, children }) => {
           color={frontmatter.color}
         />
         <div className={styles.body}>
-          <aside className={styles.actions}>
-            <BookmarkToggle post={data.post} bookmarks={bookmarks} setBookmarks={setBookmarks} />
-          </aside>
           <PostBody>{children}</PostBody>
           <Pagination next={next} previous={previous} />
         </div>

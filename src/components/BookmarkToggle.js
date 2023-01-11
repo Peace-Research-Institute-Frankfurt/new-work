@@ -1,4 +1,5 @@
 import React from "react";
+import HeartIcon from "../images/heart-outline.svg";
 import AddIcon from "../images/bookmark-add.svg";
 import RemoveIcon from "../images/cross.svg";
 import Button from "./Button.js"
