@@ -8,7 +8,7 @@
   padding-right: 3.5rem;
   position: relative;
   @include bp(m) {
-    padding: 0.5rem 0.75rem;
+    padding: 1rem;
     padding-right: 3.5rem;
   }
   &:hover, &:focus-visible {
@@ -22,9 +22,6 @@
   line-height: 0.95;
   font-size: var(--ms-3);
   font-weight: 700;
-  @include bp(m) {
-    font-weight: 800;
-  }
 }
 
 .authors {
@@ -53,8 +50,7 @@
 }
 
 .actions {
-  padding: .5rem;
+  padding: 1rem;
   display: flex;
   flex-flow: column;
-  background: var(--gray-light)
 }

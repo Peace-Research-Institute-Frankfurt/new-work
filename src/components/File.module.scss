@@ -14,12 +14,15 @@ a.container {
   font-size: var(--ms-2);
   font-weight: 300;
   letter-spacing: 0em;
-  line-height: 1
+  line-height: 1;
 }
 
 .meta {
   @extend %caption;
   display: flex;
+  span {
+    font-size: inherit;
+  }
 }
 
 .type {

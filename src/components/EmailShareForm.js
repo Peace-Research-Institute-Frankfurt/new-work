@@ -7,7 +7,19 @@ export default function EmailShareForm({ posts }) {
     posts = [];
   }
   const [isActive, setIsActive] = useState(true);
-  const [formData, setFormData] = useState({ userEmail: "", targetEmails: "", message: ""});
+  const [formData, setFormData] = useState({ userEmail: "", targetEmails: "", message: "" });
+  const flattenedPosts = posts.map((p) => {
+    console.log(p)
+    return {
+      title: p.childMdx.frontmatter.title,
+      authors: p.childMdx.frontmatter.authors
+        .map((a) => {
+          return a.frontmatter.name;
+        })
+        .join(", "),
+      link: "http://www.example.com",
+    };
+  });
 
   function handleChange(e) {
     e.preventDefault();
@@ -21,16 +33,16 @@ export default function EmailShareForm({ posts }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Submitting email form")
+    console.log("Submitting email form");
     fetch("/.netlify/functions/triggerShareEmail", {
-        method: "POST",
-        body: JSON.stringify({
-            userEmail: formData["userEmail"],
-            targetEmails: formData["targetEmails"].split(","),
-            message: formData["message"],
-            posts: posts
-        })
-    })
+      method: "POST",
+      body: JSON.stringify({
+        userEmail: formData["userEmail"],
+        targetEmails: formData["targetEmails"].split(","),
+        message: formData["message"],
+        posts: flattenedPosts,
+      }),
+    });
   }
   return (
     <>
@@ -41,6 +53,7 @@ export default function EmailShareForm({ posts }) {
           <input onChange={handleChange} required placeholder="you@work.com" type="email" id="userEmail" value={formData["userEmail"]} />
         </div>
         <div className={styles.section}>
+          {JSON.stringify(flattenedPosts)}
           <label htmlFor="targetEmails">Empfänger</label>
           <input
             onChange={handleChange}
@@ -52,11 +65,11 @@ export default function EmailShareForm({ posts }) {
           />
         </div>
         <div className={styles.section}>
-            <label htmlFor="message">Nachricht (optional)</label>
-            <textarea name="message" id="message" rows="3"></textarea>
+          <label htmlFor="message">Nachricht (optional)</label>
+          <textarea name="message" id="message" rows="3"></textarea>
         </div>
         <div className={styles.submit}>
-          <Button as="input" label={`${posts.length} Artikel teilen`}/>
+          <Button as="input" label={`${posts.length} Artikel teilen`} />
           <Button onClick={() => setIsActive(false)}>Abbrechen</Button>
         </div>
       </form>
