@@ -3,8 +3,8 @@
   border: 1px solid var(--gray);
   display: inline-flex;
   font-family: var(--haas-text);
-  padding: 0.35em 0.5em;
-  padding-bottom: .3em;
+  padding: 0 0.4em;
+  height: 1.8em;
   letter-spacing: 0;
   line-height: 1;
   cursor: pointer;
@@ -12,8 +12,9 @@
   font-size: var(--ms-0);
   border-radius: var(--br);
   background: white;
-  box-shadow: 0 2px 2px 0px rgba(black, .05);
-  gap: .5rem;
+  box-shadow: 0 2px 2px 0px rgba(black, 0.05);
+  gap: 0.25rem;
+  font-weight: 600;
   align-items: center;
   &:hover,
   &:focus-visible {
@@ -21,8 +22,15 @@
   }
   svg {
     height: 1.2em;
-    margin-left: .125em;
     position: relative;
-    top: .05em;
+    top: 0.05em;
+  }
+}
+
+.icon {
+  padding: 0.35em;
+  span {
+    font-size: 0;
+    position: absolute;
   }
 }

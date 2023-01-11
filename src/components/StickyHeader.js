@@ -6,6 +6,8 @@ import BookmarksList from "./BookmarksList";
 import Counter from "./Counter";
 import Button from "./Button"
 import BookmarkToggle from "./BookmarkToggle.js"
+import LeftArrow from "../images/arrow-left.svg"
+import RightArrow from "../images/arrow-right.svg"
 import * as styles from "./StickyHeader.module.scss";
 
 export default function StickyHeader({ chapterIndex, title, next, prev, post, bookmarks, setBookmarks }) {
@@ -43,6 +45,10 @@ export default function StickyHeader({ chapterIndex, title, next, prev, post, bo
             </div>
           </div>
           <div className={styles.controls}>
+          <nav className={styles.pagination}>
+              {prev && <Link to={`/${prev.childMdx.fields.slug}`}><LeftArrow/></Link>}
+              {next && <Link to={`/${next.childMdx.fields.slug}`}><RightArrow/></Link>}
+            </nav>
             <BookmarkToggle post={post} bookmarks={bookmarks} setBookmarks={setBookmarks} />            
             <Button onClick={() => setBookmarksActive(!bookmarksActive)}>
               Favoriten <Counter n={bookmarks.length} />
@@ -52,10 +58,6 @@ export default function StickyHeader({ chapterIndex, title, next, prev, post, bo
                 <BookmarksList bookmarks={bookmarks} setBookmarks={setBookmarks} />
               </div>
             </div>
-            <nav className={styles.pagination}>
-              {prev && <Link to={`/${prev.childMdx.fields.slug}`}>←</Link>}
-              {next && <Link to={`/${next.childMdx.fields.slug}`}>→</Link>}
-            </nav>
           </div>
         </div>
         <div className={styles.progress}>

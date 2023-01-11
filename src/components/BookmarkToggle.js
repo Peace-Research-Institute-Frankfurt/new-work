@@ -1,8 +1,7 @@
 import React from "react";
-import HeartIcon from "../images/heart-outline.svg";
-import AddIcon from "../images/bookmark-add.svg";
-import RemoveIcon from "../images/cross.svg";
-import Button from "./Button.js"
+import HeartIcon from "../images/heart-stroke.svg";
+import RemoveIcon from "../images/heart-filled.svg";
+import Button from "./Button.js";
 import * as styles from "./BookmarkToggle.module.scss";
 
 export default function BookmarkToggle({ post, bookmarks, setBookmarks }) {
@@ -26,7 +25,7 @@ export default function BookmarkToggle({ post, bookmarks, setBookmarks }) {
 
   const addInner = (
     <>
-      <span>Als Favorit speichern</span> <AddIcon />
+      <span>Als Favorit speichern</span> <HeartIcon />
     </>
   );
   const removeInner = (
@@ -35,9 +34,5 @@ export default function BookmarkToggle({ post, bookmarks, setBookmarks }) {
     </>
   );
 
-  return (
-    <Button onClick={toggleBookmark}>
-      {bookmarkIndex === -1 ? addInner : removeInner}
-    </Button>
-  );
+  return <Button type="icon" as="button" onClick={toggleBookmark}>{bookmarkIndex === -1 ? addInner : removeInner}</Button>;
 }
