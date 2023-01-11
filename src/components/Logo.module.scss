@@ -2,24 +2,18 @@
 
 .container {
   font-family: var(--haas-text);
+  border-bottom: 2px solid currentColor;
   line-height: 1;
   text-align: center;
   transition: var(--fast);
-  border-radius: var(--br);
-  border: 1px solid black;
-  padding: 0.2rem .4rem;
-  padding-bottom: 0.35rem;
+  padding-bottom: 0.2rem;
   font-size: var(--ms-1);
-  text-underline-offset: .1em;
   @include bp(m){
     font-size: var(--ms-0);
-    padding: 0.3rem .5rem;
-    padding-bottom: 0.4rem;
   }
   &:hover,
   &:focus-visible {
     background: rgba(white, 0.5);
-    text-decoration: underline;
   }
 }
 
@@ -29,5 +23,6 @@
 
 .top {
   letter-spacing: -.02em;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: inherit;
 }

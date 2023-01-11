@@ -50,6 +50,9 @@
     font-size: 27.75vw;
     margin-left: -0.15em;
   }
+  span {
+    font-size: inherit;
+  }
   .w {
     @include bp(s) {
       margin-right: -0.02em;
@@ -107,7 +110,7 @@
   .at {
     position: relative;
     top: -0.125em;
-    font-size: .9em;
+    font-size: 0.9em;
     @include bp(m) {
       font-size: 1em;
       margin-right: 0.01em;
@@ -136,7 +139,7 @@
     letter-spacing: -0.075em;
     font-size: var(--ms-5);
     text-decoration-thickness: 2px;
-    padding-bottom: .5em;
+    padding-bottom: 0.5em;
   }
   @include bp(l) {
     max-width: 15em;
