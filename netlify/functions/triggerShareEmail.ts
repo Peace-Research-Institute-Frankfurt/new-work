@@ -18,7 +18,7 @@ const handler: Handler = async function (event) {
 
   console.log("Called email handler")
   console.log(requestBody)
-  await fetch(`${process.env.URL}/.netlify/functions/emails/share`, {
+  const res = await fetch(`${process.env.URL}/.netlify/functions/emails/share`, {
     headers: {
       "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
     },
@@ -38,7 +38,7 @@ const handler: Handler = async function (event) {
   });
 
   return {
-    statusCode: 200,
+    statusCode: res.status,
     body: JSON.stringify("Subscribe email sent!"),
   };
 };
