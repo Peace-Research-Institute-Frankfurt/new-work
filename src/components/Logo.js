@@ -15,17 +15,15 @@ export default function Logo() {
   `);
   return (
     <Link className={styles.container} to="/">
-      <Link className={styles.siteTitle} to="/">
-        <StaticImage
-          imgStyle={{ objectFit: "contain" }}
-          placeholder="none"
-          width={50}
-          layout="constrained"
-          className={styles.face}
-          src="../images/leibniz-head.png"
-          alt="New Work Logo"
-        />
-      </Link>
+      <StaticImage
+        imgStyle={{ objectFit: "contain" }}
+        placeholder="none"
+        width={50}
+        layout="constrained"
+        className={styles.face}
+        src="../images/leibniz-head.png"
+        alt="New Work Logo"
+      />
       <span className={styles.label}>{data.site.siteMetadata.title}</span>
     </Link>
   );

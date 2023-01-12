@@ -36,7 +36,7 @@
   --haas-text: "acumin-pro", sans-serif;
   --suisse: "Suisse", Georgia, serif;
   --ratio: 1.2; // Minor 3
-  --ms-0: clamp(0.75rem, calc(1.4vw + 0.1rem), 1.05rem);
+  --ms-0: clamp(0.725rem, calc(1.4vw + 0.1rem), 1.05rem);
   --ms--2: calc(var(--ms--1) / var(--ratio));
   --ms--1: calc(var(--ms-0) / var(--ratio));
   --ms-1: calc(var(--ms-0) * var(--ratio));
@@ -80,7 +80,7 @@ font-weight: 500;
   p,
   ul,
   ol {
-    margin-bottom: 0.75em;
+    margin-bottom: 0.65em;
     @include bp(m){
       margin-bottom: 0.85em;
     }
@@ -125,15 +125,13 @@ font-weight: 500;
     }
   }
   sup {
-    font-size: var(--ms--1);
+    @extend %caption;
     vertical-align: baseline;
     position: relative;
     display: inline-block;
     top: -0.4em;
-    font-weight: 600;
-    font-feature-settings: "tnum" 1;
     a {
-      text-decoration: none;
+      text-decoration: none !important;
     }
   }
   h2 {
@@ -172,7 +170,7 @@ font-weight: 500;
 
 %caption {
   font-family: var(--haas-text);
-  font-feature-settings: "ss03";
+  font-feature-settings: "ss03" 1, "tnum" 1;
   font-size: var(--ms-0);
   line-height: 1.1;
   letter-spacing: .01em;

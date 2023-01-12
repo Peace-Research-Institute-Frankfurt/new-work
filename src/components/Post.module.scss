@@ -9,13 +9,12 @@
   @include bp(m){
     padding-bottom: 6rem;
   }
-  * {
+  & > * {
     grid-column: 2/3;
   }
   :global(.footnotes) {
-    margin-top: 2rem;
-    font-size: var(--ms-0);
-    color: var(--gray-dark);
+    @extend %caption;
+    margin-top: .75em;
     counter-reset: fn;
     h2 {
       display: none;
@@ -28,13 +27,13 @@
     li {
       display: inline-block;
       counter-increment: fn;
-      padding-left: 1.5em;
+      padding-left: 1em;
       position: relative;
       margin-bottom: 0.5em;
       &:before {
         position: absolute;
         left: 0;
-        content: counter(fn);
+        content: counter(fn)".";
       }
     }
   }
@@ -68,8 +67,8 @@
   display: inline-block;
   padding-left: var(--padding);
   left: 0;
+  right: 0;
   bottom: -1.5rem;
-  top: auto;
   position: absolute;
   @include bp(m) {
     right: 0;
