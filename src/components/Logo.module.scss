@@ -2,13 +2,14 @@
 
 .container {
   font-family: var(--haas-text);
-  border-bottom: 2px solid currentColor;
   line-height: 1;
   text-align: center;
   transition: var(--fast);
   padding-bottom: 0.2rem;
   font-size: var(--ms-1);
+  border-bottom: 1px solid currentColor;
   @include bp(m){
+    border-bottom: 2px solid currentColor;
     font-size: var(--ms-0);
   }
   &:hover,

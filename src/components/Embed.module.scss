@@ -38,16 +38,16 @@
   border: 1px solid var(--gray);
   padding: 0.3rem 0.65rem;
   padding-bottom: 0.35rem;
-  margin-top: 1.5rem;
+  margin-top: 1em;
   border-radius: var(--br);
-  font-size: var(--ms-0);
   line-height: 1.5;
+  font-size: var(--ms-0);
   background: white;
-  box-shadow: 0 1px 3px -2px rgba(black, .2);
+  box-shadow: 0 1px 3px -2px rgba(black, 0.2);
   @include bp(m) {
     padding: 0.25rem 0.65rem;
     padding-bottom: 0.35rem;
-    padding-right: .5rem;
+    padding-right: 0.5rem;
   }
   &:hover,
   &:focus-within {

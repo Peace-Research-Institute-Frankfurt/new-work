@@ -7,7 +7,7 @@
   background: linear-gradient(to bottom, rgb(255, 152, 26) 55%, transparent 70%);
   margin-bottom: 1rem;
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   @include bp(m) {
     min-height: 90vh;
     margin-bottom: 1rem;
@@ -157,7 +157,7 @@
   top: 50%;
   pointer-events: none;
   z-index: 100;
-  transform: translateX(-50%) translateY(-40%);
+  transform: translateX(-50%) translateY(-30%);
   height: 35vh;
   width: 95%;
   filter: drop-shadow(10px 10px 5px var(--shadow));

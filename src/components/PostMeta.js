@@ -1,5 +1,6 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { gri } from "./util";
 import * as styles from "./PostMeta.module.scss";
 
 export default function PostMeta({ authors, readingTime }) {
@@ -10,7 +11,13 @@ export default function PostMeta({ authors, readingTime }) {
       const authorImage = getImage(fm.image);
       return (
         <li className={styles.byline} key={fm.name}>
-          <GatsbyImage objectFit="contain" className={styles.bylineImage} image={authorImage} alt={`${fm.name} profile image`} />
+          <GatsbyImage
+            objectFit="contain"
+            style={{ left: `${gri(20, 70)}%`, top: `${gri(30, 80)}%`, transform: `rotate(${gri(-30, 30)}deg)` }}
+            className={styles.bylineImage}
+            image={authorImage}
+            alt={`${fm.name} profile image`}
+          />
           <div>
             <span className={styles.bylineName}>{fm.name}</span>
             {fm.institution && (

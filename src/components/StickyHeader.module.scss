@@ -2,7 +2,6 @@
 
 .container {
   position: fixed;
-  padding: 0.4rem var(--padding);
   left: 0;
   right: 0;
   top: 0;
@@ -15,7 +14,9 @@
   font-feature-settings: "tnum";
   pointer-events: none;
   border-bottom: 1px solid transparent;
+  padding: 0.25rem var(--padding);
   @include bp(m) {
+    padding: 0.4rem var(--padding);
     letter-spacing: 0.01em;
     font-size: var(--ms-1);
   }
