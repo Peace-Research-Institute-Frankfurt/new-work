@@ -13,7 +13,7 @@ export default function PostMeta({ authors, readingTime }) {
         <li className={styles.byline} key={fm.name}>
           <GatsbyImage
             objectFit="contain"
-            style={{ left: `${gri(20, 70)}%`, top: `${gri(30, 80)}%`, transform: `rotate(${gri(-30, 30)}deg)` }}
+            style={{ left: `${gri(10, 90)}%`, top: `${gri(40, 50)}%`, transform: `rotate(${gri(-30, 30)}deg)` }}
             className={styles.bylineImage}
             image={authorImage}
             alt={`${fm.name} profile image`}
