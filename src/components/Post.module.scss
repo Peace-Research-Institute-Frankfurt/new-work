@@ -56,6 +56,7 @@
     max-width: calc(80% - 4rem);
     img {
       width: auto;
+      border-radius: var(--br)
     }
   }
 }
@@ -63,7 +64,7 @@
 .credit {
   @extend %caption;
   font-size: var(--ms--1);
-  color: var(--gray);
+  color: var(--gray-dark);
   display: inline-block;
   padding-left: var(--padding);
   left: 0;
