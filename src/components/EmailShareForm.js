@@ -6,11 +6,11 @@ export default function EmailShareForm({ posts }) {
   if (posts === undefined) {
     posts = [];
   }
-  const [formState, setFormState] = useState("success");
+  const [formState, setFormState] = useState("collapsed");
   const [isActive, setIsActive] = useState(true);
   const [formData, setFormData] = useState({ userEmail: "", targetEmails: "", message: "" });
   let flattenedPosts = [];
-  if (posts && posts.length > 0) {
+  if (posts.length > 0) {
     flattenedPosts = posts.map((p) => {
       return {
         title: p.childMdx.frontmatter.title,
@@ -19,9 +19,18 @@ export default function EmailShareForm({ posts }) {
             return a.frontmatter.name;
           })
           .join(", "),
-        link: "http://www.example.com",
+        link: `https://leibniz-nw.netlify.app/${p.childMdx.fields.slug}`,
       };
     });
+  }
+
+  // If the server-side email fails, we fall back to a mailto link
+  let mailto = "";
+  if (posts.length > 0) {
+    const emailTitle = `Work New @ Leibniz`;
+    const emailBody = posts.map((p) => `${p.childMdx.frontmatter.title} – https://leibniz-nw.netlify.app/${p.childMdx.fields.slug}`).join(`\n`);
+    const to = formData.targetEmails.split(",").join(";");
+    mailto = `mailto:${to}?subject=${emailTitle}&body=${encodeURIComponent(`${formData.message}\n\n${emailBody}\n\nPasswort: Leibniz123\n\n`)}`;
   }
 
   function handleChange(e) {
@@ -93,10 +102,12 @@ export default function EmailShareForm({ posts }) {
   );
   const errorView = (
     <div>
-      <p className={`${styles.feedback} ${styles.error}`}>Email fehlgeschlagen. Versuche es in ein paar Minuten erneut.</p>
+      <p className={`${styles.feedback} ${styles.error}`}>
+        Versand fehlgeschlagen. Versuch es in ein paar Minuten erneut oder <a href={mailto}>schick die Email manuell</a> mit deiner Email-App.
+      </p>
       <div className={styles.actions}>
         <Button onClick={() => setFormState("collapsed")} state="">
-          Close
+          Abbrechen
         </Button>
       </div>
     </div>

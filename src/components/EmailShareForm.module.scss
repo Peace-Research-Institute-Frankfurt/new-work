@@ -6,7 +6,6 @@
 
 .container {
   text-align: left;
-  padding: 0.2rem;
   display: none;
   &.active {
     display: block;
@@ -14,10 +13,12 @@
 }
 
 .feedback {
+  @extend %caption;
   background: var(--lightgray);
   border-radius: var(--br);
   padding: 0.75rem 1rem;
   font-size: var(--ms-0);
+  margin-bottom: .75rem;
   p {
     opacity: 0.85;
   }
@@ -59,7 +60,6 @@
 }
 
 .actions {
-  padding-top: 0.35rem;
   font-weight: bold;
   display: flex;
   gap: 0.5rem;

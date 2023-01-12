@@ -1,6 +1,5 @@
 @import "vars";
 .item {
-  max-width: 35rem;
   text-align: left;
   border-bottom: 1px dotted var(--black);
   list-style: none;
@@ -8,7 +7,7 @@
   padding-right: 3.5rem;
   position: relative;
   @include bp(m) {
-    padding: 1rem;
+    padding: rem;
     padding-right: 3.5rem;
   }
   &:hover,
@@ -20,8 +19,8 @@
 .title {
   display: block;
   letter-spacing: -0.025em;
-  line-height: 0.95;
-  font-size: var(--ms-3);
+  line-height: 1.1;
+  font-size: var(--ms-2);
   font-weight: 700;
 }
 
@@ -51,7 +50,7 @@
 }
 
 .actions {
-  padding: 1rem;
+  padding: .75rem;
   display: flex;
   flex-flow: column;
 }

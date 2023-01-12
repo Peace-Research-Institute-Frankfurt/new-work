@@ -68,7 +68,7 @@
   display: flex;
   align-items: center;
   flex-shrink: 1;
-  max-width: calc(100% - 7rem);
+  max-width: calc(100% - 10rem);
 }
 
 .title {
@@ -117,6 +117,7 @@
   z-index: 100;
   right: 0;
   top: 3.5rem;
+  max-width: 25rem;
   @include bp(m) {
     top: 3rem;
   }

@@ -17,28 +17,28 @@ const handler: Handler = async function (event) {
   };
 
   console.log("Called email handler")
-  console.log(requestBody)
-  const res = await fetch(`${process.env.URL}/.netlify/functions/emails/share`, {
-    headers: {
-      "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
-    },
-    method: "POST",
-    body: JSON.stringify({
-      from: process.env.EMAIL_SENDER,
-      to: requestBody.targetEmails,
-      replyTo: requestBody.userEmail,
-      subject: `${requestBody.userEmail} hat ${requestBody.posts.length} Artikel mit dir geteilt`,
-      parameters: {
-        userEmail: requestBody.userEmail,
-        targetEmails: requestBody.targetEmails,
-        message: requestBody.message,
-        posts: requestBody.posts,
-      },
-    }),
-  });
+  // const res = await fetch(`${process.env.URL}/.netlify/functions/emails/share`, {
+  //   headers: {
+  //     "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
+  //   },
+  //   method: "POST",
+  //   body: JSON.stringify({
+  //     from: process.env.EMAIL_SENDER,
+  //     to: requestBody.targetEmails,
+  //     replyTo: requestBody.userEmail,
+  //     subject: `${requestBody.userEmail} hat ${requestBody.posts.length} Artikel mit dir geteilt`,
+  //     parameters: {
+  //       userEmail: requestBody.userEmail,
+  //       targetEmails: requestBody.targetEmails,
+  //       message: requestBody.message,
+  //       posts: requestBody.posts,
+  //     },
+  //   }),
+  // });
 
   return {
-    statusCode: res.status,
+    // statusCode: res.status,
+    statusCode: 400,
     body: JSON.stringify("Subscribe email sent!"),
   };
 };
