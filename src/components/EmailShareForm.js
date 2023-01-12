@@ -45,7 +45,6 @@ export default function EmailShareForm({ posts }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("Submitting email form");
     const res = await fetch("/.netlify/functions/triggerShareEmail", {
       method: "POST",
       body: JSON.stringify({
@@ -55,10 +54,10 @@ export default function EmailShareForm({ posts }) {
         posts: flattenedPosts,
       }),
     });
-    console.log(res);
     if (res.status === 200) {
       setFormState("success");
     } else {
+      const data = await res.json();
       setFormState("error");
     }
   }
@@ -106,6 +105,9 @@ export default function EmailShareForm({ posts }) {
         Versand fehlgeschlagen. Versuch es in ein paar Minuten erneut oder <a href={mailto}>schick die Email manuell</a> mit deiner Email-App.
       </p>
       <div className={styles.actions}>
+        <Button onClick={() => setFormState("default")} state="">
+          Zurück
+        </Button>
         <Button onClick={() => setFormState("collapsed")} state="">
           Abbrechen
         </Button>
