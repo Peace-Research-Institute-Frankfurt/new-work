@@ -25,6 +25,8 @@
   @extend %copy-large;
   hyphens: none;
   padding: 1em;
+  padding-top: 0.75em;
+  line-height: 1.25;
   margin: 0 auto;
   @include bp(m) {
     padding-top: 1em;

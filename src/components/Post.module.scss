@@ -66,9 +66,9 @@
   color: var(--gray);
   display: inline-block;
   padding-left: var(--padding);
-  padding-top: 1em;
   left: 0;
   bottom: -1.5rem;
+  top: auto;
   position: absolute;
   @include bp(m) {
     right: 0;
