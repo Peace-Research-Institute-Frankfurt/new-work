@@ -1,14 +1,15 @@
 @import "../components/vars";
 
 .hero {
-  min-height: 90vh;
   display: flex;
   padding-bottom: 1rem;
   position: relative;
   background: linear-gradient(to bottom, rgb(255, 152, 26) 55%, transparent 70%);
   margin-bottom: 1rem;
   position: relative;
+  min-height: 100vh;
   @include bp(m) {
+    min-height: 90vh;
     margin-bottom: 1rem;
   }
 }
@@ -35,6 +36,9 @@
   line-height: 0.7;
   text-transform: uppercase;
   @include bp(xs) {
+    font-size: 35vw;
+  }
+  @include bp(m) {
     line-height: 0.73;
     text-align: left;
     text-transform: none;
@@ -44,8 +48,6 @@
     font-size: 27.5vw;
     width: 100%;
     letter-spacing: -0.05em;
-  }
-  @include bp(m) {
     margin-top: -0.05em;
     font-size: 27.75vw;
     margin-left: -0.15em;
@@ -54,9 +56,6 @@
     font-size: inherit;
   }
   .w {
-    @include bp(s) {
-      margin-right: -0.02em;
-    }
     @include bp(m) {
       margin-right: -0.03em;
     }
@@ -71,9 +70,6 @@
   .e {
     margin-right: 0.025em;
     margin-left: -0.012em;
-    @include bp(s) {
-      margin-right: -0.005em;
-    }
     @include bp(m) {
       margin-left: -0.012em;
       margin-right: -0.006em;
@@ -89,28 +85,28 @@
   align-items: flex-end;
   justify-content: center;
   letter-spacing: -0.06em;
-  font-weight: 100;
-  font-size: 40vw;
+  font-weight: 300;
+  font-size: 30vw;
   line-height: 0.8;
-  margin-bottom: 0.1em;
+  margin-bottom: 0.15em;
   margin-left: -0.08em;
-  @include bp(s) {
+  
+  @include bp(xs) {
+    margin-bottom: .15em;
+    font-size: 30vw;
     font-family: var(--haas-text);
-    white-space: nowrap;
-    letter-spacing: -0.1em;
-    margin-bottom: 0.1em;
-    font-size: 25vw;
     font-weight: 100;
     margin-left: -0.15em;
+    letter-spacing: -0.1em;
   }
-  @include bp(l) {
-    font-weight: 100;
+  @include bp(m) {
+    font-size: 30vw;
     order: 3;
+    margin-bottom: 0.05em;
   }
   .at {
     position: relative;
     top: -0.125em;
-    font-size: 0.9em;
     @include bp(m) {
       font-size: 1em;
       margin-right: 0.01em;
@@ -131,18 +127,11 @@
   padding: 0 var(--padding);
   text-decoration: underline;
   text-underline-offset: 0.1em;
-  font-size: var(--ms-3);
+  font-size: var(--ms-2);
   text-decoration-thickness: 1px;
-  max-width: 18em;
-  @include bp(s) {
-    max-width: 22em;
-    letter-spacing: -0.075em;
-    font-size: var(--ms-5);
-    text-decoration-thickness: 2px;
-    padding-bottom: 0.5em;
-  }
-  @include bp(l) {
-    max-width: 15em;
+  max-width: 20em;
+  @include bp(m) {
+    max-width: 14em;
     font-weight: 100;
     height: auto;
     line-height: 1;
@@ -169,18 +158,20 @@
   pointer-events: none;
   z-index: 100;
   transform: translateX(-50%) translateY(-40%);
-  height: 50vh;
+  height: 35vh;
   width: 95%;
-  filter: drop-shadow(30px 40px 7px var(--shadow));
+  filter: drop-shadow(10px 10px 5px var(--shadow));
   @include bp(xs) {
-    transform: translateX(-50%) translateY(-55%);
-    height: 60vh;
+    transform: translateX(-50%) translateY(-35%);
+    filter: drop-shadow(20px 20px 10px var(--shadow));
+    height: 40vh;
   }
   @include bp(m) {
-    transform: translateX(-50%) translateY(-55%);
-    filter: drop-shadow(40px 50px 10px var(--shadow));
+    transform: translateX(-50%) translateY(-50%);
+    height: 55vh;
   }
   @include bp(l) {
+    filter: drop-shadow(30px 30px 8px var(--shadow));
     transform: translateX(-50%) translateY(-55%);
     height: 60vh;
   }
@@ -315,12 +306,13 @@
   border: 3px solid rgb(252, 251, 248);
   box-shadow: 2px 2px 1px rgba(black, 0.5);
   top: 12%;
-  width: 7rem;
-  height: 7rem;
+  width: 6rem;
+  height: 6rem;
   padding: 0.5rem;
   @include bp(m) {
-    top: 15%;
-    width: 10rem;
+    top: 20%;
+    right: 15%;
+    width:  10rem;
     height: 10rem;
     padding: 1rem;
   }
