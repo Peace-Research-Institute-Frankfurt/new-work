@@ -56,17 +56,19 @@ export default function Figure({ caption, credit, size, alt, ...props }) {
   return (
     <figure className={[styles[size], styles.container].join(" ")}>
       {imageEl}
-      {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
-      {credit && (
-        <figcaption className={styles.credit}>
-          <>{credit}</>
-          {license && (
-            <>
-              {","} <a href={license.url}>{license.title}</a>
-            </>
-          )}
-        </figcaption>
-      )}
+      <div className={styles.captions}>
+        {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
+        {credit && (
+          <figcaption className={styles.credit}>
+            <>{credit}</>
+            {license && (
+              <>
+                {","} <a href={license.url}>{license.title}</a>
+              </>
+            )}
+          </figcaption>
+        )}
+      </div>
     </figure>
   );
 }

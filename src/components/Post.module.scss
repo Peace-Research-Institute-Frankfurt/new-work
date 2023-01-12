@@ -3,9 +3,12 @@
   @extend %copy;
   padding-top: 0;
   display: grid;
-  grid-template-columns: 1fr minmax(auto, 50rem) 1fr;
+  grid-template-columns: 1fr minmax(auto, 45rem) 1fr;
   column-gap: var(--padding);
-  padding-bottom: 6rem;
+  padding-bottom: 2rem;
+  @include bp(m){
+    padding-bottom: 6rem;
+  }
   * {
     grid-column: 2/3;
   }
@@ -38,9 +41,9 @@
 }
 
 .actions {
-  margin-top: .5rem;
-  margin-bottom: .75rem;
-  @include bp(m){
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  @include bp(m) {
     margin-bottom: 1rem;
   }
 }
@@ -50,7 +53,7 @@
   @include bp(m) {
     margin-bottom: 1rem;
     position: relative;
-    max-width: calc(100% - 4rem);
+    max-width: calc(80% - 4rem);
     img {
       width: auto;
     }
@@ -65,10 +68,11 @@
   padding-left: var(--padding);
   padding-top: 1em;
   left: 0;
+  bottom: -1.5rem;
+  position: absolute;
   @include bp(m) {
     right: 0;
     padding: 0;
-    position: absolute;
     transform-origin: bottom right;
     bottom: 0;
     left: auto;

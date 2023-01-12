@@ -1,7 +1,7 @@
 @import "vars";
 .title {
   font-family: var(--haas-text);
-  font-size: var(--ms-7);
+  font-size: var(--ms-6);
   line-height: 0.85;
   letter-spacing: -0.05em;
   font-weight: 800;
@@ -37,10 +37,10 @@
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
   margin-bottom: 2.5rem;
   align-items: flex-start;
   max-width: 50rem;
-  margin: 0 auto;
   @include bp(m) {
     padding-top: 4rem;
     margin-bottom: 1.5rem;

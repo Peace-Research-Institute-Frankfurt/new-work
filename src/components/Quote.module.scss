@@ -1,39 +1,30 @@
 @import "vars";
 
 .container {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 1em;
+  margin-top: .5em;
 }
 
 .text {
+  @extend %copy-large;
   font-weight: 400;
   letter-spacing: -0.01em;
-  line-height: 1.3;
-  border: 1px solid black;
   border-radius: var(--br);
-  padding: .75em;
+  padding: .85em;
   position: relative;
-  filter: drop-shadow(2px 2px 1px rgba(black, .1));
-  background: white;
+  background: var(--highlight);
   @include bp(m) {
-    font-family: var(--suisse);
-    line-height: 1.25;
+    line-height: 1.35;
     font-size: var(--ms-2);
-    letter-spacing: -0.02em;
-  }
-  strong {
-    background: var(--highlight);
   }
   &:after {
     content: "";
     width: 0.75rem;
     height: 0.75rem;
-    border-right: 1px solid var(--black);
-    border-bottom: 1px solid var(--black);
     position: absolute;
     bottom: 0;
     left: 1.5rem;
-    background: white;
+    background: var(--highlight);
     transform: translateY(55%) rotate(45deg);
   }
 }

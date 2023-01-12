@@ -1,11 +1,12 @@
 @import "vars";
 
-.caption {
+.captions {
   @extend %caption;
-  padding: 0 var(--padding);
-  text-align: left;
-  max-width: 36em;
+
   align-self: flex-start;
+  text-align: left;
+  padding: 0 var(--padding);
+  max-width: 36em;
   @include bp(m) {
     max-width: 55em;
     text-align: center;
@@ -13,14 +14,13 @@
   }
 }
 
-.image {
-  margin-bottom: 0.5rem;
-}
-
 .credit {
-  @extend %caption;
   color: var(--gray-dark);
   display: block;
+}
+
+.image {
+  margin-bottom: 0.75rem;
 }
 
 .container {
@@ -59,7 +59,9 @@
   align-items: center;
   max-width: 100%;
   .image {
-    margin-bottom: 1rem;
+    @include bp(m) {
+      margin-bottom: 1rem;
+    }
   }
   @include bp(m) {
     margin-top: calc(var(--ms-1) * 1.5);

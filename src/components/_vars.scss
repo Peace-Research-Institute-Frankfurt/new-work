@@ -36,7 +36,7 @@
   --haas-text: "acumin-pro", sans-serif;
   --suisse: "Suisse", Georgia, serif;
   --ratio: 1.2; // Minor 3
-  --ms-0: clamp(0.95rem, calc(1.4vw + 0.1rem), 1.05rem);
+  --ms-0: clamp(0.85rem, calc(1.4vw + 0.1rem), 1.05rem);
   --ms--2: calc(var(--ms--1) / var(--ratio));
   --ms--1: calc(var(--ms-0) / var(--ratio));
   --ms-1: calc(var(--ms-0) * var(--ratio));
@@ -58,28 +58,29 @@
 
 %h2 {
   font-family: var(--haas-text);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   font-size: var(--ms-3);
   hyphens: none;
   font-weight: 700;
   @include bp(m) {
+    font-weight: 400;
     letter-spacing: -0.018em;
-    font-size: var(--ms-3);
+    font-size: var(--ms-4);
   }
 }
 
 %copy {
   font-family: var(--suisse);
   font-size: var(--ms-1);
-  line-height: 1.375;
-  letter-spacing: -0.012em;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
   hyphens: auto;
   font-weight: 500;
   p,
   ul,
   ol {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.85em;
     &:last-child {
       margin-bottom: 0;
     }

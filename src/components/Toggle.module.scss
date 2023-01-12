@@ -7,10 +7,14 @@
 
 .container {
   display: inline-flex;
-  align-items: flex-end;
+  align-items: center;
   cursor: pointer;
-  --height: 1.5rem;
-  --width: 2.65rem;
+  --height: 1.25rem;
+  --width: 2rem;
+  @include bp(m){
+    --height: 1.25rem;
+    --width: 2rem;
+  }
   &:focus-within {
     outline: 3px solid var(--focus-color);
   }
@@ -27,9 +31,12 @@
 }
 .label {
   margin-right: 0.5em;
-  font-size: var(--ms-0);
+  font-size: var(--ms-1);
   position: relative;
   top: -0.05em;
+  @include bp(m) {
+    font-size: var(--ms-0);
+  }
 }
 
 .outer {
