@@ -57,7 +57,7 @@ export default function Figure({ caption, credit, size, alt, ...props }) {
     <figure className={[styles[size], styles.container].join(" ")}>
       {imageEl}
       <div className={styles.captions}>
-        {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
+        {caption && <figcaption>{caption}</figcaption>}
         {credit && (
           <figcaption className={styles.credit}>
             <>{credit}</>

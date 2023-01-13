@@ -6,10 +6,6 @@
 
 .container {
   text-align: left;
-  display: none;
-  &.active {
-    display: block;
-  }
 }
 
 .feedback {

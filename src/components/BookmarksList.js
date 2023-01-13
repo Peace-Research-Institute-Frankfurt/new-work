@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import EmailShareForm from "./EmailShareForm";
 import CrossIcon from "../images/cross.svg";

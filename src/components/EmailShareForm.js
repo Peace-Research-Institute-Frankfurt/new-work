@@ -7,7 +7,6 @@ export default function EmailShareForm({ posts }) {
     posts = [];
   }
   const [formState, setFormState] = useState("collapsed");
-  const [isActive, setIsActive] = useState(true);
   const [formData, setFormData] = useState({ userEmail: "", targetEmails: "", message: "" });
   let flattenedPosts = [];
   if (posts.length > 0) {
@@ -62,7 +61,7 @@ export default function EmailShareForm({ posts }) {
     }
   }
   const defaultView = (
-    <form onSubmit={handleSubmit} className={`${styles.container} ${isActive && styles.active}`}>
+    <form onSubmit={handleSubmit} className={`${styles.container}`}>
       <div className={styles.section}>
         <label htmlFor="userEmail">Deine Email-Adresse</label>
         <input onChange={handleChange} required placeholder="you@work.com" type="email" id="userEmail" value={formData["userEmail"]} />
